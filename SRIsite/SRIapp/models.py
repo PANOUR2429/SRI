@@ -40,7 +40,7 @@ class Levels(models.Model):
     score_cr7 = models.FloatField()
     level = models.FloatField()
     mandatory = models.FloatField()
-    domain = models.FloatField()
+    domain = models.CharField(max_length=200)
 
 
 class Services(models.Model):

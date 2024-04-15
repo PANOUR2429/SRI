@@ -42,6 +42,20 @@ def fill_impact_w():
                 impact_weight_instance.save()
 
 
+def fill_services():
+    with open("csv_files/services.csv", 'r') as file:
+        csvreader = csv.reader(file)
+        for k, data_list in enumerate(csvreader):
+            if k > 0:
+                print(data_list)
+                services_instance = Services(
+                                        domain=data_list[0],
+                                        code=data_list[1],
+                                        service_group=data_list[2],
+                                        service_desc=data_list[3]
+                                            )
+                services_instance.save()
+
 def fill_levels():
     with open("csv_files/levels.csv", 'r') as file:
         csvreader = csv.reader(file)
@@ -66,25 +80,8 @@ def fill_levels():
                 levels_instance.save()
 
 
-
-def fill_services():
-    with open("csv_files/services.csv", 'r') as file:
-        csvreader = csv.reader(file)
-        for k, data_list in enumerate(csvreader):
-            if k > 0:
-                print(data_list)
-                services_instance = Services(
-                                        domain=data_list[0],
-                                        code=data_list[1],
-                                        service_group=data_list[2],
-                                        service_desc=data_list[3]
-                                            )
-                services_instance.save()
-
-
-
 #if __name__ == "__main__":
-fill_domain_w()
-fill_impact_w()
+#fill_domain_w()
+#fill_impact_w()
 fill_levels()
 fill_services()
