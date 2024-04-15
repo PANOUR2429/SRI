@@ -299,7 +299,7 @@ E-3,level 2,On site storage of energy (e.g. electric battery or thermal storage)
 E-3,level 3,On site storage of energy (e.g. electric battery or thermal storage) with controller optimising the use of locally generated electricity,0,2,0,2,0,0,0,3,0,Electricity
 E-3,level 4,On site storage of energy (e.g. electric battery or thermal storage) with controller optimising the use of locally generated electricity and possibility to feed back into the grid,0,3,0,2,0,0,0,4,0,Electricity
 E-4,level 0,None,0,0,0,0,0,0,0,0,0,Electricity
-E-4,level 1,Scheduling electricity consumption (plug loads, white goods, etc.),0,1,0,1,0,0,0,1,0,Electricity
+E-4,level 1,Scheduling electricity consumption (plug loads white goods etc.),0,1,0,1,0,0,0,1,0,Electricity
 E-4,level 2,Automated management of local electricity consumption based on current renewable energy availability,0,2,0,2,0,0,0,2,0,Electricity
 E-4,level 3,Automated management of local electricity consumption based on current and predicted energy needs and renewable energy availability,0,3,0,2,0,0,0,3,0,Electricity
 E-5,level 0,CHP control based on scheduled runtime management and/or current heat energy demand,0,0,0,0,0,0,0,0,0,Electricity
@@ -409,7 +409,7 @@ MC-29,level 4,Scheduled override of DSM control and reactivation with optimised 
 MC-30,level 0,None,0,0,0,0,0,0,0,0,1,Monitoring and control
 MC-30,level 1,Single platform that allows manual control of multiple TBS,0,0,0,1,0,1,0,1,1,Monitoring and control
 MC-30,level 2,Single platform that allows automated control & coordination between TBS,1,0,0,2,0,1,0,2,1,Monitoring and control
-MC-30,level 3,Single platform that allows automated control & coordination between TBS + optimization of energy flow based on occupancy, weather and grid signals,2,0,0,3,0,1,0,3,1,Monitoring and control
+MC-30,level 3,Single platform that allows automated control & coordination between TBS + optimization of energy flow based on occupancy weather and grid signals,2,0,0,3,0,1,0,3,1,Monitoring and control
 MC-E1,level 0,User defined level 1-0,0,0,0,0,0,0,0,0,0,Monitoring and control
 MC-E1,level 1,User defined level 1-1,0,0,0,0,0,0,0,1,0,Monitoring and control
 MC-E1,level 2,User defined level 1-2,0,0,0,0,0,0,0,2,0,Monitoring and control

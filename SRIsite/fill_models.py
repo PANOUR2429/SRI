@@ -81,7 +81,7 @@ def fill_levels():
 
 
 #if __name__ == "__main__":
-#fill_domain_w()
-#fill_impact_w()
+fill_domain_w()
+fill_impact_w()
 fill_levels()
 fill_services()
