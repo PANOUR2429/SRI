@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="1st commit">
+    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="FILLED DB">
+      <change afterPath="$PROJECT_DIR$/SRIsite/SRIapp/from" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SRIsite/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SRIsite/from" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/csv_files/levels.csv" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/csv_files/levels.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SRIsite/SRIsite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIsite/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SRIsite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +27,25 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;PANOUR2429&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="02e8bf4f-3789-47ad-8e49-16515cd76031" />
+        <option name="url" value="https://github.com/PANOUR2429/SRI.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.venv/Scripts/activate.bat" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -42,6 +62,7 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Batch.activate.executor&quot;: &quot;Run&quot;,
+    &quot;Python.SRIcalc.executor&quot;: &quot;Run&quot;,
     &quot;Python.fill_models.executor&quot;: &quot;Run&quot;,
     &quot;Python.manage.executor&quot;: &quot;Run&quot;,
     &quot;Python.models.executor&quot;: &quot;Run&quot;,
@@ -58,8 +79,8 @@
       <recent name="C:\Users\kpann\PycharmProjects\SRI\SRIsite" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\kpann\PycharmProjects\SRI\SRIsite" />
       <recent name="C:\Users\kpann\PycharmProjects\SRI\SRIsite\SRIapp" />
+      <recent name="C:\Users\kpann\PycharmProjects\SRI\SRIsite" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -102,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713217420492</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1st commit">
+      <option name="closed" value="true" />
+      <created>1713218226423</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713218226423</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
