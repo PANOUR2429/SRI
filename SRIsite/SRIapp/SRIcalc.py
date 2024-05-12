@@ -472,18 +472,27 @@ print("N_MCmax = " + str(N_MCmax))
 
 #------------------------------
 #SMARTNESS OF EACH CRITERION
+print("")
+print("SMARTNESS & NORMALISED SMARTNESS OF EACH CRITERION BAZED ON USER SELECTION FOR BUILDING TYPE AND ZONE")
+
+
 i = 0
 Smartness = [0,0,0,0,0,0,0]
 Sum_N = [0,0,0,0,0,0,0]
 Sum_N_Max = [0,0,0,0,0,0,0]
 
+W = list(ImpactWeight.objects.filter(building_type = selected_building_type, zone = selected_zone).values())
+N_Smartness = [0,0,0,0,0,0,0]
+
 while i < len(Smartness):
   Sum_N[i] = N_H[i]+N_DHW[i]+N_C[i]+N_V[i]+N_L[i]+N_DE[i]+N_E[i]+N_EV[i]+N_MC[i]
   Sum_N_Max[i] = N_Hmax[i] + N_DHWmax[i] + N_Cmax[i] + N_Vmax[i] + N_Lmax[i] + N_DEmax[i] + N_Emax[i] + N_EVmax[i] + N_MCmax[i]
   Smartness[i] = Sum_N[i] / Sum_N_Max[i]
+  N_Smartness[i] = Smartness[i] * W[0]["imp_cr"+str(i+1)]
+  i += 1
 
 print ("Smartness = " + str(Smartness))
-
+print ("Normalized Smartness = " + str(N_Smartness))
 
 
 
