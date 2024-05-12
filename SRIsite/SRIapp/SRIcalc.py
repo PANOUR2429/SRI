@@ -495,17 +495,33 @@ print ("Smartness = " + str(Smartness))
 print ("Normalized Smartness = " + str(N_Smartness))
 
 
+#------------------------------
+# SMARTNESS VALUES OF EACH KEY FUNCTIONALITY
+print("")
+print("SMARTNESS VALUES OF EACH KEY FUNCTIONALITY")
 
+w_kf1 = 1/3
+w_kf2 = 1/3
+w_kf3 = 1/3
 
+kf1 = w_kf1 * ( N_Smartness[0] + N_Smartness[6] )
+kf2 = w_kf2 * sum(N_Smartness[2:5])
+kf3 = w_kf3 * ( N_Smartness[1] )
 
+SRI = kf1 + kf2 + kf3
+
+print ("kf1 = " + str(kf1))
+print ("kf2 = " + str(kf2))
+print ("kf3 = " + str(kf3))
+print("")
+print("TOTAL SRI:  ")
+print ("SRI = " + str(SRI) )
+print ("SRI =" + str( round(SRI,4) * 100) + "%")
 
 
 
 
 # test code bellow
-
-
-
 #l_H1a = Levels.objects.filter(id=1, code = 'H-1a', level = i).values()
 #print(list(l_H1a))
 
