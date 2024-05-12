@@ -407,6 +407,7 @@ N_DE = [0,0,0,0,0,0,0]
 N_E = [0,0,0,0,0,0,0]
 N_EV = [0,0,0,0,0,0,0]
 N_MC = [0,0,0,0,0,0,0]
+
 N_Hmax = [0,0,0,0,0,0,0]
 N_DHWmax = [0,0,0,0,0,0,0]
 N_Cmax = [0,0,0,0,0,0,0]
@@ -469,8 +470,19 @@ print("N_Emax = " + str(N_Emax))
 print("N_EVmax = " + str(N_EVmax))
 print("N_MCmax = " + str(N_MCmax))
 
+#------------------------------
+#SMARTNESS OF EACH CRITERION
+i = 0
+Smartness = [0,0,0,0,0,0,0]
+Sum_N = [0,0,0,0,0,0,0]
+Sum_N_Max = [0,0,0,0,0,0,0]
 
+while i < len(Smartness):
+  Sum_N[i] = N_H[i]+N_DHW[i]+N_C[i]+N_V[i]+N_L[i]+N_DE[i]+N_E[i]+N_EV[i]+N_MC[i]
+  Sum_N_Max[i] = N_Hmax[i] + N_DHWmax[i] + N_Cmax[i] + N_Vmax[i] + N_Lmax[i] + N_DEmax[i] + N_Emax[i] + N_EVmax[i] + N_MCmax[i]
+  Smartness[i] = Sum_N[i] / Sum_N_Max[i]
 
+print ("Smartness = " + str(Smartness))
 
 
 
