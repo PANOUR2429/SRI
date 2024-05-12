@@ -1,19 +1,24 @@
 from .models import *
+
 #user selection
+
+# possible building types: Residential, Non - Residential
 selected_building_type = 'Residential'
-selected_zone = 'North Europe'
+
+# possible zones : North Europe, West Europe, North-East Europe, South Europe, South-East Europe
+selected_zone = 'West Europe'
 
 # user selection for H (Heating)
 H1a_level = 3   #max 4
 H1b_level = 2   #max 3
-H1c_level = 0   #max 2
-H1d_level = 0   #max 4
+H1c_level = 2   #max 2
+H1d_level = 3   #max 4
 H1f_level = 0   #max 3
 H2a_level = 0   #max 2
-H2b_level = 0   #max 3
+H2b_level = 2   #max 3
 H2d_level = 0   #max 4
-H3_level = 0    #max 4
-H4_level = 0    #max 4
+H3_level = 4    #max 4
+H4_level = 1    #max 4
 
 # user selection for DHW (Domestic Hot Water)
 DHW1a_level = 2   #max 3
@@ -74,6 +79,11 @@ MC25_level = 1   #max 2
 MC28_level = 0   #max 2
 MC29_level = 2   #max 4
 MC30_level = 0   #max 3
+
+print("User selected : ")
+print(" Building type :" + str(selected_building_type))
+print(" zone :" + str(selected_zone))
+
 
 #-----------------------------------------------------------------------------------------------------
 #SUM OF SERVICES' PERFORMANCES AGAINST EACH CRITERION TO CALCULATE PERFORMANCE OF EACH DOMAIN
@@ -513,10 +523,24 @@ SRI = kf1 + kf2 + kf3
 print ("kf1 = " + str(kf1))
 print ("kf2 = " + str(kf2))
 print ("kf3 = " + str(kf3))
-print("")
+print("-------------------")
 print("TOTAL SRI:  ")
 print ("SRI = " + str(SRI) )
-print ("SRI =" + str( round(SRI,4) * 100) + "%")
+print("-------------------")
+print("User selected : ")
+print(" Building type : " + str(selected_building_type))
+print(" zone : " + str(selected_zone))
+print(" H Levels   : " + str(H_level_list))
+print(" DHW Levels : " + str(DHW_level_list))
+print(" C Levels   : " + str(C_level_list))
+print(" V Levels   : " + str(V_level_list))
+print(" L Levels   : " + str(L_level_list))
+print(" DE Levels  : " + str(DE_level_list))
+print(" E Levels   : " + str(E_level_list))
+print(" EV Levels  : " + str(EV_level_list))
+print(" MC Levels  : " + str(MC_level_list))
+print("-------------------")
+print ("SRI = " + str( round(SRI,4) * 100) + "%")
 
 
 
