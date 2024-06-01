@@ -13,9 +13,49 @@
       <div class="col-sm-8 text-left">
       <h5>SRI application, please select Domains present.</h5>
 
-        <div class="form-check form-switch">
-             Heating <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheck1" name="Heating">
-        </div>
+
+      <div class="form-check form-switch">
+          Heating  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheck1" name="Heating" data-bs-toggle="collapse" data-bs-target="#demo">
+            <div id="demo" class="collapse">
+
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="H1a" data-bs-toggle="collapse" data-bs-target="#demo1">
+                        <label class="form-check-label" for="radio1"> H1a. Heat emission control </label>
+                            <div id="demo1" class="collapse">
+                                 <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio1a" name="optradio" value="Level0">
+                                    <label class="form-check-label" for="radio2"> Level 0 : No automatic control.  </label>
+                                 </div>
+                                 <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio1b" name="optradio" value="Level1">
+                                    <label class="form-check-label" for="radio2"> Level 1 : Central automatic control </label>
+                                 </div>
+                                             <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio1c" name="optradio" value="Level2">
+                                    <label class="form-check-label" for="radio2"> Level 2 :  </label>
+                                 </div>
+                                 <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio1d" name="optradio" value="Level3">
+                                    <label class="form-check-label" for="radio2"> Level 3 : </label>
+                                 </div>
+                                 <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio1e" name="optradio" value="Level4">
+                                    <label class="form-check-label" for="radio2"> Level 4 : </label>
+                                 </div>
+                            </div>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="H1b">
+                        <label class="form-check-label" for="radio2"> H1b </label>
+                    </div>
+
+
+                </form>
+
+            </div>
+      </div>
+
+
         <div class="form-check form-switch">
             Domestic hot water <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheck2" name="DomesticHotWater">
         </div>
