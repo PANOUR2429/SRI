@@ -6,7 +6,7 @@ from .models import *
 selected_building_type = 'Residential'
 
 # possible zones : North Europe, West Europe, North-East Europe, South Europe, South-East Europe
-selected_zone = 'West Europe'
+selected_zone = 'North-East Europe'
 
 # user selection for H (Heating)
 H1a_level = 3   #max 4
@@ -16,9 +16,9 @@ H1d_level = 3   #max 4
 H1f_level = 0   #max 3
 H2a_level = 0   #max 2
 H2b_level = 2   #max 3
-H2d_level = 0   #max 4
+H2d_level = 4   #max 4
 H3_level = 4    #max 4
-H4_level = 1    #max 4
+H4_level = 4    #max 4
 
 # user selection for DHW (Domestic Hot Water)
 DHW1a_level = 2   #max 3
@@ -28,7 +28,7 @@ DHW2b_level = 2   #max 4
 DHW3_level = 4    #max 4
 
 # user selection for C (Cooling)
-C1a_level = 0   #max 4
+C1a_level = 4   #max 4
 C1b_level = 3   #max 3
 C1c_level = 2   #max 2
 C1d_level = 0   #max 4
@@ -52,14 +52,14 @@ L1a_level = 1   #max 3
 L2_level = 2   #max 4
 
 # user selection for DE (Dynamic Building Envelope)
-DE1_level = 1   #max 4
+DE1_level = 4   #max 4
 DE2_level = 2   #max 3
 DE4_level = 4   #max 4
 
 # user selection for E (Electricity)
 E2_level = 2   #max 4
 E3_level = 2   #max 4
-E4_level = 1   #max 3
+E4_level = 3   #max 3
 E5_level = 1   #max 2
 E8_level = 2   #max 3
 E11_level = 4   #max 4
