@@ -133,3 +133,8 @@ class test(models.Model):
     s_zone = models.CharField(max_length=200)
     s_H = models.BooleanField(null=True)
     s_H1a_l = models.PositiveIntegerField(null=True)
+    def __str__(self):
+        return self.name
+
+class test1(models.Model):
+    testtype = models.CharField(max_length=200)

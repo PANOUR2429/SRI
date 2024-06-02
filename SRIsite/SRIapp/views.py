@@ -7,11 +7,9 @@
 
 from django.http import HttpResponse
 from django.template import loader
-from .models import Levels
-from .models import DomainWeight
-from .models import ImpactWeight
-from .models import Services
-from .models import UserSelections
+from .models import *
+
+
 
 def SRIapp(request):
   myLevels = Levels.objects.all().values()
@@ -27,13 +25,11 @@ def SRIapp(request):
     'myServices' : myServices,
     'mySelection' : mySelection
   }
-  if request.method == 'POST':
-    selected_building_type = request.POST['selected_building_type']
-    selected_zone = request.POST['selected_zone']
-    selected_H = request.POST['selected_H']
-  #  UserSelections = UserSelections.objects.create(selected_building_type = selected_building_type, selected_zone = selected_zone, selected_H = selected_H)
   return HttpResponse(template.render(context, request))
 
 def test(request):
      template = loader.get_template('test.html')
+     if request.method == 'POST':
+       testtype = request.POST['testtype']
+       test1.objects.create(testtype=testtype)
      return HttpResponse(template.render())

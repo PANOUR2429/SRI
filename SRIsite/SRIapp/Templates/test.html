@@ -6,11 +6,19 @@
 </head>
 <body>
 <a href="/">SRIpage1</a>
-
-{% for x in fruits %}
-  <h1>{{ x }}</h1>
-{% endfor %}
-
 <p>Test site</p>
+<p></p>
+
+<form method="post" >
+<label for="types" class="form-label">Choose your building type:</label>
+              <input class="form-control" list="types" name="{{testtype}}" >
+              <datalist id="types">
+                       <option value="Residential">
+                       <option value="Non - Residential">
+              </datalist>
+<p></p>
+<input type="submit"  />
+</form>
+
 </body>
 </html>
