@@ -34,3 +34,6 @@ def SRIapp(request):
   #  UserSelections = UserSelections.objects.create(selected_building_type = selected_building_type, selected_zone = selected_zone, selected_H = selected_H)
   return HttpResponse(template.render(context, request))
 
+def test(request):
+     template = loader.get_template('test.html')
+     return HttpResponse(template.render())
