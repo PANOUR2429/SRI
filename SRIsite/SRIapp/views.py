@@ -9,27 +9,18 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import *
 
-
+from django.shortcuts import render, redirect
+from .forms import *
 
 def SRIapp(request):
-  myLevels = Levels.objects.all().values()
-  myDomainWeight = DomainWeight.objects.all().values()
-  myImpactWeight = ImpactWeight.objects.all().values()
-  myServices = Services.objects.all().values()
-  mySelection = UserSelections.objects.all().values()
-  template = loader.get_template('SRI_page1.html')
-  context = {
-    'myLevels': myLevels,
-    'myDomainWeight' : myDomainWeight,
-    'myImpactWeight' : myImpactWeight,
-    'myServices' : myServices,
-    'mySelection' : mySelection
-  }
-  return HttpResponse(template.render(context, request))
+  if request.method == 'POST':
+    #form = DomainControlForm(request.POST)
+    form = ControlForm(request.POST)
+    if form.is_valid():
+      form.save()
+      return redirect('test.html')
+  else:
+    #form = DomainControlForm()
+    form = ControlForm()
+  return render(request, 'SRI_page1.html', {'form': form})
 
-def test(request):
-     template = loader.get_template('test.html')
-     if request.method == 'POST':
-       testtype = request.POST['testtype']
-       test1.objects.create(testtype=testtype)
-     return HttpResponse(template.render())

@@ -61,11 +61,12 @@ class UserSelections(models.Model):
     selected_H1c_level = models.PositiveIntegerField(null=True)  # max 2
     selected_H1d_level = models.PositiveIntegerField(null=True)  # max 4
     selected_H1f_level = models.PositiveIntegerField(null=True)  # max 3
-    selected_H2a_level = models.PositiveIntegerField(null=True) # max 2
+    selected_H2a_level = models.PositiveIntegerField(null=True)  # max 2
     selected_H2b_level = models.PositiveIntegerField(null=True)  # max 3
     selected_H2d_level = models.PositiveIntegerField(null=True)  # max 4
     selected_H3_level = models.PositiveIntegerField(null=True)  # max 4
-    selected_H4_level = models.PositiveIntegerField(null=True)  # max 4
+    selected_H4_level = models.PositiveIntegerField(null=True)   # max 4
+
     # user selection for DHW (Domestic Hot Water)
     selected_DHW = models.BooleanField(null=True)
     selected_DHW1a_level = models.PositiveIntegerField(null=True)  # max 3
@@ -136,5 +137,5 @@ class test(models.Model):
     def __str__(self):
         return self.name
 
-class test1(models.Model):
-    testtype = models.CharField(max_length=200)
+
+

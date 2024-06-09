@@ -9,15 +9,10 @@
 <p>Test site</p>
 <p></p>
 
-<form method="post" >
-<label for="types" class="form-label">Choose your building type:</label>
-              <input class="form-control" list="types" name="{{testtype}}" >
-              <datalist id="types">
-                       <option value="Residential">
-                       <option value="Non - Residential">
-              </datalist>
-<p></p>
-<input type="submit"  />
+<form action="/test/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
 </form>
 
 </body>
