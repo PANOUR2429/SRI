@@ -14,19 +14,23 @@ select {
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+    {% load crispy_forms_tags %}
 </head>
 <body>
-
-<p></p>
-<a href="test/">test</a>
-<p></p>
-
- <form action="/" method="post" >
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
-</form>
-
+<div class="container">
+      <div class="row justify-content-center">
+        <div class="col-8">
+            <p></p>
+            <a href="test/">test</a>
+            <p></p>
+            <form action="/" method="post" >
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+      </div>
+</div>
 </body>
 
 </html>
