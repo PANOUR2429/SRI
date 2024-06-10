@@ -539,7 +539,7 @@ print(" DE Levels  : " + str(DE_level_list))
 print(" E Levels   : " + str(E_level_list))
 print(" EV Levels  : " + str(EV_level_list))
 print(" MC Levels  : " + str(MC_level_list))
-print("-------------------")
+print("--------------------")
 print ("SRI = " + str( round(SRI,4) * 100) + "%")
 
 

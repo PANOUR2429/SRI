@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="FILLED DB">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc.py" afterDir="false" />
-    </list>
+    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="FILLED DB" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +132,47 @@
       <option name="project" value="LOCAL" />
       <updated>1715303891675</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="FILLED DB">
+      <option name="closed" value="true" />
+      <created>1715505859489</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715505859489</updated>
+    </task>
+    <task id="LOCAL-00007" summary="FILLED DB">
+      <option name="closed" value="true" />
+      <created>1715506985941</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715506985941</updated>
+    </task>
+    <task id="LOCAL-00008" summary="FILLED DB">
+      <option name="closed" value="true" />
+      <created>1715507839176</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715507839176</updated>
+    </task>
+    <task id="LOCAL-00009" summary="FILLED DB">
+      <option name="closed" value="true" />
+      <created>1715509420552</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715509420552</updated>
+    </task>
+    <task id="LOCAL-00010" summary="FILLED DB">
+      <option name="closed" value="true" />
+      <created>1715510517072</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715510517072</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
