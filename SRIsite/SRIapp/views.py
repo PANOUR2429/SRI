@@ -18,9 +18,26 @@ def SRIapp(request):
     form = ControlForm(request.POST)
     if form.is_valid():
       form.save()
-      return redirect('test.html')
+      return redirect('test/')
   else:
     #form = DomainControlForm()
     form = ControlForm()
   return render(request, 'SRI_page1.html', {'form': form})
 
+
+def Test(request):
+  myLevels = Levels.objects.all().values()
+  myDomainWeight = DomainWeight.objects.all().values()
+  myImpactWeight = ImpactWeight.objects.all().values()
+  myServices = Services.objects.all().values()
+  mySelection = UserSelections.objects.all().values()
+
+  template = loader.get_template('test.html')
+  context = {
+    'myLevels': myLevels,
+    'myDomainWeight' : myDomainWeight,
+    'myImpactWeight' : myImpactWeight,
+    'myServices' : myServices,
+    'mySelection' : mySelection
+  }
+  return HttpResponse(template.render(context, request))
