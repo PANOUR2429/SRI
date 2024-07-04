@@ -7,6 +7,8 @@
 
 from django.http import HttpResponse
 from django.template import loader
+
+from .SRIcalc2 import calcSRI, SRIcalculator
 from .models import *
 
 from django.shortcuts import render, redirect
@@ -25,12 +27,14 @@ def SRIapp(request):
   return render(request, 'SRI_page1.html', {'form': form})
 
 
-def Test(request):
+def Result(request):
   myLevels = Levels.objects.all().values()
   myDomainWeight = DomainWeight.objects.all().values()
   myImpactWeight = ImpactWeight.objects.all().values()
   myServices = Services.objects.all().values()
   mySelection = UserSelections.objects.all().values()
+  Y = SRIcalculator()
+#  Y = calcSRI()
 
   template = loader.get_template('test.html')
   context = {
@@ -38,6 +42,8 @@ def Test(request):
     'myDomainWeight' : myDomainWeight,
     'myImpactWeight' : myImpactWeight,
     'myServices' : myServices,
-    'mySelection' : mySelection
+    'mySelection' : mySelection,
+    'Y' : Y
   }
   return HttpResponse(template.render(context, request))
+
