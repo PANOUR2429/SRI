@@ -469,6 +469,16 @@ class UserSelections(models.Model):
     selected_zone = models.CharField(max_length=100, choices= zones_choice, default='South Europe')
     # user selection for H (Heating
     selected_H = models.BooleanField(default=True)
+    selected_H1a = models.BooleanField(default=True)
+    selected_H1b = models.BooleanField(default=True)
+    selected_H1c = models.BooleanField(default=True)
+    selected_H1d = models.BooleanField(default=True)
+    selected_H1f = models.BooleanField(default=True)
+    selected_H2a = models.BooleanField(default=True)
+    selected_H2b = models.BooleanField(default=True)
+    selected_H2d = models.BooleanField(default=True)
+    selected_H3 = models.BooleanField(default=True)
+    selected_H4 = models.BooleanField(default=True)
     selected_H1a_level = models.CharField(max_length=100, choices=H1a_choice, default='0')  # max 4
     selected_H1b_level = models.CharField(max_length=100, choices=H1b_choice, default='0')  # max 3
     selected_H1c_level = models.CharField(max_length=100, choices=H1c_choice, default='0')  # max 2
@@ -482,6 +492,11 @@ class UserSelections(models.Model):
 
     # user selection for DHW (Domestic Hot Water)
     selected_DHW = models.BooleanField(default=True)
+    selected_DHW1a = models.BooleanField(default=True)
+    selected_DHW1b = models.BooleanField(default=True)
+    selected_DHW1d = models.BooleanField(default=True)
+    selected_DHW2b = models.BooleanField(default=True)
+    selected_DHW3 = models.BooleanField(default=True)
     selected_DHW1a_level = models.CharField(max_length=100, choices=DHW1a_choice, default='0')  # max 3
     selected_DHW1b_level = models.CharField(max_length=100, choices=DHW1b_choice, default='0')  # max 3
     selected_DHW1d_level = models.CharField(max_length=100, choices=DHW1d_choice, default='0')  # max 3
@@ -489,6 +504,16 @@ class UserSelections(models.Model):
     selected_DHW3_level = models.CharField(max_length=100, choices=DHW3_choice, default='0')  # max 4
     # user selection for C (Cooling)
     selected_C = models.BooleanField(default=True)
+    selected_C1a = models.BooleanField(default=True)
+    selected_C1b = models.BooleanField(default=True)
+    selected_C1c = models.BooleanField(default=True)
+    selected_C1d = models.BooleanField(default=True)
+    selected_C1f = models.BooleanField(default=True)
+    selected_C1g = models.BooleanField(default=True)
+    selected_C2a = models.BooleanField(default=True)
+    selected_C2b = models.BooleanField(default=True)
+    selected_C3 = models.BooleanField(default=True)
+    selected_C4 = models.BooleanField(default=True)
     selected_C1a_level = models.CharField(max_length=100, choices=C1a_choice, default='0')  # max 4
     selected_C1b_level = models.CharField(max_length=100, choices=C1b_choice, default='0')  # max 3
     selected_C1c_level = models.CharField(max_length=100, choices=C1c_choice, default='0')  # max 2
@@ -501,6 +526,12 @@ class UserSelections(models.Model):
     selected_C4_level = models.CharField(max_length=100, choices=C4_choice, default='0')  # max 4
     # user selection for V (Ventilation)
     selected_V = models.BooleanField(default=True)
+    selected_V1a = models.BooleanField(default=True)
+    selected_V1c = models.BooleanField(default=True)
+    selected_V2c = models.BooleanField(default=True)
+    selected_V2d = models.BooleanField(default=True)
+    selected_V3 = models.BooleanField(default=True)
+    selected_V6 = models.BooleanField(default=True)
     selected_V1a_level = models.CharField(max_length=100, choices=V1a_choice, default='0')  # max 4
     selected_V1c_level = models.CharField(max_length=100, choices=V1c_choice, default='0')  # max 4
     selected_V2c_level = models.CharField(max_length=100, choices=V2c_choice, default='0')  # max 2
@@ -509,15 +540,27 @@ class UserSelections(models.Model):
     selected_V6_level = models.CharField(max_length=100, choices=V6_choice, default='0')  # max 3
     # user selection for L (Lighting)
     selected_L = models.BooleanField(default=True)
+    selected_L1a = models.BooleanField(default=True)
+    selected_L2 = models.BooleanField(default=True)
     selected_L1a_level = models.CharField(max_length=100, choices=L1a_choice, default='0')  # max 3
     selected_L2_level = models.CharField(max_length=100, choices=L2_choice, default='0')  # max 4
     # user selection for DE (Dynamic Building Envelope)
     selected_DE = models.BooleanField(default=True)
+    selected_DE1 = models.BooleanField(default=True)
+    selected_DE2 = models.BooleanField(default=True)
+    selected_DE4 = models.BooleanField(default=True)
     selected_DE1_level = models.CharField(max_length=100, choices=DE1_choice, default='0')  # max 4
     selected_DE2_level = models.CharField(max_length=100, choices=DE2_choice, default='0')  # max 3
     selected_DE4_level = models.CharField(max_length=100, choices=DE4_choice, default='0')  # max 4
     # user selection for E (Electricity)
     selected_E = models.BooleanField(default=True)
+    selected_E2 = models.BooleanField(default=True)
+    selected_E3 = models.BooleanField(default=True)
+    selected_E4 = models.BooleanField(default=True)
+    selected_E5 = models.BooleanField(default=True)
+    selected_E8 = models.BooleanField(default=True)
+    selected_E11 = models.BooleanField(default=True)
+    selected_E12 = models.BooleanField(default=True)
     selected_E2_level = models.CharField(max_length=100, choices=E2_choice, default='0')  # max 4
     selected_E3_level = models.CharField(max_length=100, choices=E3_choice, default='0')  # max 4
     selected_E4_level = models.CharField(max_length=100, choices=E4_choice, default='0')  # max 3
@@ -527,11 +570,22 @@ class UserSelections(models.Model):
     selected_E12_level = models.CharField(max_length=100, choices=E12_choice, default='0')  # max 4
     # user selection for EV (Electrical Vehicle Charging)
     selected_EV = models.BooleanField(default=True)
+    selected_EV15 = models.BooleanField(default=True)
+    selected_EV16 = models.BooleanField(default=True)
+    selected_EV17 = models.BooleanField(default=True)
     selected_EV15_level = models.CharField(max_length=100, choices=EV15_choice, default='0')  # max 4
     selected_EV16_level = models.CharField(max_length=100, choices=EV16_choice, default='0')  # max 2
     selected_EV17_level = models.CharField(max_length=100, choices=EV17_choice, default='0')  # max 2
     # user selection for MC (Monitoring and Control)
     selected_MC = models.BooleanField(default=True)
+    selected_MC3 = models.BooleanField(default=True)
+    selected_MC4 = models.BooleanField(default=True)
+    selected_MC9 = models.BooleanField(default=True)
+    selected_MC13 = models.BooleanField(default=True)
+    selected_MC25 = models.BooleanField(default=True)
+    selected_MC28 = models.BooleanField(default=True)
+    selected_MC29 = models.BooleanField(default=True)
+    selected_MC30 = models.BooleanField(default=True)
     selected_MC3_level = models.CharField(max_length=100, choices=MC3_choice, default='0')  # max 3
     selected_MC4_level = models.CharField(max_length=100, choices=MC4_choice, default='0')  # max 3
     selected_MC9_level = models.CharField(max_length=100, choices=MC9_choice, default='0')  # max 2
