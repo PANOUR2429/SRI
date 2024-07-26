@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment=" new index&#10; results added">
+    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="fix algorithm">
+      <change afterPath="$PROJECT_DIR$/SRIsite/SRIapp/migrations/0013_userselections_selected_c1a_and_more.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc2.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_page1.html" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_page1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SRIsite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -287,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721859154184</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fix algorithm">
+      <option name="closed" value="true" />
+      <created>1721948300513</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1721948300513</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -311,6 +316,7 @@
     <MESSAGE value="change to dropdowns" />
     <MESSAGE value="result of last form id added" />
     <MESSAGE value=" new index&#10; results added" />
-    <option name="LAST_COMMIT_MESSAGE" value=" new index&#10; results added" />
+    <MESSAGE value="fix algorithm" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix algorithm" />
   </component>
 </project>
