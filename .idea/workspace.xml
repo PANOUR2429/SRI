@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="fix algorithm">
-      <change afterPath="$PROJECT_DIR$/SRIsite/SRIapp/migrations/0013_userselections_selected_c1a_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SRIsite/SRIapp/migrations/0015_remove_userselections_selected_c1a_perc_2_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SRIsite/SRIapp/migrations/0016_rename_selected_c1a_perc_2_level_userselections_selected_c1a_perc2_level_and_more.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc2.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SRIsite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -292,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721948300513</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="fix algorithm">
+      <option name="closed" value="true" />
+      <created>1721954179036</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1721954179036</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

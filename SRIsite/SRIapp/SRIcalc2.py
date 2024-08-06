@@ -30,6 +30,7 @@ def SRIcalculator(index):
 
     # user selection for H (Heating)
     H_selected = LastUserSelection[0]["selected_H"]
+
     selected_H1a = LastUserSelection[0]["selected_H1a"]
     selected_H1b = LastUserSelection[0]["selected_H1b"]
     selected_H1c = LastUserSelection[0]["selected_H1c"]
@@ -40,6 +41,7 @@ def SRIcalculator(index):
     selected_H2d = LastUserSelection[0]["selected_H2d"]
     selected_H3 = LastUserSelection[0]["selected_H3"]
     selected_H4 = LastUserSelection[0]["selected_H4"]
+
     H1a_level = LastUserSelection[0]["selected_H1a_level"]  # max 4
     H1b_level = LastUserSelection[0]["selected_H1b_level"]  # max 3
     H1c_level = LastUserSelection[0]["selected_H1c_level"]  # max 2
@@ -51,21 +53,58 @@ def SRIcalculator(index):
     H3_level = LastUserSelection[0]["selected_H3_level"]  # max 4
     H4_level = LastUserSelection[0]["selected_H4_level"]  # max 4
 
+    selected_H1a_Perc_1 = LastUserSelection[0]["selected_H1a_Perc_1"]
+    selected_H1b_Perc_1 = LastUserSelection[0]["selected_H1b_Perc_1"]
+    selected_H1c_Perc_1 = LastUserSelection[0]["selected_H1c_Perc_1"]
+    selected_H1d_Perc_1 = LastUserSelection[0]["selected_H1d_Perc_1"]
+    selected_H1f_Perc_1 = LastUserSelection[0]["selected_H1f_Perc_1"]
+    selected_H2a_Perc_1 = LastUserSelection[0]["selected_H2a_Perc_1"]
+    selected_H2b_Perc_1 = LastUserSelection[0]["selected_H2b_Perc_1"]
+    selected_H2d_Perc_1 = LastUserSelection[0]["selected_H2d_Perc_1"]
+    selected_H3_Perc_1 = LastUserSelection[0]["selected_H3_Perc_1"]
+    selected_H4_Perc_1 = LastUserSelection[0]["selected_H4_Perc_1"]
+
+    selected_H1a_Perc2_level = LastUserSelection[0]["selected_H1a_Perc2_level"]
+    selected_H1b_Perc2_level = LastUserSelection[0]["selected_H1b_Perc2_level"]
+    selected_H1c_Perc2_level = LastUserSelection[0]["selected_H1c_Perc2_level"]
+    selected_H1d_Perc2_level = LastUserSelection[0]["selected_H1d_Perc2_level"]
+    selected_H1f_Perc2_level = LastUserSelection[0]["selected_H1f_Perc2_level"]
+    selected_H2a_Perc2_level = LastUserSelection[0]["selected_H2a_Perc2_level"]
+    selected_H2b_Perc2_level = LastUserSelection[0]["selected_H2b_Perc2_level"]
+    selected_H2d_Perc2_level = LastUserSelection[0]["selected_H2d_Perc2_level"]
+    selected_H3_Perc2_level = LastUserSelection[0]["selected_H3_Perc2_level"]
+    selected_H4_Perc2_level = LastUserSelection[0]["selected_H4_Perc2_level"]
+
     # user selection for DHW (Domestic Hot Water)
     DHW_selected = LastUserSelection[0]["selected_DHW"]
+
     selected_DHW1a = LastUserSelection[0]["selected_DHW1a"]
     selected_DHW1b = LastUserSelection[0]["selected_DHW1b"]
     selected_DHW1d = LastUserSelection[0]["selected_DHW1d"]
     selected_DHW2b = LastUserSelection[0]["selected_DHW2b"]
     selected_DHW3 = LastUserSelection[0]["selected_DHW3"]
+
     DHW1a_level = LastUserSelection[0]["selected_DHW1a_level"]  # max 3
     DHW1b_level = LastUserSelection[0]["selected_DHW1b_level"]  # max 3
     DHW1d_level = LastUserSelection[0]["selected_DHW1d_level"]  # max 3
     DHW2b_level = LastUserSelection[0]["selected_DHW2b_level"]  # max 4
     DHW3_level = LastUserSelection[0]["selected_DHW3_level"]  # max 4
 
+    selected_DHW1a_Perc_1 = LastUserSelection[0]["selected_DHW1a_Perc_1"]
+    selected_DHW1b_Perc_1 = LastUserSelection[0]["selected_DHW1b_Perc_1"]
+    selected_DHW1d_Perc_1 = LastUserSelection[0]["selected_DHW1d_Perc_1"]
+    selected_DHW2b_Perc_1 = LastUserSelection[0]["selected_DHW2b_Perc_1"]
+    selected_DHW3_Perc_1 = LastUserSelection[0]["selected_DHW3_Perc_1"]
+
+    DHW1a_Perc2_level = LastUserSelection[0]["selected_DHW1a_Perc2_level"]  # max 3
+    DHW1b_Perc2_level = LastUserSelection[0]["selected_DHW1b_Perc2_level"]  # max 3
+    DHW1d_Perc2_level = LastUserSelection[0]["selected_DHW1d_Perc2_level"]  # max 3
+    DHW2b_Perc2_level = LastUserSelection[0]["selected_DHW2b_Perc2_level"]  # max 4
+    DHW3_Perc2_level = LastUserSelection[0]["selected_DHW3_Perc2_level"]  # max 4
+
     # user selection for C (Cooling)
     C_selected = LastUserSelection[0]["selected_C"]
+
     selected_C1a = LastUserSelection[0]["selected_C1a"]
     selected_C1b = LastUserSelection[0]["selected_C1b"]
     selected_C1c = LastUserSelection[0]["selected_C1c"]
@@ -76,6 +115,7 @@ def SRIcalculator(index):
     selected_C2b = LastUserSelection[0]["selected_C2b"]
     selected_C3 = LastUserSelection[0]["selected_C3"]
     selected_C4 = LastUserSelection[0]["selected_C4"]
+
     C1a_level = LastUserSelection[0]["selected_C1a_level"]  # max 4
     C1b_level = LastUserSelection[0]["selected_C1b_level"]  # max 3
     C1c_level = LastUserSelection[0]["selected_C1c_level"]  # max 2
@@ -87,14 +127,38 @@ def SRIcalculator(index):
     C3_level = LastUserSelection[0]["selected_C3_level"]  # max 4
     C4_level = LastUserSelection[0]["selected_C4_level"]  # max 4
 
+    selected_C1a_Perc_1 = LastUserSelection[0]["selected_C1a_Perc_1"]
+    selected_C1b_Perc_1 = LastUserSelection[0]["selected_C1b_Perc_1"]
+    selected_C1c_Perc_1 = LastUserSelection[0]["selected_C1c_Perc_1"]
+    selected_C1d_Perc_1 = LastUserSelection[0]["selected_C1d_Perc_1"]
+    selected_C1f_Perc_1 = LastUserSelection[0]["selected_C1f_Perc_1"]
+    selected_C1g_Perc_1 = LastUserSelection[0]["selected_C1g_Perc_1"]
+    selected_C2a_Perc_1 = LastUserSelection[0]["selected_C2a_Perc_1"]
+    selected_C2b_Perc_1 = LastUserSelection[0]["selected_C2b_Perc_1"]
+    selected_C3_Perc_1 = LastUserSelection[0]["selected_C3_Perc_1"]
+    selected_C4_Perc_1 = LastUserSelection[0]["selected_C4_Perc_1"]
+
+    C1a_Perc2_level = LastUserSelection[0]["selected_C1a_Perc2_level"]  # max 4
+    C1b_Perc2_level = LastUserSelection[0]["selected_C1b_Perc2_level"]  # max 3
+    C1c_Perc2_level = LastUserSelection[0]["selected_C1c_Perc2_level"]  # max 2
+    C1d_Perc2_level = LastUserSelection[0]["selected_C1d_Perc2_level"]  # max 4
+    C1f_Perc2_level = LastUserSelection[0]["selected_C1f_Perc2_level"]  # max 2
+    C1g_Perc2_level = LastUserSelection[0]["selected_C1g_Perc2_level"]  # max 3
+    C2a_Perc2_level = LastUserSelection[0]["selected_C2a_Perc2_level"]  # max 3
+    C2b_Perc2_level = LastUserSelection[0]["selected_C2b_Perc2_level"]  # max 4
+    C3_Perc2_level = LastUserSelection[0]["selected_C3_Perc2_level"]  # max 4
+    C4_Perc2_level = LastUserSelection[0]["selected_C4_Perc2_level"]  # max 4
+
     # user selection for V (Ventilation)
     V_selected = LastUserSelection[0]["selected_V"]
+
     selected_V1a = LastUserSelection[0]["selected_V1a"]
     selected_V1c = LastUserSelection[0]["selected_V1c"]
     selected_V2c = LastUserSelection[0]["selected_V2c"]
     selected_V2d = LastUserSelection[0]["selected_V2d"]
     selected_V3 = LastUserSelection[0]["selected_V3"]
     selected_V6 = LastUserSelection[0]["selected_V6"]
+
     V1a_level = LastUserSelection[0]["selected_V1a_level"]  # max 4
     V1c_level = LastUserSelection[0]["selected_V1c_level"]  # max 4
     V2c_level = LastUserSelection[0]["selected_V2c_level"]  # max 2
@@ -102,24 +166,57 @@ def SRIcalculator(index):
     V3_level = LastUserSelection[0]["selected_V3_level"]  # max 3
     V6_level = LastUserSelection[0]["selected_V6_level"]  # max 3
 
+    selected_V1a_Perc_1 = LastUserSelection[0]["selected_V1a_Perc_1"]
+    selected_V1c_Perc_1 = LastUserSelection[0]["selected_V1c_Perc_1"]
+    selected_V2c_Perc_1 = LastUserSelection[0]["selected_V2c_Perc_1"]
+    selected_V2d_Perc_1 = LastUserSelection[0]["selected_V2d_Perc_1"]
+    selected_V3_Perc_1 = LastUserSelection[0]["selected_V3_Perc_1"]
+    selected_V6_Perc_1 = LastUserSelection[0]["selected_V6_Perc_1"]
+
+    V1a_Perc2_level = LastUserSelection[0]["selected_V1a_Perc2_level"]  # max 4
+    V1c_Perc2_level = LastUserSelection[0]["selected_V1c_Perc2_level"]  # max 4
+    V2c_Perc2_level = LastUserSelection[0]["selected_V2c_Perc2_level"]  # max 2
+    V2d_Perc2_level = LastUserSelection[0]["selected_V2d_Perc2_level"]  # max 3
+    V3_Perc2_level = LastUserSelection[0]["selected_V3_Perc2_level"]  # max 3
+    V6_Perc2_level = LastUserSelection[0]["selected_V6_Perc2_level"]  # max 3
+
     # user selection for L (Lighting)
     L_selected = LastUserSelection[0]["selected_L"]
+
     selected_L1a = LastUserSelection[0]["selected_L1a"]
     selected_L2 = LastUserSelection[0]["selected_L2"]
+
     L1a_level = LastUserSelection[0]["selected_L1a_level"]  # max 3
     L2_level = LastUserSelection[0]["selected_L2_level"]  # max 4
 
+    selected_L1a_Perc_1 = LastUserSelection[0]["selected_L1a_Perc_1"]
+    selected_L2_Perc_1 = LastUserSelection[0]["selected_L2_Perc_1"]
+
+    L1a_Perc2_level = LastUserSelection[0]["selected_L1a_Perc2_level"]  # max 3
+    L2_Perc2_level = LastUserSelection[0]["selected_L2_Perc2_level"]  # max 4
+
     # user selection for DE (Dynamic Building Envelope)
     DE_selected = LastUserSelection[0]["selected_DE"]
+
     selected_DE1 = LastUserSelection[0]["selected_DE1"]
     selected_DE2 = LastUserSelection[0]["selected_DE2"]
     selected_DE4 = LastUserSelection[0]["selected_DE4"]
+
     DE1_level = LastUserSelection[0]["selected_DE1_level"]  # max 4
     DE2_level = LastUserSelection[0]["selected_DE2_level"]  # max 3
     DE4_level = LastUserSelection[0]["selected_DE4_level"]  # max 4
 
+    selected_DE1_Perc_1 = LastUserSelection[0]["selected_DE1_Perc_1"]
+    selected_DE2_Perc_1 = LastUserSelection[0]["selected_DE2_Perc_1"]
+    selected_DE4_Perc_1 = LastUserSelection[0]["selected_DE4_Perc_1"]
+
+    DE1_Perc2_level = LastUserSelection[0]["selected_DE1_Perc2_level"]  # max 4
+    DE2_Perc2_level = LastUserSelection[0]["selected_DE2_Perc2_level"]  # max 3
+    DE4_Perc2_level = LastUserSelection[0]["selected_DE4_Perc2_level"]  # max 4
+
     # user selection for E (Electricity)
     E_selected = LastUserSelection[0]["selected_E"]
+
     selected_E2 = LastUserSelection[0]["selected_E2"]
     selected_E3 = LastUserSelection[0]["selected_E3"]
     selected_E4 = LastUserSelection[0]["selected_E4"]
@@ -127,6 +224,7 @@ def SRIcalculator(index):
     selected_E8 = LastUserSelection[0]["selected_E8"]
     selected_E11 = LastUserSelection[0]["selected_E11"]
     selected_E12 = LastUserSelection[0]["selected_E12"]
+
     E2_level = LastUserSelection[0]["selected_E2_level"]  # max 4
     E3_level = LastUserSelection[0]["selected_E3_level"]  # max 4
     E4_level = LastUserSelection[0]["selected_E4_level"]  # max 3
@@ -135,17 +233,45 @@ def SRIcalculator(index):
     E11_level = LastUserSelection[0]["selected_E11_level"]  # max 4
     E12_level = LastUserSelection[0]["selected_E12_level"]  # max 4
 
+    selected_E2_Perc_1 = LastUserSelection[0]["selected_E2_Perc_1"]
+    selected_E3_Perc_1 = LastUserSelection[0]["selected_E3_Perc_1"]
+    selected_E4_Perc_1 = LastUserSelection[0]["selected_E4_Perc_1"]
+    selected_E5_Perc_1 = LastUserSelection[0]["selected_E5_Perc_1"]
+    selected_E8_Perc_1 = LastUserSelection[0]["selected_E8_Perc_1"]
+    selected_E11_Perc_1 = LastUserSelection[0]["selected_E11_Perc_1"]
+    selected_E12_Perc_1 = LastUserSelection[0]["selected_E12_Perc_1"]
+
+    E2_Perc2_level = LastUserSelection[0]["selected_E2_Perc2_level"]  # max 4
+    E3_Perc2_level = LastUserSelection[0]["selected_E3_Perc2_level"]  # max 4
+    E4_Perc2_level = LastUserSelection[0]["selected_E4_Perc2_level"]  # max 3
+    E5_Perc2_level = LastUserSelection[0]["selected_E5_Perc2_level"]  # max 2
+    E8_Perc2_level = LastUserSelection[0]["selected_E8_Perc2_level"]  # max 3
+    E11_Perc2_level = LastUserSelection[0]["selected_E11_Perc2_level"]  # max 4
+    E12_Perc2_level = LastUserSelection[0]["selected_E12_Perc2_level"]  # max 4
+
     # user selection for EV (Electrical Vehicle Charging)
     EV_selected = LastUserSelection[0]["selected_EV"]
+
     selected_EV15 = LastUserSelection[0]["selected_EV15"]
     selected_EV16 = LastUserSelection[0]["selected_EV16"]
     selected_EV17 = LastUserSelection[0]["selected_EV17"]
+
     EV15_level = LastUserSelection[0]["selected_EV15_level"]  # max 4
     EV16_level = LastUserSelection[0]["selected_EV16_level"]  # max 2
     EV17_level = LastUserSelection[0]["selected_EV17_level"]  # max 2
 
+    selected_EV15_Perc_1 = LastUserSelection[0]["selected_EV15_Perc_1"]
+    selected_EV16_Perc_1 = LastUserSelection[0]["selected_EV16_Perc_1"]
+    selected_EV17_Perc_1 = LastUserSelection[0]["selected_EV17_Perc_1"]
+
+    EV15_Perc2_level = LastUserSelection[0]["selected_EV15_Perc2_level"]  # max 4
+    EV16_Perc2_level = LastUserSelection[0]["selected_EV16_Perc2_level"]  # max 2
+    EV17_Perc2_level = LastUserSelection[0]["selected_EV17_Perc2_level"]  # max 2
+
+
     # user selection for MC (Monitoring and Control)
     MC_selected = LastUserSelection[0]["selected_MC"]
+
     selected_MC3 = LastUserSelection[0]["selected_MC3"]
     selected_MC4 = LastUserSelection[0]["selected_MC4"]
     selected_MC9 = LastUserSelection[0]["selected_MC9"]
@@ -154,6 +280,7 @@ def SRIcalculator(index):
     selected_MC28 = LastUserSelection[0]["selected_MC28"]
     selected_MC29 = LastUserSelection[0]["selected_MC29"]
     selected_MC30 = LastUserSelection[0]["selected_MC30"]
+
     MC3_level = LastUserSelection[0]["selected_MC3_level"]  # max 3
     MC4_level = LastUserSelection[0]["selected_MC4_level"]  # max 3
     MC9_level = LastUserSelection[0]["selected_MC9_level"]  # max 2
@@ -162,6 +289,24 @@ def SRIcalculator(index):
     MC28_level = LastUserSelection[0]["selected_MC28_level"]  # max 2
     MC29_level = LastUserSelection[0]["selected_MC29_level"]  # max 4
     MC30_level = LastUserSelection[0]["selected_MC30_level"]  # max 3
+
+    selected_MC3_Perc_1 = LastUserSelection[0]["selected_MC3_Perc_1"]
+    selected_MC4_Perc_1 = LastUserSelection[0]["selected_MC4_Perc_1"]
+    selected_MC9_Perc_1 = LastUserSelection[0]["selected_MC9_Perc_1"]
+    selected_MC13_Perc_1 = LastUserSelection[0]["selected_MC13_Perc_1"]
+    selected_MC25_Perc_1 = LastUserSelection[0]["selected_MC25_Perc_1"]
+    selected_MC28_Perc_1 = LastUserSelection[0]["selected_MC28_Perc_1"]
+    selected_MC29_Perc_1 = LastUserSelection[0]["selected_MC29_Perc_1"]
+    selected_MC30_Perc_1 = LastUserSelection[0]["selected_MC30_Perc_1"]
+
+    MC3_Perc2_level = LastUserSelection[0]["selected_MC3_Perc2_level"]  # max 3
+    MC4_Perc2_level = LastUserSelection[0]["selected_MC4_Perc2_level"]  # max 3
+    MC9_Perc2_level = LastUserSelection[0]["selected_MC9_Perc2_level"]  # max 2
+    MC13_Perc2_level = LastUserSelection[0]["selected_MC13_Perc2_level"]  # max 3
+    MC25_Perc2_level = LastUserSelection[0]["selected_MC25_Perc2_level"]  # max 2
+    MC28_Perc2_level = LastUserSelection[0]["selected_MC28_Perc2_level"]  # max 2
+    MC29_Perc2_level = LastUserSelection[0]["selected_MC29_Perc2_level"]  # max 4
+    MC30_Perc2_level = LastUserSelection[0]["selected_MC30_Perc2_level"]  # max 3
 
 
     # -------H calculation-------------
