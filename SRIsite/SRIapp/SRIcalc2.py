@@ -1,22 +1,4 @@
 from .models import *
-from django.db.models import Max
-#user selection
-#UserSel = UserSelections.objects.values()
-#z = UserSel.aggregate(Max('id'))
-#maxid= z["id__max"]
-
-#def calcSRI():
-#    dict_res = dict()
-#    UserSel = UserSelections.objects.values()
-#    z = UserSel.aggregate(Max('id'))
-#    maxid = z["id__max"]
-#    LastUserSelection = list(UserSelections.objects.filter(id=maxid).values())
-#    dict_res["selected_building_type"] = LastUserSelection[0]["selected_building_type"]
-#    dict_res["selected_zone"]= LastUserSelection[0]["selected_zone"]
-#    dict_res["H1a_level"] = LastUserSelection[0]["selected_H1a_level"]
-#    dict_res["H1b_level"] = LastUserSelection[0]["selected_H1b_level"]
-#    dict_res["maxid"] = maxid
-#    return dict_res
 
 def SRIcalculator(index):
     SRI_res = dict()
@@ -349,7 +331,7 @@ def SRIcalculator(index):
                 (((selected_H1c_Perc_1/100) * H1c[0]["score_cr" + str(i+1)]) + ((1-(selected_H1c_Perc_1/100)) * H1c_2[0]["score_cr" + str(i + 1)]))* selected_H1c +
                 (((selected_H1d_Perc_1/100) * H1d[0]["score_cr" + str(i+1)]) + ((1-(selected_H1d_Perc_1/100)) * H1d_2[0]["score_cr" + str(i + 1)]))* selected_H1d +
                 (((selected_H1f_Perc_1/100) * H1f[0]["score_cr" + str(i+1)]) + ((1-(selected_H1f_Perc_1/100)) * H1f_2[0]["score_cr" + str(i + 1)]))* selected_H1f +
-                (((selected_H2a_Perc_1/100) * H1a[0]["score_cr" + str(i+1)]) + ((1-(selected_H2a_Perc_1/100)) * H2a_2[0]["score_cr" + str(i + 1)]))* selected_H2a +
+                (((selected_H2a_Perc_1/100) * H2a[0]["score_cr" + str(i+1)]) + ((1-(selected_H2a_Perc_1/100)) * H2a_2[0]["score_cr" + str(i + 1)]))* selected_H2a +
                 (((selected_H2b_Perc_1/100) * H2b[0]["score_cr" + str(i+1)]) + ((1-(selected_H2b_Perc_1/100)) * H2b_2[0]["score_cr" + str(i + 1)])) * selected_H2b +
                 (((selected_H2d_Perc_1/100) * H2d[0]["score_cr" + str(i+1)]) + ((1-(selected_H2d_Perc_1/100)) * H2d_2[0]["score_cr" + str(i + 1)])) * selected_H2d +
                 (((selected_H3_Perc_1/100) * H3[0]["score_cr" + str(i+1)]) + ((1-(selected_H3_Perc_1/100)) * H3_2[0]["score_cr" + str(i + 1)])) * selected_H3 +
@@ -381,12 +363,12 @@ def SRIcalculator(index):
 
     while j < len(DHW):
         DHW[j] = (
-                    (((selected_DHW1a_Perc_1 / 100) * DHW1a[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DHW1a_Perc_1 / 100)) * DHW1a_2[0]["score_cr" + str(i + 1)])) * selected_DHW1a +
-                    (((selected_DHW1b_Perc_1 / 100) * DHW1b[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DHW1b_Perc_1 / 100)) * DHW1b_2[0]["score_cr" + str(i + 1)])) * selected_DHW1b +
-                    (((selected_DHW1d_Perc_1 / 100) * DHW1d[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DHW1d_Perc_1 / 100)) * DHW1d_2[0]["score_cr" + str(i + 1)])) * selected_DHW1d +
-                    (((selected_DHW2b_Perc_1 / 100) * DHW2b[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DHW2b_Perc_1 / 100)) * DHW2b_2[0]["score_cr" + str(i + 1)])) * selected_DHW2b +
-                    (((selected_DHW3_Perc_1 / 100) * DHW3[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DHW3_Perc_1 / 100)) * DHW3_2[0]["score_cr" + str(i + 1)])) * selected_DHW3
-                 )*DHW_selected
+                    (((selected_DHW1a_Perc_1 / 100) * DHW1a[0]["score_cr" + str(j + 1)]) + ((1 - (selected_DHW1a_Perc_1 / 100)) * DHW1a_2[0]["score_cr" + str(j + 1)])) * selected_DHW1a +
+                    (((selected_DHW1b_Perc_1 / 100) * DHW1b[0]["score_cr" + str(j + 1)]) + ((1 - (selected_DHW1b_Perc_1 / 100)) * DHW1b_2[0]["score_cr" + str(j + 1)])) * selected_DHW1b +
+                    (((selected_DHW1d_Perc_1 / 100) * DHW1d[0]["score_cr" + str(j + 1)]) + ((1 - (selected_DHW1d_Perc_1 / 100)) * DHW1d_2[0]["score_cr" + str(j + 1)])) * selected_DHW1d +
+                    (((selected_DHW2b_Perc_1 / 100) * DHW2b[0]["score_cr" + str(j + 1)]) + ((1 - (selected_DHW2b_Perc_1 / 100)) * DHW2b_2[0]["score_cr" + str(j + 1)])) * selected_DHW2b +
+                    (((selected_DHW3_Perc_1 / 100) * DHW3[0]["score_cr" + str(j + 1)]) + ((1 - (selected_DHW3_Perc_1 / 100)) * DHW3_2[0]["score_cr" + str(j + 1)])) * selected_DHW3
+                 ) * DHW_selected
         j += 1
 
     SRI_res['DHW'] = DHW
@@ -423,16 +405,16 @@ def SRIcalculator(index):
 
     while k < len(C):
         C[k] = (
-               (((selected_C1a_Perc_1 / 100) * C1a[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C1a_Perc_1 / 100)) * C1a_2[0]["score_cr" + str(i + 1)])) * selected_C1a +
-               (((selected_C1b_Perc_1 / 100) * C1b[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C1b_Perc_1 / 100)) * C1b_2[0]["score_cr" + str(i + 1)])) * selected_C1b +
-               (((selected_C1c_Perc_1 / 100) * C1c[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C1c_Perc_1 / 100)) * C1c_2[0]["score_cr" + str(i + 1)])) * selected_C1c +
-               (((selected_C1d_Perc_1 / 100) * C1d[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C1d_Perc_1 / 100)) * C1d_2[0]["score_cr" + str(i + 1)])) * selected_C1d +
-               (((selected_C1f_Perc_1 / 100) * C1f[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C1f_Perc_1 / 100)) * C1f_2[0]["score_cr" + str(i + 1)])) * selected_C1f +
-               (((selected_C1g_Perc_1 / 100) * C1g[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C1g_Perc_1 / 100)) * C1g_2[0]["score_cr" + str(i + 1)])) * selected_C1g +
-               (((selected_C2a_Perc_1 / 100) * C2a[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C2a_Perc_1 / 100)) * C2a_2[0]["score_cr" + str(i + 1)])) * selected_C2a +
-               (((selected_C2b_Perc_1 / 100) * C2b[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C2b_Perc_1 / 100)) * C2b_2[0]["score_cr" + str(i + 1)])) * selected_C2b +
-               (((selected_C3_Perc_1 / 100) * C3[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C3_Perc_1 / 100)) * C3_2[0]["score_cr" + str(i + 1)])) * selected_C3 +
-               (((selected_C4_Perc_1 / 100) * C4[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C4_Perc_1 / 100)) * C4_2[0]["score_cr" + str(i + 1)])) * selected_C4
+               (((selected_C1a_Perc_1 / 100) * C1a[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C1a_Perc_1 / 100)) * C1a_2[0]["score_cr" + str(k + 1)])) * selected_C1a +
+               (((selected_C1b_Perc_1 / 100) * C1b[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C1b_Perc_1 / 100)) * C1b_2[0]["score_cr" + str(k + 1)])) * selected_C1b +
+               (((selected_C1c_Perc_1 / 100) * C1c[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C1c_Perc_1 / 100)) * C1c_2[0]["score_cr" + str(k + 1)])) * selected_C1c +
+               (((selected_C1d_Perc_1 / 100) * C1d[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C1d_Perc_1 / 100)) * C1d_2[0]["score_cr" + str(k + 1)])) * selected_C1d +
+               (((selected_C1f_Perc_1 / 100) * C1f[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C1f_Perc_1 / 100)) * C1f_2[0]["score_cr" + str(k + 1)])) * selected_C1f +
+               (((selected_C1g_Perc_1 / 100) * C1g[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C1g_Perc_1 / 100)) * C1g_2[0]["score_cr" + str(k + 1)])) * selected_C1g +
+               (((selected_C2a_Perc_1 / 100) * C2a[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C2a_Perc_1 / 100)) * C2a_2[0]["score_cr" + str(k + 1)])) * selected_C2a +
+               (((selected_C2b_Perc_1 / 100) * C2b[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C2b_Perc_1 / 100)) * C2b_2[0]["score_cr" + str(k + 1)])) * selected_C2b +
+               (((selected_C3_Perc_1 / 100) * C3[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C3_Perc_1 / 100)) * C3_2[0]["score_cr" + str(k + 1)])) * selected_C3 +
+               (((selected_C4_Perc_1 / 100) * C4[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C4_Perc_1 / 100)) * C4_2[0]["score_cr" + str(k + 1)])) * selected_C4
                 ) * C_selected
         k += 1
 
@@ -460,12 +442,12 @@ def SRIcalculator(index):
 
     while k < len(V):
         V[k] = (
-                (((selected_V1a_Perc_1 / 100) * V1a[0]["score_cr" + str(i + 1)]) + ((1 - (selected_V1a_Perc_1 / 100)) * V1a_2[0]["score_cr" + str(i + 1)])) * selected_V1a +
-                (((selected_V1c_Perc_1 / 100) * V1c[0]["score_cr" + str(i + 1)]) + ((1 - (selected_V1c_Perc_1 / 100)) * V1c_2[0]["score_cr" + str(i + 1)])) * selected_V1c +
-                (((selected_V2c_Perc_1 / 100) * V2c[0]["score_cr" + str(i + 1)]) + ((1 - (selected_V2c_Perc_1 / 100)) * V2c_2[0]["score_cr" + str(i + 1)])) * selected_V2c +
-                (((selected_V2d_Perc_1 / 100) * V2d[0]["score_cr" + str(i + 1)]) + ((1 - (selected_V2d_Perc_1 / 100)) * V2d_2[0]["score_cr" + str(i + 1)])) * selected_V2d +
-                (((selected_V3_Perc_1 / 100) * V3[0]["score_cr" + str(i + 1)]) + ((1 - (selected_V3_Perc_1 / 100)) * V3_2[0]["score_cr" + str(i + 1)])) * selected_V3 +
-                (((selected_V6_Perc_1 / 100) * V6[0]["score_cr" + str(i + 1)]) + ((1 - (selected_V6_Perc_1 / 100)) * V6_2[0]["score_cr" + str(i + 1)])) * selected_V6
+                (((selected_V1a_Perc_1 / 100) * V1a[0]["score_cr" + str(k + 1)]) + ((1 - (selected_V1a_Perc_1 / 100)) * V1a_2[0]["score_cr" + str(k + 1)])) * selected_V1a +
+                (((selected_V1c_Perc_1 / 100) * V1c[0]["score_cr" + str(k + 1)]) + ((1 - (selected_V1c_Perc_1 / 100)) * V1c_2[0]["score_cr" + str(k + 1)])) * selected_V1c +
+                (((selected_V2c_Perc_1 / 100) * V2c[0]["score_cr" + str(k + 1)]) + ((1 - (selected_V2c_Perc_1 / 100)) * V2c_2[0]["score_cr" + str(k + 1)])) * selected_V2c +
+                (((selected_V2d_Perc_1 / 100) * V2d[0]["score_cr" + str(k + 1)]) + ((1 - (selected_V2d_Perc_1 / 100)) * V2d_2[0]["score_cr" + str(k + 1)])) * selected_V2d +
+                (((selected_V3_Perc_1 / 100) * V3[0]["score_cr" + str(k + 1)]) + ((1 - (selected_V3_Perc_1 / 100)) * V3_2[0]["score_cr" + str(k + 1)])) * selected_V3 +
+                (((selected_V6_Perc_1 / 100) * V6[0]["score_cr" + str(k + 1)]) + ((1 - (selected_V6_Perc_1 / 100)) * V6_2[0]["score_cr" + str(k + 1)])) * selected_V6
                ) * V_selected
         k += 1
 
@@ -484,8 +466,8 @@ def SRIcalculator(index):
     L2_2 = list(Levels.objects.filter(code='L-2', level=L_level_list2[1]).values())
     while k < len(L):
         L[k] = (
-               (((selected_L1a_Perc_1 / 100) * L1a[0]["score_cr" + str(i + 1)]) + ((1 - (selected_L1a_Perc_1 / 100)) * L1a_2[0]["score_cr" + str(i + 1)])) * selected_L1a +
-               (((selected_L2_Perc_1 / 100) * L2[0]["score_cr" + str(i + 1)]) + ((1 - (selected_L2_Perc_1 / 100)) * L2_2[0]["score_cr" + str(i + 1)])) * selected_L2
+               (((selected_L1a_Perc_1 / 100) * L1a[0]["score_cr" + str(k + 1)]) + ((1 - (selected_L1a_Perc_1 / 100)) * L1a_2[0]["score_cr" + str(k + 1)])) * selected_L1a +
+               (((selected_L2_Perc_1 / 100) * L2[0]["score_cr" + str(k + 1)]) + ((1 - (selected_L2_Perc_1 / 100)) * L2_2[0]["score_cr" + str(k + 1)])) * selected_L2
                ) * L_selected
         k += 1
 
@@ -507,9 +489,9 @@ def SRIcalculator(index):
 
     while k < len(DE):
         DE[k] = (
-                (((selected_DE1_Perc_1 / 100) * DE1[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DE1_Perc_1 / 100)) * DE1_2[0]["score_cr" + str(i + 1)])) * selected_DE1 +
-                (((selected_DE2_Perc_1 / 100) * DE2[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DE2_Perc_1 / 100)) * DE2_2[0]["score_cr" + str(i + 1)])) * selected_DE2 +
-                (((selected_DE4_Perc_1 / 100) * DE4[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DE4_Perc_1 / 100)) * DE4_2[0]["score_cr" + str(i + 1)])) * selected_DE4
+                (((selected_DE1_Perc_1 / 100) * DE1[0]["score_cr" + str(k + 1)]) + ((1 - (selected_DE1_Perc_1 / 100)) * DE1_2[0]["score_cr" + str(k + 1)])) * selected_DE1 +
+                (((selected_DE2_Perc_1 / 100) * DE2[0]["score_cr" + str(k + 1)]) + ((1 - (selected_DE2_Perc_1 / 100)) * DE2_2[0]["score_cr" + str(k + 1)])) * selected_DE2 +
+                (((selected_DE4_Perc_1 / 100) * DE4[0]["score_cr" + str(k + 1)]) + ((1 - (selected_DE4_Perc_1 / 100)) * DE4_2[0]["score_cr" + str(k + 1)])) * selected_DE4
                 ) * DE_selected
         k += 1
 
@@ -539,13 +521,13 @@ def SRIcalculator(index):
 
     while k < len(E):
         E[k] = (
-               (((selected_E2_Perc_1 / 100) * E2[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E2_Perc_1 / 100)) * E2_2[0]["score_cr" + str(i + 1)])) * selected_E2 +
-               (((selected_E3_Perc_1 / 100) * E3[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E3_Perc_1 / 100)) * E3_2[0]["score_cr" + str(i + 1)])) * selected_E3 +
-               (((selected_E4_Perc_1 / 100) * E4[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E4_Perc_1 / 100)) * E4_2[0]["score_cr" + str(i + 1)])) * selected_E4 +
-               (((selected_E5_Perc_1 / 100) * E5[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E5_Perc_1 / 100)) * E5_2[0]["score_cr" + str(i + 1)])) * selected_E5 +
-               (((selected_E8_Perc_1 / 100) * E8[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E8_Perc_1 / 100)) * E8_2[0]["score_cr" + str(i + 1)])) * selected_E8 +
-               (((selected_E11_Perc_1 / 100) * E11[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E11_Perc_1 / 100)) * E11_2[0]["score_cr" + str(i + 1)])) * selected_E11 +
-               (((selected_E12_Perc_1 / 100) * E12[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E12_Perc_1 / 100)) * E12_2[0]["score_cr" + str(i + 1)])) * selected_E12
+               (((selected_E2_Perc_1 / 100) * E2[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E2_Perc_1 / 100)) * E2_2[0]["score_cr" + str(k + 1)])) * selected_E2 +
+               (((selected_E3_Perc_1 / 100) * E3[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E3_Perc_1 / 100)) * E3_2[0]["score_cr" + str(k + 1)])) * selected_E3 +
+               (((selected_E4_Perc_1 / 100) * E4[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E4_Perc_1 / 100)) * E4_2[0]["score_cr" + str(k + 1)])) * selected_E4 +
+               (((selected_E5_Perc_1 / 100) * E5[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E5_Perc_1 / 100)) * E5_2[0]["score_cr" + str(k + 1)])) * selected_E5 +
+               (((selected_E8_Perc_1 / 100) * E8[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E8_Perc_1 / 100)) * E8_2[0]["score_cr" + str(k + 1)])) * selected_E8 +
+               (((selected_E11_Perc_1 / 100) * E11[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E11_Perc_1 / 100)) * E11_2[0]["score_cr" + str(k + 1)])) * selected_E11 +
+               (((selected_E12_Perc_1 / 100) * E12[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E12_Perc_1 / 100)) * E12_2[0]["score_cr" + str(k + 1)])) * selected_E12
                ) * E_selected
         k += 1
 
@@ -567,9 +549,9 @@ def SRIcalculator(index):
 
     while k < len(EV):
         EV[k] = (
-                 (((selected_EV15_Perc_1 / 100) * EV15[0]["score_cr" + str(i + 1)]) + ((1 - (selected_EV15_Perc_1 / 100)) * EV15_2[0]["score_cr" + str(i + 1)])) * selected_EV15 +
-                 (((selected_EV16_Perc_1 / 100) * EV16[0]["score_cr" + str(i + 1)]) + ((1 - (selected_EV16_Perc_1 / 100)) * EV16_2[0]["score_cr" + str(i + 1)])) * selected_EV16 +
-                 (((selected_EV17_Perc_1 / 100) * EV17[0]["score_cr" + str(i + 1)]) + ((1 - (selected_EV17_Perc_1 / 100)) * EV17_2[0]["score_cr" + str(i + 1)])) * selected_EV17
+                 (((selected_EV15_Perc_1 / 100) * EV15[0]["score_cr" + str(k + 1)]) + ((1 - (selected_EV15_Perc_1 / 100)) * EV15_2[0]["score_cr" + str(k + 1)])) * selected_EV15 +
+                 (((selected_EV16_Perc_1 / 100) * EV16[0]["score_cr" + str(k + 1)]) + ((1 - (selected_EV16_Perc_1 / 100)) * EV16_2[0]["score_cr" + str(k + 1)])) * selected_EV16 +
+                 (((selected_EV17_Perc_1 / 100) * EV17[0]["score_cr" + str(k + 1)]) + ((1 - (selected_EV17_Perc_1 / 100)) * EV17_2[0]["score_cr" + str(k + 1)])) * selected_EV17
                 ) * EV_selected
         k += 1
 
@@ -601,16 +583,17 @@ def SRIcalculator(index):
 
     while k < len(MC):
         MC[k] = (
-                (((selected_MC3_Perc_1 / 100) * MC3[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC3_Perc_1 / 100)) * MC3_2[0]["score_cr" + str(i + 1)])) * selected_MC3 +
-                (((selected_MC4_Perc_1 / 100) * MC4[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC4_Perc_1 / 100)) * MC4_2[0]["score_cr" + str(i + 1)])) * selected_MC4 +
-                (((selected_MC9_Perc_1 / 100) * MC9[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC9_Perc_1 / 100)) * MC9_2[0]["score_cr" + str(i + 1)])) * selected_MC9 +
-                (((selected_MC13_Perc_1 / 100) * MC13[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC13_Perc_1 / 100)) * MC13_2[0]["score_cr" + str(i + 1)])) * selected_MC13 +
-                (((selected_MC25_Perc_1 / 100) * MC25[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC25_Perc_1 / 100)) * MC25_2[0]["score_cr" + str(i + 1)])) * selected_MC25 +
-                (((selected_MC28_Perc_1 / 100) * MC28[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC28_Perc_1 / 100)) * MC28_2[0]["score_cr" + str(i + 1)])) * selected_MC28 +
-                (((selected_MC29_Perc_1 / 100) * MC29[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC29_Perc_1 / 100)) * MC29_2[0]["score_cr" + str(i + 1)])) * selected_MC29 +
-                (((selected_MC30_Perc_1 / 100) * MC30[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC30_Perc_1 / 100)) * MC30_2[0]["score_cr" + str(i + 1)])) * selected_MC30
+                (((selected_MC3_Perc_1 / 100) * MC3[0]["score_cr" + str(k + 1)]) + ((1 - (selected_MC3_Perc_1 / 100)) * MC3_2[0]["score_cr" + str(k + 1)])) * selected_MC3 +
+                (((selected_MC4_Perc_1 / 100) * MC4[0]["score_cr" + str(k + 1)]) + ((1 - (selected_MC4_Perc_1 / 100)) * MC4_2[0]["score_cr" + str(k + 1)])) * selected_MC4 +
+                (((selected_MC9_Perc_1 / 100) * MC9[0]["score_cr" + str(k + 1)]) + ((1 - (selected_MC9_Perc_1 / 100)) * MC9_2[0]["score_cr" + str(k + 1)])) * selected_MC9 +
+                (((selected_MC13_Perc_1 / 100) * MC13[0]["score_cr" + str(k + 1)]) + ((1 - (selected_MC13_Perc_1 / 100)) * MC13_2[0]["score_cr" + str(k + 1)])) * selected_MC13 +
+                (((selected_MC25_Perc_1 / 100) * MC25[0]["score_cr" + str(k + 1)]) + ((1 - (selected_MC25_Perc_1 / 100)) * MC25_2[0]["score_cr" + str(k + 1)])) * selected_MC25 +
+                (((selected_MC28_Perc_1 / 100) * MC28[0]["score_cr" + str(k + 1)]) + ((1 - (selected_MC28_Perc_1 / 100)) * MC28_2[0]["score_cr" + str(k + 1)])) * selected_MC28 +
+                (((selected_MC29_Perc_1 / 100) * MC29[0]["score_cr" + str(k + 1)]) + ((1 - (selected_MC29_Perc_1 / 100)) * MC29_2[0]["score_cr" + str(k + 1)])) * selected_MC29 +
+                (((selected_MC30_Perc_1 / 100) * MC30[0]["score_cr" + str(k + 1)]) + ((1 - (selected_MC30_Perc_1 / 100)) * MC30_2[0]["score_cr" + str(k + 1)])) * selected_MC30
                 ) * MC_selected
         k += 1
+
 
     SRI_res['MC'] = MC
 
