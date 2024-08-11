@@ -64,16 +64,16 @@ def SRIcalculator(index):
     selected_H3_Perc_1 = LastUserSelection[0]["selected_H3_Perc_1"]
     selected_H4_Perc_1 = LastUserSelection[0]["selected_H4_Perc_1"]
 
-    selected_H1a_Perc2_level = LastUserSelection[0]["selected_H1a_Perc2_level"]
-    selected_H1b_Perc2_level = LastUserSelection[0]["selected_H1b_Perc2_level"]
-    selected_H1c_Perc2_level = LastUserSelection[0]["selected_H1c_Perc2_level"]
-    selected_H1d_Perc2_level = LastUserSelection[0]["selected_H1d_Perc2_level"]
-    selected_H1f_Perc2_level = LastUserSelection[0]["selected_H1f_Perc2_level"]
-    selected_H2a_Perc2_level = LastUserSelection[0]["selected_H2a_Perc2_level"]
-    selected_H2b_Perc2_level = LastUserSelection[0]["selected_H2b_Perc2_level"]
-    selected_H2d_Perc2_level = LastUserSelection[0]["selected_H2d_Perc2_level"]
-    selected_H3_Perc2_level = LastUserSelection[0]["selected_H3_Perc2_level"]
-    selected_H4_Perc2_level = LastUserSelection[0]["selected_H4_Perc2_level"]
+    H1a_Perc2_level = LastUserSelection[0]["selected_H1a_Perc2_level"]
+    H1b_Perc2_level = LastUserSelection[0]["selected_H1b_Perc2_level"]
+    H1c_Perc2_level = LastUserSelection[0]["selected_H1c_Perc2_level"]
+    H1d_Perc2_level = LastUserSelection[0]["selected_H1d_Perc2_level"]
+    H1f_Perc2_level = LastUserSelection[0]["selected_H1f_Perc2_level"]
+    H2a_Perc2_level = LastUserSelection[0]["selected_H2a_Perc2_level"]
+    H2b_Perc2_level = LastUserSelection[0]["selected_H2b_Perc2_level"]
+    H2d_Perc2_level = LastUserSelection[0]["selected_H2d_Perc2_level"]
+    H3_Perc2_level = LastUserSelection[0]["selected_H3_Perc2_level"]
+    H4_Perc2_level = LastUserSelection[0]["selected_H4_Perc2_level"]
 
     # user selection for DHW (Domestic Hot Water)
     DHW_selected = LastUserSelection[0]["selected_DHW"]
@@ -312,8 +312,10 @@ def SRIcalculator(index):
     # -------H calculation-------------
     i = 0
     H = [0, 0, 0, 0, 0, 0, 0]
+    # user selection for Perc1 = x %
     H_level_list = [H1a_level, H1b_level, H1c_level, H1d_level, H1f_level, H2a_level, H2b_level, H2d_level, H3_level,
                     H4_level]
+
     H1a = list(Levels.objects.filter(code='H-1a', level=H_level_list[0]).values())
     H1b = list(Levels.objects.filter(code='H-1b', level=H_level_list[1]).values())
     H1c = list(Levels.objects.filter(code='H-1c', level=H_level_list[2]).values())
@@ -325,19 +327,34 @@ def SRIcalculator(index):
     H3 = list(Levels.objects.filter(code='H-3', level=H_level_list[8]).values())
     H4 = list(Levels.objects.filter(code='H-4', level=H_level_list[9]).values())
 
+    # user selection for Perc2 = 100% - Perc1 = 100% - x (if x=100 then Perc2 = 0%)
+    H_level_list2 = [H1a_Perc2_level, H1b_Perc2_level, H1c_Perc2_level,H1d_Perc2_level,
+                     H1f_Perc2_level, H2a_Perc2_level, H2b_Perc2_level, H2d_Perc2_level, H3_Perc2_level, H4_Perc2_level]
+
+    H1a_2 = list(Levels.objects.filter(code='H-1a', level=H_level_list2[0]).values())
+    H1b_2 = list(Levels.objects.filter(code='H-1b', level=H_level_list2[1]).values())
+    H1c_2 = list(Levels.objects.filter(code='H-1c', level=H_level_list2[2]).values())
+    H1d_2 = list(Levels.objects.filter(code='H-1d', level=H_level_list2[3]).values())
+    H1f_2 = list(Levels.objects.filter(code='H-1f', level=H_level_list2[4]).values())
+    H2a_2 = list(Levels.objects.filter(code='H-2a', level=H_level_list2[5]).values())
+    H2b_2 = list(Levels.objects.filter(code='H-2b', level=H_level_list2[6]).values())
+    H2d_2 = list(Levels.objects.filter(code='H-2d', level=H_level_list2[7]).values())
+    H3_2 = list(Levels.objects.filter(code='H-3', level=H_level_list2[8]).values())
+    H4_2 = list(Levels.objects.filter(code='H-4', level=H_level_list2[9]).values())
+
     while i < len(H):
         H[i] = (
-                ( selected_H1a * H1a[0]["score_cr" + str(i + 1)] ) +
-                ( selected_H1b * H1b[0]["score_cr" + str(i + 1)] ) +
-                ( selected_H1c * H1c[0]["score_cr" + str(i + 1)] ) +
-                ( selected_H1d * H1d[0]["score_cr" + str(i + 1)] ) +
-                ( selected_H1f * H1f[0]["score_cr" + str(i + 1)] ) +
-                ( selected_H2a * H2a[0]["score_cr" + str(i + 1)] ) +
-                ( selected_H2b * H2b[0]["score_cr" + str(i + 1)] ) +
-                ( selected_H2d * H2d[0]["score_cr" + str(i + 1)] ) +
-                ( selected_H3 * H3[0]["score_cr" + str(i + 1)] ) +
-                ( selected_H4 * H4[0]["score_cr" + str(i + 1)] )
-               )*H_selected
+                (((selected_H1a_Perc_1/100) * H1a[0]["score_cr" + str(i+1)]) + ((1-(selected_H1a_Perc_1/100)) * H1a_2[0]["score_cr" + str(i + 1)]))* selected_H1a +
+                (((selected_H1b_Perc_1/100) * H1b[0]["score_cr" + str(i+1)]) + ((1-(selected_H1b_Perc_1/100)) * H1b_2[0]["score_cr" + str(i + 1)])) * selected_H1b +
+                (((selected_H1c_Perc_1/100) * H1c[0]["score_cr" + str(i+1)]) + ((1-(selected_H1c_Perc_1/100)) * H1c_2[0]["score_cr" + str(i + 1)]))* selected_H1c +
+                (((selected_H1d_Perc_1/100) * H1d[0]["score_cr" + str(i+1)]) + ((1-(selected_H1d_Perc_1/100)) * H1d_2[0]["score_cr" + str(i + 1)]))* selected_H1d +
+                (((selected_H1f_Perc_1/100) * H1f[0]["score_cr" + str(i+1)]) + ((1-(selected_H1f_Perc_1/100)) * H1f_2[0]["score_cr" + str(i + 1)]))* selected_H1f +
+                (((selected_H2a_Perc_1/100) * H1a[0]["score_cr" + str(i+1)]) + ((1-(selected_H2a_Perc_1/100)) * H2a_2[0]["score_cr" + str(i + 1)]))* selected_H2a +
+                (((selected_H2b_Perc_1/100) * H2b[0]["score_cr" + str(i+1)]) + ((1-(selected_H2b_Perc_1/100)) * H2b_2[0]["score_cr" + str(i + 1)])) * selected_H2b +
+                (((selected_H2d_Perc_1/100) * H2d[0]["score_cr" + str(i+1)]) + ((1-(selected_H2d_Perc_1/100)) * H2d_2[0]["score_cr" + str(i + 1)])) * selected_H2d +
+                (((selected_H3_Perc_1/100) * H3[0]["score_cr" + str(i+1)]) + ((1-(selected_H3_Perc_1/100)) * H3_2[0]["score_cr" + str(i + 1)])) * selected_H3 +
+                (((selected_H4_Perc_1/100) * H4[0]["score_cr" + str(i+1)]) + ((1-(selected_H4_Perc_1/100)) * H4_2[0]["score_cr" + str(i + 1)])) * selected_H4
+               ) * H_selected
         i += 1
 
     SRI_res['H']=H
@@ -345,20 +362,30 @@ def SRIcalculator(index):
     # -------DHW calculation-------------
     j = 0
     DHW = [0, 0, 0, 0, 0, 0, 0]
+    # user selection for Perc1 = x %
     DHW_level_list = [DHW1a_level, DHW1b_level, DHW1d_level, DHW2b_level, DHW3_level]
     DHW1a = list(Levels.objects.filter(code='DHW-1a', level=DHW_level_list[0]).values())
     DHW1b = list(Levels.objects.filter(code='DHW-1b', level=DHW_level_list[1]).values())
     DHW1d = list(Levels.objects.filter(code='DHW-1d', level=DHW_level_list[2]).values())
     DHW2b = list(Levels.objects.filter(code='DHW-2b', level=DHW_level_list[3]).values())
     DHW3 = list(Levels.objects.filter(code='DHW-3', level=DHW_level_list[4]).values())
+    # user selection for Perc2 = 100% - Perc1 = 100% - x (if x=100 then Perc2 = 0%)
+    DHW_level_list2 = [DHW1a_Perc2_level, DHW1b_Perc2_level, DHW1d_Perc2_level, DHW2b_Perc2_level, DHW3_Perc2_level]
+    DHW1a_2 = list(Levels.objects.filter(code='DHW-1a', level=DHW_level_list2[0]).values())
+    DHW1b_2 = list(Levels.objects.filter(code='DHW-1b', level=DHW_level_list2[1]).values())
+    DHW1d_2 = list(Levels.objects.filter(code='DHW-1d', level=DHW_level_list2[2]).values())
+    DHW2b_2 = list(Levels.objects.filter(code='DHW-2b', level=DHW_level_list2[3]).values())
+    DHW3_2 = list(Levels.objects.filter(code='DHW-3', level=DHW_level_list2[4]).values())
+
+
 
     while j < len(DHW):
         DHW[j] = (
-                    ( selected_DHW1a * DHW1a[0]["score_cr" + str(j + 1)]) +
-                    ( selected_DHW1b * DHW1b[0]["score_cr" + str(j + 1)]) +
-                    ( selected_DHW1d * DHW1d[0]["score_cr" + str(j + 1)]) +
-                    ( selected_DHW2b * DHW2b[0]["score_cr" + str(j + 1)]) +
-                    ( selected_DHW3 * DHW3[0]["score_cr" + str(j + 1)])
+                    (((selected_DHW1a_Perc_1 / 100) * DHW1a[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DHW1a_Perc_1 / 100)) * DHW1a_2[0]["score_cr" + str(i + 1)])) * selected_DHW1a +
+                    (((selected_DHW1b_Perc_1 / 100) * DHW1b[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DHW1b_Perc_1 / 100)) * DHW1b_2[0]["score_cr" + str(i + 1)])) * selected_DHW1b +
+                    (((selected_DHW1d_Perc_1 / 100) * DHW1d[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DHW1d_Perc_1 / 100)) * DHW1d_2[0]["score_cr" + str(i + 1)])) * selected_DHW1d +
+                    (((selected_DHW2b_Perc_1 / 100) * DHW2b[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DHW2b_Perc_1 / 100)) * DHW2b_2[0]["score_cr" + str(i + 1)])) * selected_DHW2b +
+                    (((selected_DHW3_Perc_1 / 100) * DHW3[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DHW3_Perc_1 / 100)) * DHW3_2[0]["score_cr" + str(i + 1)])) * selected_DHW3
                  )*DHW_selected
         j += 1
 
@@ -367,6 +394,7 @@ def SRIcalculator(index):
     # -------C calculation-------------
     k = 0
     C = [0, 0, 0, 0, 0, 0, 0]
+    # user selection for Perc1 = x %
     C_level_list = [C1a_level, C1b_level, C1c_level, C1d_level, C1f_level, C1g_level, C2a_level, C2b_level, C3_level,
                     C4_level]
     C1a = list(Levels.objects.filter(code='C-1a', level=C_level_list[0]).values())
@@ -379,19 +407,32 @@ def SRIcalculator(index):
     C2b = list(Levels.objects.filter(code='C-2b', level=C_level_list[7]).values())
     C3 = list(Levels.objects.filter(code='C-3', level=C_level_list[8]).values())
     C4 = list(Levels.objects.filter(code='C-4', level=C_level_list[9]).values())
+    # user selection for Perc2 = 100% - Perc1 = 100% - x (if x=100 then Perc2 = 0%)
+    C_level_list2 = [C1a_Perc2_level, C1b_Perc2_level, C1c_Perc2_level, C1d_Perc2_level, C1f_Perc2_level, C1g_Perc2_level,
+                     C2a_Perc2_level, C2b_Perc2_level, C3_Perc2_level, C4_Perc2_level]
+    C1a_2 = list(Levels.objects.filter(code='C-1a', level=C_level_list2[0]).values())
+    C1b_2 = list(Levels.objects.filter(code='C-1b', level=C_level_list2[1]).values())
+    C1c_2 = list(Levels.objects.filter(code='C-1c', level=C_level_list2[2]).values())
+    C1d_2 = list(Levels.objects.filter(code='C-1d', level=C_level_list2[3]).values())
+    C1f_2 = list(Levels.objects.filter(code='C-1f', level=C_level_list2[4]).values())
+    C1g_2 = list(Levels.objects.filter(code='C-1g', level=C_level_list2[5]).values())
+    C2a_2 = list(Levels.objects.filter(code='C-2a', level=C_level_list2[6]).values())
+    C2b_2 = list(Levels.objects.filter(code='C-2b', level=C_level_list2[7]).values())
+    C3_2 = list(Levels.objects.filter(code='C-3', level=C_level_list2[8]).values())
+    C4_2 = list(Levels.objects.filter(code='C-4', level=C_level_list2[9]).values())
 
     while k < len(C):
         C[k] = (
-               (selected_C1a * C1a[0]["score_cr" + str(k + 1)]) +
-               (selected_C1b * C1b[0]["score_cr" + str(k + 1)]) +
-               (selected_C1c * C1c[0]["score_cr" + str(k + 1)]) +
-               (selected_C1d * C1d[0]["score_cr" + str(k + 1)]) +
-               (selected_C1f * C1f[0]["score_cr" + str(k + 1)]) +
-               (selected_C1g * C1g[0]["score_cr" + str(k + 1)]) +
-               (selected_C2a * C2a[0]["score_cr" + str(k + 1)]) +
-               (selected_C2b * C2b[0]["score_cr" + str(k + 1)]) +
-               (selected_C3 * C3[0]["score_cr" + str(k + 1)]) +
-               (selected_C4 * C4[0]["score_cr" + str(k + 1)])
+               (((selected_C1a_Perc_1 / 100) * C1a[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C1a_Perc_1 / 100)) * C1a_2[0]["score_cr" + str(i + 1)])) * selected_C1a +
+               (((selected_C1b_Perc_1 / 100) * C1b[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C1b_Perc_1 / 100)) * C1b_2[0]["score_cr" + str(i + 1)])) * selected_C1b +
+               (((selected_C1c_Perc_1 / 100) * C1c[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C1c_Perc_1 / 100)) * C1c_2[0]["score_cr" + str(i + 1)])) * selected_C1c +
+               (((selected_C1d_Perc_1 / 100) * C1d[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C1d_Perc_1 / 100)) * C1d_2[0]["score_cr" + str(i + 1)])) * selected_C1d +
+               (((selected_C1f_Perc_1 / 100) * C1f[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C1f_Perc_1 / 100)) * C1f_2[0]["score_cr" + str(i + 1)])) * selected_C1f +
+               (((selected_C1g_Perc_1 / 100) * C1g[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C1g_Perc_1 / 100)) * C1g_2[0]["score_cr" + str(i + 1)])) * selected_C1g +
+               (((selected_C2a_Perc_1 / 100) * C2a[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C2a_Perc_1 / 100)) * C2a_2[0]["score_cr" + str(i + 1)])) * selected_C2a +
+               (((selected_C2b_Perc_1 / 100) * C2b[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C2b_Perc_1 / 100)) * C2b_2[0]["score_cr" + str(i + 1)])) * selected_C2b +
+               (((selected_C3_Perc_1 / 100) * C3[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C3_Perc_1 / 100)) * C3_2[0]["score_cr" + str(i + 1)])) * selected_C3 +
+               (((selected_C4_Perc_1 / 100) * C4[0]["score_cr" + str(i + 1)]) + ((1 - (selected_C4_Perc_1 / 100)) * C4_2[0]["score_cr" + str(i + 1)])) * selected_C4
                 ) * C_selected
         k += 1
 
@@ -399,6 +440,7 @@ def SRIcalculator(index):
 
     # -------V calculation-------------
     k = 0
+    # user selection for Perc1 = x %
     V = [0, 0, 0, 0, 0, 0, 0]
     V_level_list = [V1a_level, V1c_level, V2c_level, V2d_level, V3_level, V6_level]
     V1a = list(Levels.objects.filter(code='V-1a', level=V_level_list[0]).values())
@@ -407,15 +449,23 @@ def SRIcalculator(index):
     V2d = list(Levels.objects.filter(code='V-2d', level=V_level_list[3]).values())
     V3 = list(Levels.objects.filter(code='V-3', level=V_level_list[4]).values())
     V6 = list(Levels.objects.filter(code='V-6', level=V_level_list[5]).values())
+    # user selection for Perc2 = 100% - Perc1 = 100% - x (if x=100 then Perc2 = 0%)
+    V_level_list2 = [V1a_Perc2_level, V1c_Perc2_level, V2c_Perc2_level, V2d_Perc2_level, V3_Perc2_level, V6_Perc2_level]
+    V1a_2 = list(Levels.objects.filter(code='V-1a', level=V_level_list2[0]).values())
+    V1c_2 = list(Levels.objects.filter(code='V-1c', level=C_level_list2[1]).values())
+    V2c_2 = list(Levels.objects.filter(code='V-2c', level=V_level_list2[2]).values())
+    V2d_2 = list(Levels.objects.filter(code='V-2d', level=V_level_list2[3]).values())
+    V3_2 = list(Levels.objects.filter(code='V-3', level=V_level_list2[4]).values())
+    V6_2 = list(Levels.objects.filter(code='V-6', level=V_level_list2[5]).values())
 
     while k < len(V):
         V[k] = (
-                (selected_V1a * V1a[0]["score_cr" + str(k + 1)]) +
-                (selected_V1c * V1c[0]["score_cr" + str(k + 1)]) +
-                (selected_V2c * V2c[0]["score_cr" + str(k + 1)]) +
-                (selected_V2d * V2d[0]["score_cr" + str(k + 1)]) +
-                (selected_V3 * V3[0]["score_cr" + str(k + 1)]) +
-                (selected_V6 * V6[0]["score_cr" + str(k + 1)])
+                (((selected_V1a_Perc_1 / 100) * V1a[0]["score_cr" + str(i + 1)]) + ((1 - (selected_V1a_Perc_1 / 100)) * V1a_2[0]["score_cr" + str(i + 1)])) * selected_V1a +
+                (((selected_V1c_Perc_1 / 100) * V1c[0]["score_cr" + str(i + 1)]) + ((1 - (selected_V1c_Perc_1 / 100)) * V1c_2[0]["score_cr" + str(i + 1)])) * selected_V1c +
+                (((selected_V2c_Perc_1 / 100) * V2c[0]["score_cr" + str(i + 1)]) + ((1 - (selected_V2c_Perc_1 / 100)) * V2c_2[0]["score_cr" + str(i + 1)])) * selected_V2c +
+                (((selected_V2d_Perc_1 / 100) * V2d[0]["score_cr" + str(i + 1)]) + ((1 - (selected_V2d_Perc_1 / 100)) * V2d_2[0]["score_cr" + str(i + 1)])) * selected_V2d +
+                (((selected_V3_Perc_1 / 100) * V3[0]["score_cr" + str(i + 1)]) + ((1 - (selected_V3_Perc_1 / 100)) * V3_2[0]["score_cr" + str(i + 1)])) * selected_V3 +
+                (((selected_V6_Perc_1 / 100) * V6[0]["score_cr" + str(i + 1)]) + ((1 - (selected_V6_Perc_1 / 100)) * V6_2[0]["score_cr" + str(i + 1)])) * selected_V6
                ) * V_selected
         k += 1
 
@@ -423,15 +473,19 @@ def SRIcalculator(index):
 
     # -------L calculation-------------
     k = 0
+    # user selection for Perc1 = x %
     L = [0, 0, 0, 0, 0, 0, 0]
     L_level_list = [L1a_level, L2_level]
     L1a = list(Levels.objects.filter(code='L-1a', level=L_level_list[0]).values())
     L2 = list(Levels.objects.filter(code='L-2', level=L_level_list[1]).values())
-
+    # user selection for Perc2 = 100% - Perc1 = 100% - x (if x=100 then Perc2 = 0%)
+    L_level_list2 = [L1a_Perc2_level, L2_Perc2_level]
+    L1a_2 = list(Levels.objects.filter(code='L-1a', level=L_level_list2[0]).values())
+    L2_2 = list(Levels.objects.filter(code='L-2', level=L_level_list2[1]).values())
     while k < len(L):
         L[k] = (
-               (selected_L1a * L1a[0]["score_cr" + str(k + 1)]) +
-               (selected_L2 * L2[0]["score_cr" + str(k + 1)])
+               (((selected_L1a_Perc_1 / 100) * L1a[0]["score_cr" + str(i + 1)]) + ((1 - (selected_L1a_Perc_1 / 100)) * L1a_2[0]["score_cr" + str(i + 1)])) * selected_L1a +
+               (((selected_L2_Perc_1 / 100) * L2[0]["score_cr" + str(i + 1)]) + ((1 - (selected_L2_Perc_1 / 100)) * L2_2[0]["score_cr" + str(i + 1)])) * selected_L2
                ) * L_selected
         k += 1
 
@@ -439,17 +493,23 @@ def SRIcalculator(index):
 
     # -------DE calculation-------------
     k = 0
+    # user selection for Perc1 = x %
     DE = [0, 0, 0, 0, 0, 0, 0]
     DE_level_list = [DE1_level, DE2_level, DE4_level]
     DE1 = list(Levels.objects.filter(code='DE-1', level=DE_level_list[0]).values())
     DE2 = list(Levels.objects.filter(code='DE-2', level=DE_level_list[1]).values())
     DE4 = list(Levels.objects.filter(code='DE-4', level=DE_level_list[2]).values())
+    # user selection for Perc2 = 100% - Perc1 = 100% - x (if x=100 then Perc2 = 0%)
+    DE_level_list2 = [DE1_Perc2_level, DE2_Perc2_level, DE4_Perc2_level]
+    DE1_2 = list(Levels.objects.filter(code='DE-1', level=DE_level_list2[0]).values())
+    DE2_2 = list(Levels.objects.filter(code='DE-2', level=DE_level_list2[1]).values())
+    DE4_2 = list(Levels.objects.filter(code='DE-4', level=DE_level_list2[2]).values())
 
     while k < len(DE):
         DE[k] = (
-                (selected_DE1 * DE1[0]["score_cr" + str(k + 1)]) +
-                (selected_DE2 * DE2[0]["score_cr" + str(k + 1)]) +
-                (selected_DE4 * DE4[0]["score_cr" + str(k + 1)])
+                (((selected_DE1_Perc_1 / 100) * DE1[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DE1_Perc_1 / 100)) * DE1_2[0]["score_cr" + str(i + 1)])) * selected_DE1 +
+                (((selected_DE2_Perc_1 / 100) * DE2[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DE2_Perc_1 / 100)) * DE2_2[0]["score_cr" + str(i + 1)])) * selected_DE2 +
+                (((selected_DE4_Perc_1 / 100) * DE4[0]["score_cr" + str(i + 1)]) + ((1 - (selected_DE4_Perc_1 / 100)) * DE4_2[0]["score_cr" + str(i + 1)])) * selected_DE4
                 ) * DE_selected
         k += 1
 
@@ -457,6 +517,7 @@ def SRIcalculator(index):
 
     # -------E calculation-------------
     k = 0
+    # user selection for Perc1 = x %
     E = [0, 0, 0, 0, 0, 0, 0]
     E_level_list = [E2_level, E3_level, E4_level, E5_level, E8_level, E11_level, E12_level]
     E2 = list(Levels.objects.filter(code='E-2', level=E_level_list[0]).values())
@@ -466,16 +527,25 @@ def SRIcalculator(index):
     E8 = list(Levels.objects.filter(code='E-8', level=E_level_list[4]).values())
     E11 = list(Levels.objects.filter(code='E-11', level=E_level_list[5]).values())
     E12 = list(Levels.objects.filter(code='E-12', level=E_level_list[6]).values())
+    # user selection for Perc2 = 100% - Perc1 = 100% - x (if x=100 then Perc2 = 0%)
+    E_level_list2 = [E2_Perc2_level, E3_Perc2_level, E4_Perc2_level, E5_Perc2_level, E8_Perc2_level, E11_Perc2_level, E12_Perc2_level]
+    E2_2 = list(Levels.objects.filter(code='E-2', level=E_level_list2[0]).values())
+    E3_2 = list(Levels.objects.filter(code='E-3', level=E_level_list2[1]).values())
+    E4_2 = list(Levels.objects.filter(code='E-4', level=E_level_list2[2]).values())
+    E5_2 = list(Levels.objects.filter(code='E-5', level=E_level_list2[3]).values())
+    E8_2 = list(Levels.objects.filter(code='E-8', level=E_level_list2[4]).values())
+    E11_2 = list(Levels.objects.filter(code='E-11', level=E_level_list2[5]).values())
+    E12_2 = list(Levels.objects.filter(code='E-12', level=E_level_list2[6]).values())
 
     while k < len(E):
         E[k] = (
-               (selected_E2 * E2[0]["score_cr" + str(k + 1)]) +
-               (selected_E3 * E3[0]["score_cr" + str(k + 1)]) +
-               (selected_E4 * E4[0]["score_cr" + str(k + 1)]) +
-               (selected_E5 * E5[0]["score_cr" + str(k + 1)]) +
-               (selected_E8 * E8[0]["score_cr" + str(k + 1)]) +
-               (selected_E11 * E11[0]["score_cr" + str(k + 1)]) +
-               (selected_E12 * E12[0]["score_cr" + str(k + 1)])
+               (((selected_E2_Perc_1 / 100) * E2[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E2_Perc_1 / 100)) * E2_2[0]["score_cr" + str(i + 1)])) * selected_E2 +
+               (((selected_E3_Perc_1 / 100) * E3[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E3_Perc_1 / 100)) * E3_2[0]["score_cr" + str(i + 1)])) * selected_E3 +
+               (((selected_E4_Perc_1 / 100) * E4[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E4_Perc_1 / 100)) * E4_2[0]["score_cr" + str(i + 1)])) * selected_E4 +
+               (((selected_E5_Perc_1 / 100) * E5[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E5_Perc_1 / 100)) * E5_2[0]["score_cr" + str(i + 1)])) * selected_E5 +
+               (((selected_E8_Perc_1 / 100) * E8[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E8_Perc_1 / 100)) * E8_2[0]["score_cr" + str(i + 1)])) * selected_E8 +
+               (((selected_E11_Perc_1 / 100) * E11[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E11_Perc_1 / 100)) * E11_2[0]["score_cr" + str(i + 1)])) * selected_E11 +
+               (((selected_E12_Perc_1 / 100) * E12[0]["score_cr" + str(i + 1)]) + ((1 - (selected_E12_Perc_1 / 100)) * E12_2[0]["score_cr" + str(i + 1)])) * selected_E12
                ) * E_selected
         k += 1
 
@@ -483,17 +553,23 @@ def SRIcalculator(index):
 
     # -------EV calculation-------------
     k = 0
+    # user selection for Perc1 = x %
     EV = [0, 0, 0, 0, 0, 0, 0]
     EV_level_list = [EV15_level, EV16_level, EV17_level]
     EV15 = list(Levels.objects.filter(code='EV-15', level=EV_level_list[0]).values())
     EV16 = list(Levels.objects.filter(code='EV-16', level=EV_level_list[1]).values())
     EV17 = list(Levels.objects.filter(code='EV-17', level=EV_level_list[2]).values())
+    # user selection for Perc2 = 100% - Perc1 = 100% - x (if x=100 then Perc2 = 0%)
+    EV_level_list2 = [EV15_Perc2_level, EV16_Perc2_level, EV17_Perc2_level]
+    EV15_2 = list(Levels.objects.filter(code='EV-15', level=EV_level_list2[0]).values())
+    EV16_2 = list(Levels.objects.filter(code='EV-16', level=EV_level_list2[1]).values())
+    EV17_2 = list(Levels.objects.filter(code='EV-17', level=EV_level_list2[2]).values())
 
     while k < len(EV):
         EV[k] = (
-                (selected_EV15 * EV15[0]["score_cr" + str(k + 1)]) +
-                (selected_EV16 * EV16[0]["score_cr" + str(k + 1)]) +
-                (selected_EV17 * EV17[0]["score_cr" + str(k + 1)])
+                 (((selected_EV15_Perc_1 / 100) * EV15[0]["score_cr" + str(i + 1)]) + ((1 - (selected_EV15_Perc_1 / 100)) * EV15_2[0]["score_cr" + str(i + 1)])) * selected_EV15 +
+                 (((selected_EV16_Perc_1 / 100) * EV16[0]["score_cr" + str(i + 1)]) + ((1 - (selected_EV16_Perc_1 / 100)) * EV16_2[0]["score_cr" + str(i + 1)])) * selected_EV16 +
+                 (((selected_EV17_Perc_1 / 100) * EV17[0]["score_cr" + str(i + 1)]) + ((1 - (selected_EV17_Perc_1 / 100)) * EV17_2[0]["score_cr" + str(i + 1)])) * selected_EV17
                 ) * EV_selected
         k += 1
 
@@ -501,6 +577,7 @@ def SRIcalculator(index):
 
     # -------MC calculation-------------
     k = 0
+    # user selection for Perc1 = x %
     MC = [0, 0, 0, 0, 0, 0, 0]
     MC_level_list = [MC3_level, MC4_level, MC9_level, MC13_level, MC25_level, MC28_level, MC29_level, MC30_level]
     MC3 = list(Levels.objects.filter(code='MC-3', level=MC_level_list[0]).values())
@@ -511,17 +588,27 @@ def SRIcalculator(index):
     MC28 = list(Levels.objects.filter(code='MC-28', level=MC_level_list[5]).values())
     MC29 = list(Levels.objects.filter(code='MC-29', level=MC_level_list[6]).values())
     MC30 = list(Levels.objects.filter(code='MC-30', level=MC_level_list[7]).values())
+    # user selection for Perc2 = 100% - Perc1 = 100% - x (if x=100 then Perc2 = 0%)
+    MC_level_list2 = [MC3_Perc2_level, MC4_Perc2_level, MC9_Perc2_level, MC13_Perc2_level, MC25_Perc2_level, MC28_Perc2_level, MC29_Perc2_level, MC30_Perc2_level]
+    MC3_2 = list(Levels.objects.filter(code='MC-3', level=MC_level_list2[0]).values())
+    MC4_2 = list(Levels.objects.filter(code='MC-4', level=MC_level_list2[1]).values())
+    MC9_2 = list(Levels.objects.filter(code='MC-9', level=MC_level_list2[2]).values())
+    MC13_2 = list(Levels.objects.filter(code='MC-13', level=MC_level_list2[3]).values())
+    MC25_2 = list(Levels.objects.filter(code='MC-25', level=MC_level_list2[4]).values())
+    MC28_2 = list(Levels.objects.filter(code='MC-28', level=MC_level_list2[5]).values())
+    MC29_2 = list(Levels.objects.filter(code='MC-29', level=MC_level_list2[6]).values())
+    MC30_2 = list(Levels.objects.filter(code='MC-30', level=MC_level_list2[7]).values())
 
     while k < len(MC):
         MC[k] = (
-                (selected_MC3 * MC3[0]["score_cr" + str(k + 1)]) +
-                (selected_MC4 * MC4[0]["score_cr" + str(k + 1)]) +
-                (selected_MC9 * MC9[0]["score_cr" + str(k + 1)]) +
-                (selected_MC13 * MC13[0]["score_cr" + str(k + 1)]) +
-                (selected_MC25 * MC25[0]["score_cr" + str(k + 1)]) +
-                (selected_MC28 * MC28[0]["score_cr" + str(k + 1)]) +
-                (selected_MC29 * MC29[0]["score_cr" + str(k + 1)]) +
-                (selected_MC30 * MC30[0]["score_cr" + str(k + 1)])
+                (((selected_MC3_Perc_1 / 100) * MC3[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC3_Perc_1 / 100)) * MC3_2[0]["score_cr" + str(i + 1)])) * selected_MC3 +
+                (((selected_MC4_Perc_1 / 100) * MC4[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC4_Perc_1 / 100)) * MC4_2[0]["score_cr" + str(i + 1)])) * selected_MC4 +
+                (((selected_MC9_Perc_1 / 100) * MC9[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC9_Perc_1 / 100)) * MC9_2[0]["score_cr" + str(i + 1)])) * selected_MC9 +
+                (((selected_MC13_Perc_1 / 100) * MC13[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC13_Perc_1 / 100)) * MC13_2[0]["score_cr" + str(i + 1)])) * selected_MC13 +
+                (((selected_MC25_Perc_1 / 100) * MC25[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC25_Perc_1 / 100)) * MC25_2[0]["score_cr" + str(i + 1)])) * selected_MC25 +
+                (((selected_MC28_Perc_1 / 100) * MC28[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC28_Perc_1 / 100)) * MC28_2[0]["score_cr" + str(i + 1)])) * selected_MC28 +
+                (((selected_MC29_Perc_1 / 100) * MC29[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC29_Perc_1 / 100)) * MC29_2[0]["score_cr" + str(i + 1)])) * selected_MC29 +
+                (((selected_MC30_Perc_1 / 100) * MC30[0]["score_cr" + str(i + 1)]) + ((1 - (selected_MC30_Perc_1 / 100)) * MC30_2[0]["score_cr" + str(i + 1)])) * selected_MC30
                 ) * MC_selected
         k += 1
 

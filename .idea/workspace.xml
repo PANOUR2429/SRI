@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="fix algorithm">
-      <change afterPath="$PROJECT_DIR$/SRIsite/SRIapp/migrations/0015_remove_userselections_selected_c1a_perc_2_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SRIsite/SRIapp/migrations/0016_rename_selected_c1a_perc_2_level_userselections_selected_c1a_perc2_level_and_more.py" afterDir="false" />
+    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="percentage added">
+      <change afterPath="$PROJECT_DIR$/SRIsite/SRIapp/migrations/0017_alter_userselections_selected_h1a_perc_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SRIsite/SRIapp/migrations/0018_alter_userselections_selected_c1a_perc_1_and_more.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc2.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721954179036</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="percentage added">
+      <option name="closed" value="true" />
+      <created>1722977242630</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1722977242630</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -329,6 +334,7 @@
     <MESSAGE value="result of last form id added" />
     <MESSAGE value=" new index&#10; results added" />
     <MESSAGE value="fix algorithm" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix algorithm" />
+    <MESSAGE value="percentage added" />
+    <option name="LAST_COMMIT_MESSAGE" value="percentage added" />
   </component>
 </project>
