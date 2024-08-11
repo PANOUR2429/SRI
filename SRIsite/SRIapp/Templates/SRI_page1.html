@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <style>
 select {
   width: 100%;
@@ -45,11 +44,13 @@ select {
                       {{ form.selected_zone }}
                     </div>
 
-
-                    <div class="fieldWrapper">
+                 <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH" >
                     <label >user selection for H (Heating):</label>
                       {{ form.selected_H }}
-                    </div>
+                 </div>
+
+                <div id="collapseH" class="collapse">
+                   <div class="card card-body">
                     <div class="fieldWrapper">
                     <label >user selection for H1a (Heating):</label>
                       {{ form.selected_H1a }}
@@ -128,13 +129,16 @@ select {
                       {{ form.selected_H4_level }}
                       {{ form.selected_H4_Perc2_level }}
                     </div>
+                </div>
+            </div>
 
-
-
-                    <div class="fieldWrapper">
-                    <label >user selection for DHW :</label>
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW">
+                    <label >user selection for DHW (Domestic Hot Water) :</label>
                       {{ form.selected_DHW }}
                     </div>
+
+                <div id="collapseDHW" class="collapse">
+                    <div class="card card-body">
                     <div class="fieldWrapper">
                     <label >user selection for DHW1a :</label>
                       {{ form.selected_DHW1a }}
@@ -173,11 +177,16 @@ select {
                       {{ form.selected_DHW3_level }}
                       {{ form.selected_DHW3_Perc2_level }}
                     </div>
+                </div>
+                </div>
 
-                    <div class="fieldWrapper">
-                    <label >user selection for C :</label>
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC">
+                    <label >user selection for C (Cooling) :</label>
                       {{ form.selected_C }}
                     </div>
+
+                <div id="collapseC" class="collapse">
+                    <div class="card card-body">
                     <div class="fieldWrapper">
                     <label >user selection for C1a :</label>
                       {{ form.selected_C1a }}
@@ -256,11 +265,16 @@ select {
                       {{ form.selected_C4_level }}
                       {{ form.selected_C4_Perc2_level }}
                     </div>
+                </div>
+                </div>
 
-                    <div class="fieldWrapper">
-                    <label >user selection for V :</label>
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV">
+                    <label >user selection for V (Ventilation) :</label>
                       {{ form.selected_V }}
                     </div>
+
+                <div id="collapseV" class="collapse">
+                    <div class="card card-body">
                     <div class="fieldWrapper">
                     <label >user selection for V1a :</label>
                       {{ form.selected_V1a }}
@@ -307,11 +321,16 @@ select {
                       {{ form.selected_V6_level }}
                       {{ form.selected_V6_Perc2_level }}
                     </div>
+                </div>
+                </div>
 
-                   <div class="fieldWrapper">
-                    <label >user selection for L :</label>
+                   <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseL">
+                    <label >user selection for L (Lighting) :</label>
                       {{ form.selected_L }}
                     </div>
+
+                <div id="collapseL" class="collapse">
+                    <div class="card card-body">
                     <div class="fieldWrapper">
                     <label >user selection for L1a :</label>
                       {{ form.selected_L1a }}
@@ -326,12 +345,16 @@ select {
                       {{ form.selected_L2_level }}
                       {{ form.selected_L2_Perc2_level }}
                     </div>
+                </div>
+                </div>
 
-
-                    <div class="fieldWrapper">
-                    <label >user selection for DE :</label>
+                    <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseDE">
+                    <label >user selection for DE (Dynamic Building Envelope) :</label>
                       {{ form.selected_DE }}
                     </div>
+
+                <div id="collapseDE" class="collapse">
+                    <div class="card card-body">
                     <div class="fieldWrapper">
                     <label >user selection for DE1 :</label>
                       {{ form.selected_DE1 }}
@@ -353,11 +376,16 @@ select {
                       {{ form.selected_DE4_level }}
                       {{ form.selected_DE4_Perc2_level }}
                     </div>
+                   </div>
+                </div>
 
-                    <div class="fieldWrapper">
-                    <label >user selection for E :</label>
+                    <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseE">
+                    <label >user selection for E (Electricity) :</label>
                       {{ form.selected_E }}
                     </div>
+
+                <div id="collapseE" class="collapse">
+                     <div class="card card-body">
                     <div class="fieldWrapper">
                     <label >user selection for E2 :</label>
                       {{ form.selected_E2 }}
@@ -407,11 +435,16 @@ select {
                       {{ form.selected_E12_level }}
                       {{ form.selected_E12_Perc2_level }}
                     </div>
+                </div>
+                </div>
 
-                    <div class="fieldWrapper">
-                    <label >user selection for Ev :</label>
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseEV">
+                    <label >user selection for EV (Electrical Vehicle Charging) :</label>
                       {{ form.selected_EV }}
                     </div>
+
+                <div id="collapseEV" class="collapse">
+                     <div class="card card-body">
                     <div class="fieldWrapper">
                     <label >user selection for EV15 :</label>
                       {{ form.selected_EV15 }}
@@ -433,11 +466,16 @@ select {
                       {{ form.selected_EV17_level }}
                       {{ form.selected_EV17_Perc2_level }}
                     </div>
+                </div>
+                </div>
 
-<div class="fieldWrapper">
-                    <label >user selection for MC :</label>
+                    <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseMC">
+                    <label >user selection for MC (Monitoring and Control) :</label>
                       {{ form.selected_MC }}
                     </div>
+
+                <div id="collapseMC" class="collapse">
+                     <div class="card card-body">
                     <div class="fieldWrapper">
                     <label >user selection for MC3 :</label>
                       {{ form.selected_MC3 }}
@@ -495,6 +533,8 @@ select {
                       {{ form.selected_MC30_level }}
                       {{ form.selected_MC30_Perc2_level }}
                     </div>
+                </div>
+                </div>
 
                 <input type="submit" value="Submit">
             </form>

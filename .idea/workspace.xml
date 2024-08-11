@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="percentage added in calculation">
+    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="ADD BOOTSTRAP">
+      <change afterPath="$PROJECT_DIR$/SRIsite/SRIapp/migrations/0019_alter_userselections_selected_c_and_more.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_page1.html" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_page1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SRIsite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -334,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723401974301</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="ADD BOOTSTRAP">
+      <option name="closed" value="true" />
+      <created>1723413956063</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1723413956064</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -361,6 +368,7 @@
     <MESSAGE value="fix algorithm" />
     <MESSAGE value="percentage added" />
     <MESSAGE value="percentage added in calculation" />
-    <option name="LAST_COMMIT_MESSAGE" value="percentage added in calculation" />
+    <MESSAGE value="ADD BOOTSTRAP" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD BOOTSTRAP" />
   </component>
 </project>
