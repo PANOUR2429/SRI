@@ -235,3 +235,5 @@ class ControlForm(forms.ModelForm):
             'selected_MC30_level',
             'selected_MC30_Perc2_level',
         ]
+
+

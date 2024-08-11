@@ -25,9 +25,477 @@ select {
             <p></p>
             <a href="SRI_result/">test</a>
             <p></p>
-            <form action="/" method="post" >
+            <form action="/" method="post" novalidate>
                 {% csrf_token %}
-                {{ form }}
+
+                {{ form.non_field_errors }}
+
+                {% for hidden_field in form.hidden_fields %}
+                {{ hidden_field.errors }}
+                {{ hidden_field }}
+                {% endfor %}
+
+
+                    <div class="fieldWrapper">
+                    <label >user selection for possible building types:</label>
+                      {{ form.selected_building_type }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for possible building zones:</label>
+                      {{ form.selected_zone }}
+                    </div>
+
+
+                    <div class="fieldWrapper">
+                    <label >user selection for H (Heating):</label>
+                      {{ form.selected_H }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for H1a (Heating):</label>
+                      {{ form.selected_H1a }}
+                      {{ form.selected_H1a_Perc_1 }}
+                      {{ form.selected_H1a_level }}
+                      {{ form.selected_H1a_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for H1b (Heating):</label>
+                      {{ form.selected_H1b }}
+                      {{ form.selected_H1b_Perc_1 }}
+                      {{ form.selected_H1b_level }}
+                      {{ form.selected_H1b_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for H1c (Heating):</label>
+                      {{ form.selected_H1c }}
+                      {{ form.selected_H1c_Perc_1 }}
+                      {{ form.selected_H1c_level }}
+                      {{ form.selected_H1c_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for H1d (Heating):</label>
+                      {{ form.selected_H1d }}
+                      {{ form.selected_H1d_Perc_1 }}
+                      {{ form.selected_H1d_level }}
+                      {{ form.selected_H1d_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for H1f (Heating):</label>
+                      {{ form.selected_H1f }}
+                      {{ form.selected_H1f_Perc_1 }}
+                      {{ form.selected_H1f_level }}
+                      {{ form.selected_H1f_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for H2a (Heating):</label>
+                      {{ form.selected_H2a }}
+                      {{ form.selected_H2a_Perc_1 }}
+                      {{ form.selected_H2a_level }}
+                      {{ form.selected_H2a_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for H2b (Heating):</label>
+                      {{ form.selected_H2b }}
+                      {{ form.selected_H2b_Perc_1 }}
+                      {{ form.selected_H2b_level }}
+                      {{ form.selected_H2b_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for H2d (Heating):</label>
+                      {{ form.selected_H2d }}
+                      {{ form.selected_H2d_Perc_1 }}
+                      {{ form.selected_H2d_level }}
+                      {{ form.selected_H2d_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for H3 (Heating):</label>
+                      {{ form.selected_H3 }}
+                      {{ form.selected_H3_Perc_1 }}
+                      {{ form.selected_H3_level }}
+                      {{ form.selected_H3_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for H4 (Heating):</label>
+                      {{ form.selected_H4 }}
+                      {{ form.selected_H4_Perc_1 }}
+                      {{ form.selected_H4_level }}
+                      {{ form.selected_H4_Perc2_level }}
+                    </div>
+
+
+
+                    <div class="fieldWrapper">
+                    <label >user selection for DHW :</label>
+                      {{ form.selected_DHW }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for DHW1a :</label>
+                      {{ form.selected_DHW1a }}
+                      {{ form.selected_DHW1a_Perc_1 }}
+                      {{ form.selected_DHW1a_level }}
+                      {{ form.selected_DHW1a_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for DHW1b :</label>
+                      {{ form.selected_DHW1b }}
+                      {{ form.selected_DHW1b_Perc_1 }}
+                      {{ form.selected_DHW1b_level }}
+                      {{ form.selected_DHW1b_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for DHW1d :</label>
+                      {{ form.selected_DHW1d }}
+                      {{ form.selected_DHW1d_Perc_1 }}
+                      {{ form.selected_DHW1d_level }}
+                      {{ form.selected_DHW1d_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for DHW2b :</label>
+                      {{ form.selected_DHW2b }}
+                      {{ form.selected_DHW2b_Perc_1 }}
+                      {{ form.selected_DHW2b_level }}
+                      {{ form.selected_DHW2b_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for DHW3 :</label>
+                      {{ form.selected_DHW3 }}
+                      {{ form.selected_DHW3_Perc_1 }}
+                      {{ form.selected_DHW3_level }}
+                      {{ form.selected_DHW3_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for C :</label>
+                      {{ form.selected_C }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for C1a :</label>
+                      {{ form.selected_C1a }}
+                      {{ form.selected_C1a_Perc_1 }}
+                      {{ form.selected_C1a_level }}
+                      {{ form.selected_C1a_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for C1b :</label>
+                      {{ form.selected_C1b }}
+                      {{ form.selected_C1b_Perc_1 }}
+                      {{ form.selected_C1b_level }}
+                      {{ form.selected_C1b_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for C1c :</label>
+                      {{ form.selected_C1c }}
+                      {{ form.selected_C1c_Perc_1 }}
+                      {{ form.selected_C1c_level }}
+                      {{ form.selected_C1c_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for C1d :</label>
+                      {{ form.selected_C1d }}
+                      {{ form.selected_C1d_Perc_1 }}
+                      {{ form.selected_C1d_level }}
+                      {{ form.selected_C1d_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for C1f :</label>
+                      {{ form.selected_C1f }}
+                      {{ form.selected_C1f_Perc_1 }}
+                      {{ form.selected_C1f_level }}
+                      {{ form.selected_C1f_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for C1g :</label>
+                      {{ form.selected_C1g }}
+                      {{ form.selected_C1g_Perc_1 }}
+                      {{ form.selected_C1g_level }}
+                      {{ form.selected_C1g_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for C2a :</label>
+                      {{ form.selected_C2a }}
+                      {{ form.selected_C2a_Perc_1 }}
+                      {{ form.selected_C2a_level }}
+                      {{ form.selected_C2a_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for C2b :</label>
+                      {{ form.selected_C2b }}
+                      {{ form.selected_C2b_Perc_1 }}
+                      {{ form.selected_C2b_level }}
+                      {{ form.selected_C2b_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for C3 :</label>
+                      {{ form.selected_C3 }}
+                      {{ form.selected_C3_Perc_1 }}
+                      {{ form.selected_C3_level }}
+                      {{ form.selected_C3_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for C4 :</label>
+                      {{ form.selected_C4 }}
+                      {{ form.selected_C4_Perc_1 }}
+                      {{ form.selected_C4_level }}
+                      {{ form.selected_C4_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for V :</label>
+                      {{ form.selected_V }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for V1a :</label>
+                      {{ form.selected_V1a }}
+                      {{ form.selected_V1a_Perc_1 }}
+                      {{ form.selected_V1a_level }}
+                      {{ form.selected_V1a_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for V1c :</label>
+                      {{ form.selected_V1c }}
+                      {{ form.selected_V1c_Perc_1 }}
+                      {{ form.selected_V1c_level }}
+                      {{ form.selected_V1c_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for V2c :</label>
+                      {{ form.selected_V2c }}
+                      {{ form.selected_V2c_Perc_1 }}
+                      {{ form.selected_V2c_level }}
+                      {{ form.selected_V2c_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for V2d :</label>
+                      {{ form.selected_V2d }}
+                      {{ form.selected_V2d_Perc_1 }}
+                      {{ form.selected_V2d_level }}
+                      {{ form.selected_V2d_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for V3 :</label>
+                      {{ form.selected_V3 }}
+                      {{ form.selected_V3_Perc_1 }}
+                      {{ form.selected_V3_level }}
+                      {{ form.selected_V3_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for V6 :</label>
+                      {{ form.selected_V6 }}
+                      {{ form.selected_V6_Perc_1 }}
+                      {{ form.selected_V6_level }}
+                      {{ form.selected_V6_Perc2_level }}
+                    </div>
+
+                   <div class="fieldWrapper">
+                    <label >user selection for L :</label>
+                      {{ form.selected_L }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for L1a :</label>
+                      {{ form.selected_L1a }}
+                      {{ form.selected_L1a_Perc_1 }}
+                      {{ form.selected_L1a_level }}
+                      {{ form.selected_L1a_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for L2 :</label>
+                      {{ form.selected_L2 }}
+                      {{ form.selected_L2_Perc_1 }}
+                      {{ form.selected_L2_level }}
+                      {{ form.selected_L2_Perc2_level }}
+                    </div>
+
+
+                    <div class="fieldWrapper">
+                    <label >user selection for DE :</label>
+                      {{ form.selected_DE }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for DE1 :</label>
+                      {{ form.selected_DE1 }}
+                      {{ form.selected_DE1_Perc_1 }}
+                      {{ form.selected_DE1_level }}
+                      {{ form.selected_DE1_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for DE2 :</label>
+                      {{ form.selected_DE2 }}
+                      {{ form.selected_DE2_Perc_1 }}
+                      {{ form.selected_DE2_level }}
+                      {{ form.selected_DE2_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for DE4 :</label>
+                      {{ form.selected_DE4 }}
+                      {{ form.selected_DE4_Perc_1 }}
+                      {{ form.selected_DE4_level }}
+                      {{ form.selected_DE4_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for E :</label>
+                      {{ form.selected_E }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for E2 :</label>
+                      {{ form.selected_E2 }}
+                      {{ form.selected_E2_Perc_1 }}
+                      {{ form.selected_E2_level }}
+                      {{ form.selected_E2_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for E3 :</label>
+                      {{ form.selected_E3 }}
+                      {{ form.selected_E3_Perc_1 }}
+                      {{ form.selected_E3_level }}
+                      {{ form.selected_E3_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for E4 :</label>
+                      {{ form.selected_E4 }}
+                      {{ form.selected_E4_Perc_1 }}
+                      {{ form.selected_E4_level }}
+                      {{ form.selected_E4_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for E5 :</label>
+                      {{ form.selected_E5 }}
+                      {{ form.selected_E5_Perc_1 }}
+                      {{ form.selected_E5_level }}
+                      {{ form.selected_E5_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for E8 :</label>
+                      {{ form.selected_E8 }}
+                      {{ form.selected_E8_Perc_1 }}
+                      {{ form.selected_E8_level }}
+                      {{ form.selected_E8_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for E11 :</label>
+                      {{ form.selected_E11 }}
+                      {{ form.selected_E11_Perc_1 }}
+                      {{ form.selected_E11_level }}
+                      {{ form.selected_E11_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for E12 :</label>
+                      {{ form.selected_E12 }}
+                      {{ form.selected_E12_Perc_1 }}
+                      {{ form.selected_E12_level }}
+                      {{ form.selected_E12_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for Ev :</label>
+                      {{ form.selected_EV }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for EV15 :</label>
+                      {{ form.selected_EV15 }}
+                      {{ form.selected_EV15_Perc_1 }}
+                      {{ form.selected_EV15_level }}
+                      {{ form.selected_EV15_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for EV16 :</label>
+                      {{ form.selected_EV16 }}
+                      {{ form.selected_EV16_Perc_1 }}
+                      {{ form.selected_EV16_level }}
+                      {{ form.selected_EV16_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for EV17 :</label>
+                      {{ form.selected_EV17 }}
+                      {{ form.selected_EV17_Perc_1 }}
+                      {{ form.selected_EV17_level }}
+                      {{ form.selected_EV17_Perc2_level }}
+                    </div>
+
+<div class="fieldWrapper">
+                    <label >user selection for MC :</label>
+                      {{ form.selected_MC }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for MC3 :</label>
+                      {{ form.selected_MC3 }}
+                      {{ form.selected_MC3_Perc_1 }}
+                      {{ form.selected_MC3_level }}
+                      {{ form.selected_MC3_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for MC4 :</label>
+                      {{ form.selected_MC4 }}
+                      {{ form.selected_MC4_Perc_1 }}
+                      {{ form.selected_MC4_level }}
+                      {{ form.selected_MC4_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for MC9 :</label>
+                      {{ form.selected_MC9 }}
+                      {{ form.selected_MC9_Perc_1 }}
+                      {{ form.selected_MC9_level }}
+                      {{ form.selected_MC9_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for MC13 :</label>
+                      {{ form.selected_MC13 }}
+                      {{ form.selected_MC13_Perc_1 }}
+                      {{ form.selected_MC13_level }}
+                      {{ form.selected_MC13_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for MC25 :</label>
+                      {{ form.selected_MC25 }}
+                      {{ form.selected_MC25_Perc_1 }}
+                      {{ form.selected_MC25_level }}
+                      {{ form.selected_MC25_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for MC28 :</label>
+                      {{ form.selected_MC28 }}
+                      {{ form.selected_MC28_Perc_1 }}
+                      {{ form.selected_MC28_level }}
+                      {{ form.selected_MC28_Perc2_level }}
+                    </div>
+                    <div class="fieldWrapper">
+                    <label >user selection for MC29 :</label>
+                      {{ form.selected_MC29 }}
+                      {{ form.selected_MC29_Perc_1 }}
+                      {{ form.selected_MC29_level }}
+                      {{ form.selected_MC29_Perc2_level }}
+                    </div>
+
+                    <div class="fieldWrapper">
+                    <label >user selection for MC30 :</label>
+                      {{ form.selected_MC30 }}
+                      {{ form.selected_MC30_Perc_1 }}
+                      {{ form.selected_MC30_level }}
+                      {{ form.selected_MC30_Perc2_level }}
+                    </div>
+
                 <input type="submit" value="Submit">
             </form>
         </div>
