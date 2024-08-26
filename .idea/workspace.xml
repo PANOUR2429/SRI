@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="ADD BOOTSTRAP">
-      <change afterPath="$PROJECT_DIR$/SRIsite/SRIapp/migrations/0019_alter_userselections_selected_c_and_more.py" afterDir="false" />
+    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="ADD collapse">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_page1.html" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_page1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,7 +339,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723413956064</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="ADD collapse">
+      <option name="closed" value="true" />
+      <created>1723417479907</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1723417479907</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,6 +375,7 @@
     <MESSAGE value="percentage added" />
     <MESSAGE value="percentage added in calculation" />
     <MESSAGE value="ADD BOOTSTRAP" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD BOOTSTRAP" />
+    <MESSAGE value="ADD collapse" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD collapse" />
   </component>
 </project>
