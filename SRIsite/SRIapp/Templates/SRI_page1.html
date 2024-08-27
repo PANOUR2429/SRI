@@ -2,27 +2,26 @@
 <html lang="en">
 
 <style>
-select {
-  width: 100%;
-  padding: 16px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: #f1f1f1;
-}
+
 </style>
+
 <head>
      <title>SRIapp</title>
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
 
 </head>
 <body>
+
 <div class="container">
       <div class="row justify-content-center">
         <div class="col-8">
             <p></p>
-            <a href="SRI_result/">test</a>
+            <!-- <a href="SRI_result/">test</a>-->
             <p></p>
             <form action="/" method="post" novalidate>
                 {% csrf_token %}
@@ -36,95 +35,130 @@ select {
 
 
                     <div class="fieldWrapper">
-                    <label >user selection for possible building types:</label>
+                    <label >Building type :</label>
                       {{ form.selected_building_type }}
                     </div>
+
                     <div class="fieldWrapper">
-                    <label >user selection for possible building zones:</label>
+                    <label >Building zone:</label>
                       {{ form.selected_zone }}
                     </div>
+
 
                  <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH" >
                     <label >H (Heating):</label>
                       {{ form.selected_H }}
                  </div>
 
-                <div id="collapseH" class="collapse">
-                   <div class="card card-body">
-                    <div class="fieldWrapper">
-                    <label >H1a (Heat emission control):</label>
-                      {{ form.selected_H1a }}
-                      <p>{{ form.selected_H1a_Perc_1 }}</p>
-                      <p>{{ form.selected_H1a_level }}</p>
-                      <p>{{ form.selected_H1a_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
+                <div id="collapseH" class="collapse" style='opacity:0.8; border-color:black; width: 800px;' >
+                    <div class="card card-body">
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH1a">
+                            <label >H1a (Heat emission control):</label>
+                            {{ form.selected_H1a }}
+                         </div>
+
+                       <div id="collapseH1a" class="collapse">
+                            <p>{{ form.selected_H1a_Perc_1 }}</p>
+                            <p>{{ form.selected_H1a_level }}</p>
+                            <p>{{ form.selected_H1a_Perc2_level }}</p>
+                       </div>
+
+
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH1b">
                     <label >H1b (Emission control for TABS (heating mode)):</label>
                       {{ form.selected_H1b }}
+                    </div>
+
+                     <div id="collapseH1b" class="collapse">
                       <p>{{ form.selected_H1b_Perc_1 }}</p>
                       <p>{{ form.selected_H1b_level }}</p>
                       <p>{{ form.selected_H1b_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
-                    <label >H1c (Control of distribution fluid temperature (supply or return air flow or water flow) - Similar function can be applied to the control of direct electric heating networks):</label>
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH1c">
+                    <label >H1c (Control of distribution fluid temperature (supply or return air flow or water flow):</label>
                       {{ form.selected_H1c }}
+                    </div>
+
+                     <div id="collapseH1c" class="collapse">
                       <p>{{ form.selected_H1c_Perc_1 }}</p>
                       <p>{{ form.selected_H1c_level }}</p>
                       <p>{{ form.selected_H1c_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
+                    <div class="fieldWrapper " data-bs-toggle="collapse" data-bs-target="#collapseH1d">
                     <label >H1d (Control of distribution pumps in networks):</label>
                       {{ form.selected_H1d }}
+                    </div>
+
+                    <div id="collapseH1d" class="collapse">
                       <p>{{ form.selected_H1d_Perc_1 }}</p>
                       <p>{{ form.selected_H1d_level }}</p>
                       <p>{{ form.selected_H1d_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH1f">
                     <label >H1f (Thermal Energy Storage (TES) for building heating (excluding TABS)):</label>
                       {{ form.selected_H1f }}
+                    </div>
+
+                    <div id="collapseH1f" class="collapse">
                       <p>{{ form.selected_H1f_Perc_1 }}</p>
                       <p>{{ form.selected_H1f_level }}</p>
                       <p>{{ form.selected_H1f_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH2a">
                     <label >H2a (Heat generator control (all except heat pumps)):</label>
                       {{ form.selected_H2a }}
+                    </div>
+
+                    <div id="collapseH2a" class="collapse">
                       <p>{{ form.selected_H2a_Perc_1 }}</p>
                       <p>{{ form.selected_H2a_level }}</p>
                       <p>{{ form.selected_H2a_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH2b">
                     <label >H2b (Heat generator control (for heat pumps)):</label>
                       {{ form.selected_H2b }}
+                     </div>
+
+                     <div id="collapseH2b" class="collapse">
                       <p>{{ form.selected_H2b_Perc_1 }}</p>
                       <p>{{ form.selected_H2b_level }}</p>
                       <p>{{ form.selected_H2b_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH2d">
                     <label >H2d (Sequencing in case of different heat generators):</label>
                       {{ form.selected_H2d }}
+                    </div>
+
+                     <div id="collapseH2d" class="collapse">
                       <p>{{ form.selected_H2d_Perc_1 }}</p>
                       <p>{{ form.selected_H2d_level }}</p>
                       <p>{{ form.selected_H2d_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH3">
                     <label >H3 (Report information regarding heating system performance):</label>
                       {{ form.selected_H3 }}
+                    </div>
+
+                    <div id="collapseH3" class="collapse">
                       <p>{{ form.selected_H3_Perc_1 }}</p>
                       <p>{{ form.selected_H3_level }}</p>
                       <p>{{ form.selected_H3_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH4">
                     <label >H4 (Flexibility and grid interaction):</label>
                       {{ form.selected_H4 }}
+                    </div>
+
+                     <div id="collapseH4" class="collapse">
                       <p>{{ form.selected_H4_Perc_1 }}</p>
                       <p>{{ form.selected_H4_level }}</p>
                       <p>{{ form.selected_H4_Perc2_level }}</p>
@@ -132,47 +166,66 @@ select {
                 </div>
             </div>
 
-                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW">
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW" >
                     <label >DHW (Domestic Hot Water) :</label>
                       {{ form.selected_DHW }}
                     </div>
 
-                <div id="collapseDHW" class="collapse">
+                <div id="collapseDHW" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
                     <div class="card card-body">
-                    <div class="fieldWrapper">
-                    <label >DHW1a (Control of DHW storage charging (with direct electric heating or integrated electric heat pump)):</label>
-                      {{ form.selected_DHW1a }}
-                      <p>{{ form.selected_DHW1a_Perc_1 }}</p>
-                      <p>{{ form.selected_DHW1a_level }}</p>
-                      <p>{{ form.selected_DHW1a_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >DHW1b (Control of DHW storage charging (using hot water generation)):</label>
-                      {{ form.selected_DHW1b }}
-                      <p>{{ form.selected_DHW1b_Perc_1 }}</p>
-                      <p>{{ form.selected_DHW1b_level }}</p>
-                      <p>{{ form.selected_DHW1b_Perc2_level }}</p>
+
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW1a">
+                         <label >DHW1a (Control of DHW storage charging (with direct electric heating or integrated electric heat pump)):</label>
+                         {{ form.selected_DHW1a }}
+                         </div>
+
+                        <div id="collapseDHW1a" class="collapse">
+                            <p>{{ form.selected_DHW1a_Perc_1 }}</p>
+                            <p>{{ form.selected_DHW1a_level }}</p>
+                            <p>{{ form.selected_DHW1a_Perc2_level }}</p>
+                        </div>
+
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW1b">
+                            <label >DHW1b (Control of DHW storage charging (using hot water generation)):</label>
+                            {{ form.selected_DHW1b }}
+                        </div>
+
+                        <div id="collapseDHW1b" class="collapse">
+                            <p>{{ form.selected_DHW1b_Perc_1 }}</p>
+                            <p>{{ form.selected_DHW1b_level }}</p>
+                            <p>{{ form.selected_DHW1b_Perc2_level }}</p>
+                        </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW1d">
+                            <label >DHW1d (Control of DHW storage charging (with solar collector and supplymentary heat generation)):</label>
+                             {{ form.selected_DHW1d }}
+                        </div>
+
+                        <div id="collapseDHW1d" class="collapse">
+                            <p>{{ form.selected_DHW1d_Perc_1 }}</p>
+                            <p>{{ form.selected_DHW1d_level }}</p>
+                            <p>{{ form.selected_DHW1d_Perc2_level }}</p>
+                        </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW2b">
+                            <label >DHW2b (Sequencing in case of different DHW generators):</label>
+                            {{ form.selected_DHW2b }}
+                         </div>
+
+                        <div id="collapseDHW2b" class="collapse">
+                            <p>{{ form.selected_DHW2b_Perc_1 }}</p>
+                            <p>{{ form.selected_DHW2b_level }}</p>
+                            <p>{{ form.selected_DHW2b_Perc2_level }}</p>
+                        </div>
+
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW3">
+                        <label >DHW3 (Report information regarding domestic hot water performance):</label>
+                        {{ form.selected_DHW3 }}
                     </div>
 
-                    <div class="fieldWrapper">
-                    <label >DHW1d (Control of DHW storage charging (with solar collector and supplymentary heat generation)):</label>
-                      {{ form.selected_DHW1d }}
-                      <p>{{ form.selected_DHW1d_Perc_1 }}</p>
-                      <p>{{ form.selected_DHW1d_level }}</p>
-                      <p>{{ form.selected_DHW1d_Perc2_level }}</p>
-                    </div>
-
-                    <div class="fieldWrapper">
-                    <label >DHW2b (Sequencing in case of different DHW generators):</label>
-                      {{ form.selected_DHW2b }}
-                      <p>{{ form.selected_DHW2b_Perc_1 }}</p>
-                      <p>{{ form.selected_DHW2b_level }}</p>
-                      <p>{{ form.selected_DHW2b_Perc2_level }}</p>
-                    </div>
-
-                    <div class="fieldWrapper">
-                    <label >DHW3 (Report information regarding domestic hot water performance):</label>
-                      {{ form.selected_DHW3 }}
+                    <div id="collapseDHW3" class="collapse">
                       <p>{{ form.selected_DHW3_Perc_1 }}</p>
                       <p>{{ form.selected_DHW3_level }}</p>
                       <p>{{ form.selected_DHW3_Perc2_level }}</p>
@@ -185,82 +238,115 @@ select {
                       {{ form.selected_C }}
                     </div>
 
-                <div id="collapseC" class="collapse">
+                    <div id="collapseC" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
                     <div class="card card-body">
-                    <div class="fieldWrapper">
-                    <label >C1a (Cooling emission control):</label>
-                      {{ form.selected_C1a }}
-                      <p>{{ form.selected_C1a_Perc_1 }}</p>
-                      <p>{{ form.selected_C1a_level }}</p>
-                      <p>{{ form.selected_C1a_Perc2_level }}</p>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1a">
+                             <label >C1a (Cooling emission control):</label>
+                             {{ form.selected_C1a }}
+                        </div>
+
+                        <div id="collapseC1a" class="collapse">
+                            <p>{{ form.selected_C1a_Perc_1 }}</p>
+                            <p>{{ form.selected_C1a_level }}</p>
+                            <p>{{ form.selected_C1a_Perc2_level }}</p>
+                        </div>
+
+
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1b">
+                            <label >C1b (Emission control for TABS (cooling mode)):</label>
+                             {{ form.selected_C1b }}
                     </div>
-                    <div class="fieldWrapper">
-                    <label >C1b (Emission control for TABS (cooling mode)):</label>
-                      {{ form.selected_C1b }}
+
+                    <div id="collapseC1b" class="collapse">
                       <p>{{ form.selected_C1b_Perc_1 }}</p>
                       <p>{{ form.selected_C1b_level }}</p>
                       <p>{{ form.selected_C1b_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
-                    <label >C1c (Control of distribution network chilled water temperature (supply or return)):</label>
-                      {{ form.selected_C1c }}
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1c">
+                        <label >C1c (Control of distribution network chilled water temperature (supply or return)):</label>
+                        {{ form.selected_C1c }}
+                    </div>
+
+                    <div id="collapseC1c" class="collapse">
                       <p>{{ form.selected_C1c_Perc_1 }}</p>
                       <p>{{ form.selected_C1c_level }}</p>
                       <p>{{ form.selected_C1c_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
-                    <label >C1d (Control of distribution pumps in networks):</label>
-                      {{ form.selected_C1d }}
+                    <div class="fieldWrapper"data-bs-toggle="collapse" data-bs-target="#collapseC1d">
+                            <label >C1d (Control of distribution pumps in networks):</label>
+                            {{ form.selected_C1d }}
+                    </div>
+
+                    <div id="collapseC1d" class="collapse">
                       <p>{{ form.selected_C1d_Perc_1 }}</p>
                       <p>{{ form.selected_C1d_level }}</p>
                       <p>{{ form.selected_C1d_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
-                    <label >C1f (Interlock: avoiding simultaneous heating and cooling in the same room):</label>
-                      {{ form.selected_C1f }}
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1f">
+                            <label >C1f (Interlock: avoiding simultaneous heating and cooling in the same room):</label>
+                            {{ form.selected_C1f }}
+                    </div>
+
+                     <div id="collapseC1f" class="collapse">
                       <p>{{ form.selected_C1f_Perc_1 }}</p>
                       <p>{{ form.selected_C1f_level }}</p>
                       <p>{{ form.selected_C1f_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
-                    <label >C1g (Control of Thermal Energy Storage (TES) operation):</label>
-                      {{ form.selected_C1g }}
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1g">
+                            <label >C1g (Control of Thermal Energy Storage (TES) operation):</label>
+                             {{ form.selected_C1g }}
+                    </div>
+
+                    <div id="collapseC1g" class="collapse">
                       <p>{{ form.selected_C1g_Perc_1 }}</p>
                       <p>{{ form.selected_C1g_level }}</p>
                       <p>{{ form.selected_C1g_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
-                    <label >C2a (Generator control for cooling):</label>
-                      {{ form.selected_C2a }}
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC2a">
+                            <label >C2a (Generator control for cooling):</label>
+                             {{ form.selected_C2a }}
+                    </div>
+
+                    <div id="collapseC2a" class="collapse">
                       <p>{{ form.selected_C2a_Perc_1 }}</p>
                       <p>{{ form.selected_C2a_level }}</p>
                       <p>{{ form.selected_C2a_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
-                    <label >C2b (Sequencing of different cooling generators):</label>
-                      {{ form.selected_C2b }}
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC2b">
+                            <label >C2b (Sequencing of different cooling generators):</label>
+                            {{ form.selected_C2b
+                    </div>
+
+                    <div id="collapseC2b" class="collapse">
                       <p>{{ form.selected_C2b_Perc_1 }}</p>
                       <p>{{ form.selected_C2b_level }}</p>
                       <p>{{ form.selected_C2b_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
-                    <label >C3 (Report information regarding cooling system performance):</label>
-                      {{ form.selected_C3 }}
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC3">
+                            <label >C3 (Report information regarding cooling system performance):</label>
+                            {{ form.selected_C3 }}
+                    </div>
+
+                    <div id="collapseC3" class="collapse">
                       <p>{{ form.selected_C3_Perc_1 }}</p>
                       <p>{{ form.selected_C3_level }}</p>
                       <p>{{ form.selected_C3_Perc2_level }}</p>
                     </div>
 
-                    <div class="fieldWrapper">
-                    <label >C4 (Flexibility and grid interaction):</label>
-                      {{ form.selected_C4 }}
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC4">
+                            <label >C4 (Flexibility and grid interaction):</label>
+                            {{ form.selected_C4 }}
+                    </div>
+
+                    <div id="collapseC4" class="collapse">
                       <p>{{ form.selected_C4_Perc_1 }}</p>
                       <p>{{ form.selected_C4_level }}</p>
                       <p>{{ form.selected_C4_Perc2_level }}</p>
@@ -268,271 +354,387 @@ select {
                 </div>
                 </div>
 
-                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV">
+                <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV" >
                     <label >V (Ventilation) :</label>
                       {{ form.selected_V }}
-                    </div>
-
-                <div id="collapseV" class="collapse">
-                    <div class="card card-body">
-                    <div class="fieldWrapper">
-                    <label >V1a (Supply air flow control at the room level):</label>
-                      {{ form.selected_V1a }}
-                      <p>{{ form.selected_V1a_Perc_1 }}</p>
-                      <p>{{ form.selected_V1a_level }}</p>
-                      <p>{{ form.selected_V1a_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >V1c (Air flow or pressure control at the air handler level):</label>
-                      {{ form.selected_V1c }}
-                      <p>{{ form.selected_V1c_Perc_1 }}</p>
-                      <p>{{ form.selected_V1c_level }}</p>
-                      <p>{{ form.selected_V1c_Perc2_level }}</p>
-                    </div>
-
-                    <div class="fieldWrapper">
-                    <label >V2c (Heat recovery control: prevention of overheating):</label>
-                      {{ form.selected_V2c }}
-                      <p>{{ form.selected_V2c_Perc_1 }}</p>
-                      <p>{{ form.selected_V2c_level }}</p>
-                      <p>{{ form.selected_V2c_Perc2_level }}</p>
-                    </div>
-
-                    <div class="fieldWrapper">
-                    <label >V2d (Supply air temperature control at the air handling unit level):</label>
-                      {{ form.selected_V2d }}
-                      <p>{{ form.selected_V2d_Perc_1 }}</p>
-                      <p>{{ form.selected_V2d_level }}</p>
-                      <p>{{ form.selected_V2d_Perc2_level }}</p>
-                    </div>
-
-                    <div class="fieldWrapper">
-                    <label >V3 (Free cooling with mechanical ventilation system):</label>
-                      {{ form.selected_V3 }}
-                      <p>{{ form.selected_V3_Perc_1 }}</p>
-                      <p>{{ form.selected_V3_level }}</p>
-                      <p>{{ form.selected_V3_Perc2_level }}</p>
-                    </div>
-
-                    <div class="fieldWrapper">
-                    <label >V6 (Reporting information regarding IAQ):</label>
-                      {{ form.selected_V6 }}
-                      <p>{{ form.selected_V6_Perc_1 }}</p>
-                      <p>{{ form.selected_V6_level }}</p>
-                      <p>{{ form.selected_V6_Perc2_level }}</p>
-                    </div>
-                </div>
                 </div>
 
-                   <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseL">
+                <div id="collapseV" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
+                     <div class="card card-body">
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV1a">
+                            <label >V1a (Supply air flow control at the room level):</label>
+                            {{ form.selected_V1a }}
+                        </div>
+
+                        <div id="collapseV1a" class="collapse" >
+                            <p>{{ form.selected_V1a_Perc_1 }}</p>
+                            <p>{{ form.selected_V1a_level }}</p>
+                            <p>{{ form.selected_V1a_Perc2_level }}</p>
+                        </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV1c">
+                            <label >V1c (Air flow or pressure control at the air handler level):</label>
+                            {{ form.selected_V1c }}
+                        </div>
+
+                        <div id="collapseV1c" class="collapse" >
+                            <p>{{ form.selected_V1c_Perc_1 }}</p>
+                            <p>{{ form.selected_V1c_level }}</p>
+                            <p>{{ form.selected_V1c_Perc2_level }}</p>
+                        </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV2c">
+                            <label >V2c (Heat recovery control: prevention of overheating):</label>
+                            {{ form.selected_V2c }}
+                        </div>
+
+                        <div id="collapseV2c" class="collapse" >
+                            <p>{{ form.selected_V2c_Perc_1 }}</p>
+                            <p>{{ form.selected_V2c_level }}</p>
+                            <p>{{ form.selected_V2c_Perc2_level }}</p>
+                        </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV2d">
+                            <label >V2d (Supply air temperature control at the air handling unit level):</label>
+                             {{ form.selected_V2d }}
+                        </div>
+
+                        <div id="collapseV2d" class="collapse" >
+                             <p>{{ form.selected_V2d_Perc_1 }}</p>
+                             <p>{{ form.selected_V2d_level }}</p>
+                             <p>{{ form.selected_V2d_Perc2_level }}</p>
+                         </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV3">
+                          <label >V3 (Free cooling with mechanical ventilation system):</label>
+                          {{ form.selected_V3 }}
+                        </div>
+
+                        <div id="collapseV3" class="collapse" >
+                             <p>{{ form.selected_V3_Perc_1 }}</p>
+                             <p>{{ form.selected_V3_level }}</p>
+                             <p>{{ form.selected_V3_Perc2_level }}</p>
+                        </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV6">
+                            <label >V6 (Reporting information regarding IAQ):</label>
+                             {{ form.selected_V6 }}
+                        </div>
+
+                        <div id="collapseV6" class="collapse" >
+                            <p>{{ form.selected_V6_Perc_1 }}</p>
+                            <p>{{ form.selected_V6_level }}</p>
+                            <p>{{ form.selected_V6_Perc2_level }}</p>
+                        </div>
+
+                     </div>
+                </div>
+
+                <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseL">
                     <label >L (Lighting) :</label>
                       {{ form.selected_L }}
+                </div>
+
+                <div id="collapseL" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
+                <div class="card card-body">
+
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseL1a">
+                            <label >L1a (Occupancy control for indoor lighting):</label>
+                             {{ form.selected_L1a }}
                     </div>
 
-                <div id="collapseL" class="collapse">
-                    <div class="card card-body">
-                    <div class="fieldWrapper">
-                    <label >L1a (Occupancy control for indoor lighting):</label>
-                      {{ form.selected_L1a }}
-                      <p>{{ form.selected_L1a_Perc_1 }}</p>
-                      <p>{{ form.selected_L1a_level }}</p>
-                      <p>{{ form.selected_L1a_Perc2_level }}</p>
+                    <div id="collapseL1a" class="collapse">
+                        <p>{{ form.selected_L1a_Perc_1 }}</p>
+                        <p>{{ form.selected_L1a_level }}</p>
+                         <p>{{ form.selected_L1a_Perc2_level }}</p>
                     </div>
-                    <div class="fieldWrapper">
-                    <label >L2 (Control artificial lighting power based on daylight levels):</label>
-                      {{ form.selected_L2 }}
-                      <p>{{ form.selected_L2_Perc_1 }}</p>
-                      <p>{{ form.selected_L2_level }}</p>
-                      <p>{{ form.selected_L2_Perc2_level }}</p>
+
+                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseL2">
+                            <label >L2 (Control artificial lighting power based on daylight levels):</label>
+                            {{ form.selected_L2 }}
+                    </div>
+
+                    <div id="collapseL2" class="collapse">
+                         <p>{{ form.selected_L2_Perc_1 }}</p>
+                         <p>{{ form.selected_L2_level }}</p>
+                        <p>{{ form.selected_L2_Perc2_level }}</p>
                     </div>
                 </div>
                 </div>
 
-                    <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseDE">
+                <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseDE">
                     <label >DE (Dynamic Building Envelope) :</label>
                       {{ form.selected_DE }}
-                    </div>
+                </div>
 
-                <div id="collapseDE" class="collapse">
+                <div id="collapseDE" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
                     <div class="card card-body">
-                    <div class="fieldWrapper">
-                    <label >DE1 (Window solar shading control):</label>
-                      {{ form.selected_DE1 }}
-                      <p>{{ form.selected_DE1_Perc_1 }}</p>
-                      <p>{{ form.selected_DE1_level }}</p>
-                      <p>{{ form.selected_DE1_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >DE2 (Window open/closed control, combined ):</label>
-                      {{ form.selected_DE2 }}
-                      <p>{{ form.selected_DE2_Perc_1 }}</p>
-                      <p>{{ form.selected_DE2_level }}</p>
-                      <p>{{ form.selected_DE2_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >DE4 (Reporting information regarding performance of dynamic building envelope systems):</label>
-                      {{ form.selected_DE4 }}
-                      <p>{{ form.selected_DE4_Perc_1 }}</p>
-                      <p>{{ form.selected_DE4_level }}</p>
-                      <p>{{ form.selected_DE4_Perc2_level }}</p>
-                    </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDE1">
+                            <label >DE1 (Window solar shading control):</label>
+                            {{ form.selected_DE1 }}
+                        </div>
+
+                        <div id="collapseDE1" class="collapse">
+                            <p>{{ form.selected_DE1_Perc_1 }}</p>
+                            <p>{{ form.selected_DE1_level }}</p>
+                            <p>{{ form.selected_DE1_Perc2_level }}</p>
+                        </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDE2">
+                            <label >DE2 (Window open/closed control, combined ):</label>
+                            {{ form.selected_DE2 }}
+                        </div>
+
+                        <div id="collapseDE2" class="collapse">
+                            <p>{{ form.selected_DE2_Perc_1 }}</p>
+                            <p>{{ form.selected_DE2_level }}</p>
+                            <p>{{ form.selected_DE2_Perc2_level }}</p>
+                        </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDE4">
+                             <label >DE4 (Reporting information regarding performance of dynamic building envelope systems):</label>
+                             {{ form.selected_DE4 }}
+                        </div>
+
+                        <div id="collapseDE4" class="collapse">
+                            <p>{{ form.selected_DE4_Perc_1 }}</p>
+                            <p>{{ form.selected_DE4_level }}</p>
+                            <p>{{ form.selected_DE4_Perc2_level }}</p>
+                        </div>
                    </div>
                 </div>
 
-                    <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseE">
+                <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseE">
                     <label >E (Electricity) :</label>
                       {{ form.selected_E }}
-                    </div>
+                </div>
 
-                <div id="collapseE" class="collapse">
-                     <div class="card card-body">
-                    <div class="fieldWrapper">
-                    <label >E2 (Reporting information regarding local electricity generation):</label>
-                      {{ form.selected_E2 }}
-                      <p>{{ form.selected_E2_Perc_1 }}</p>
-                      <p>{{ form.selected_E2_level }}</p>
-                      <p>{{ form.selected_E2_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >E3 (Storage of (locally generated) electricity):</label>
-                      {{ form.selected_E3 }}
-                      <p>{{ form.selected_E3_Perc_1 }}</p>
-                      <p>{{ form.selected_E3_level }}</p>
-                      <p>{{ form.selected_E3_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >E4 (Optimizing self-consumption of locally generated electricity):</label>
-                      {{ form.selected_E4 }}
-                      <p>{{ form.selected_E4_Perc_1 }}</p>
-                      <p>{{ form.selected_E4_level }}</p>
-                      <p>{{ form.selected_E4_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >E5 (Control of combined heat and power plant (CHP)):</label>
-                      {{ form.selected_E5 }}
-                      <p>{{ form.selected_E5_Perc_1 }}</p>
-                      <p>{{ form.selected_E5_level }}</p>
-                      <p>{{ form.selected_E5_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >E8 (Support of (micro)grid operation modes):</label>
-                      {{ form.selected_E8 }}
-                      <p>{{ form.selected_E8_Perc_1 }}</p>
-                      <p>{{ form.selected_E8_level }}</p>
-                      <p>{{ form.selected_E8_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >E11 (Reporting information regarding energy storage):</label>
-                      {{ form.selected_E11 }}
-                      <p>{{ form.selected_E11_Perc_1 }}</p>
-                      <p>{{ form.selected_E11_level }}</p>
-                      <p>{{ form.selected_E11_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >E12 (Reporting information regarding electricity consumption):</label>
-                      {{ form.selected_E12 }}
-                      <p>{{ form.selected_E12_Perc_1 }}</p>
-                      <p>{{ form.selected_E12_level }}</p>
-                      <p>{{ form.selected_E12_Perc2_level }}</p>
-                    </div>
+                <div id="collapseE" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
+                    <div class="card card-body">
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseE2">
+                            <label >E2 (Reporting information regarding local electricity generation):</label>
+                             {{ form.selected_E2 }}
+                        </div>
+
+                        <div id="collapseE2" class="collapse">
+                            <p>{{ form.selected_E2_Perc_1 }}</p>
+                            <p>{{ form.selected_E2_level }}</p>
+                            <p>{{ form.selected_E2_Perc2_level }}</p>
+                        </div>
+
+                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseE3">
+                            <label >E3 (Storage of (locally generated) electricity):</label>
+                              {{ form.selected_E3 }}
+                         </div>
+
+                         <div id="collapseE3" class="collapse">
+                             <p>{{ form.selected_E3_Perc_1 }}</p>
+                             <p>{{ form.selected_E3_level }}</p>
+                             <p>{{ form.selected_E3_Perc2_level }}</p>
+                         </div>
+
+                        <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseE4">
+                            <label >E4 (Optimizing self-consumption of locally generated electricity):</label>
+                            {{ form.selected_E4 }}
+                         </div>
+
+                        <div id="collapseE4" class="collapse">
+                             <p>{{ form.selected_E4_Perc_1 }}</p>
+                             <p>{{ form.selected_E4_level }}</p>
+                             <p>{{ form.selected_E4_Perc2_level }}</p>
+                        </div>
+
+
+                        <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseE5">
+                            <label >E5 (Control of combined heat and power plant (CHP)):</label>
+                            {{ form.selected_E5 }}
+                        </div>
+
+                        <div id="collapseE5" class="collapse">
+                            <p>{{ form.selected_E5_Perc_1 }}</p>
+                            <p>{{ form.selected_E5_level }}</p>
+                            <p>{{ form.selected_E5_Perc2_level }}</p>
+                         </div>
+
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseE8">
+                            <label >E8 (Support of (micro)grid operation modes):</label>
+                            {{ form.selected_E8 }}
+                        </div>
+
+                        <div id="collapseE8" class="collapse">
+                             <p>{{ form.selected_E8_Perc_1 }}</p>
+                             <p>{{ form.selected_E8_level }}</p>
+                             <p>{{ form.selected_E8_Perc2_level }}</p>
+                        </div>
+
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseE11">
+                            <label >E11 (Reporting information regarding energy storage):</label>
+                            {{ form.selected_E11 }}
+                        </div>
+
+                        <div id="collapseE11" class="collapse">
+                            <p>{{ form.selected_E11_Perc_1 }}</p>
+                            <p>{{ form.selected_E11_level }}</p>
+                            <p>{{ form.selected_E11_Perc2_level }}</p>
+                        </div>
+
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseE12">
+                            <label >E12 (Reporting information regarding electricity consumption):</label>
+                            {{ form.selected_E12 }}
+                        </div>
+
+                        <div id="collapseE12" class="collapse">
+                            <p>{{ form.selected_E12_Perc_1 }}</p>
+                            <p>{{ form.selected_E12_level }}</p>
+                            <p>{{ form.selected_E12_Perc2_level }}</p>
+                        </div>
                 </div>
                 </div>
 
-                    <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseEV">
-                    <label >EV (Electrical Vehicle Charging) :</label>
+                <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseEV">
+                       <label >EV (Electrical Vehicle Charging) :</label>
                       {{ form.selected_EV }}
-                    </div>
+                </div>
 
-                <div id="collapseEV" class="collapse">
+                <div id="collapseEV" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
                      <div class="card card-body">
-                    <div class="fieldWrapper">
-                    <label >EV15 (EV Charging Capacity):</label>
-                      {{ form.selected_EV15 }}
-                      <p>{{ form.selected_EV15_Perc_1 }}</p>
-                      <p>{{ form.selected_EV15_level }}</p>
-                      <p>{{ form.selected_EV15_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >EV16 (EV Charging Grid balancing):</label>
-                      {{ form.selected_EV16 }}
-                      <p>{{ form.selected_EV16_Perc_1 }}</p>
-                      <p>{{ form.selected_EV16_level }}</p>
-                      <p>{{ form.selected_EV16_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >EV17 (EV charging information and connectivity):</label>
-                      {{ form.selected_EV17 }}
-                      <p>{{ form.selected_EV17_Perc_1 }}</p>
-                      <p>{{ form.selected_EV17_level }}</p>
-                      <p>{{ form.selected_EV17_Perc2_level }}</p>
-                    </div>
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseEV15">
+                            <label >EV15 (EV Charging Capacity):</label>
+                            {{ form.selected_EV15 }}
+                        </div>
+
+                        <div id="collapseEV15" class="collapse">
+                            <p>{{ form.selected_EV15_Perc_1 }}</p>
+                            <p>{{ form.selected_EV15_level }}</p>
+                            <p>{{ form.selected_EV15_Perc2_level }}</p>
+                        </div>
+
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseEV16">
+                            <label >EV16 (EV Charging Grid balancing):</label>
+                            {{ form.selected_EV16 }}
+                        </div>
+
+                        <div id="collapseEV16" class="collapse">
+                            <p>{{ form.selected_EV16_Perc_1 }}</p>
+                            <p>{{ form.selected_EV16_level }}</p>
+                            <p>{{ form.selected_EV16_Perc2_level }}</p>
+                        </div>
+
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseEV17">
+                            <label >EV17 (EV charging information and connectivity):</label>
+                             {{ form.selected_EV17 }}
+                        </div>
+
+                        <div id="collapseEV17" class="collapse">
+                            <p>{{ form.selected_EV17_Perc_1 }}</p>
+                            <p>{{ form.selected_EV17_level }}</p>
+                            <p>{{ form.selected_EV17_Perc2_level }}</p>
+                        </div>
                 </div>
                 </div>
 
-                    <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseMC">
-                    <label >MC (Monitoring and Control) :</label>
+                <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseMC">
+                      <label >MC (Monitoring and Control) :</label>
                       {{ form.selected_MC }}
-                    </div>
+                </div>
 
-                <div id="collapseMC" class="collapse">
-                     <div class="card card-body">
-                    <div class="fieldWrapper">
-                    <label >MC3 (Run time management of HVAC systems):</label>
-                      {{ form.selected_MC3 }}
-                      <p>{{ form.selected_MC3_Perc_1 }}</p>
-                      <p>{{ form.selected_MC3_level }}</p>
-                      <p>{{ form.selected_MC3_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >MC4 (Detecting faults of technical building systems and providing support to the diagnosis of these faults):</label>
-                      {{ form.selected_MC4 }}
-                      <p>{{ form.selected_MC4_Perc_1 }}</p>
-                      <p>{{ form.selected_MC4_level }}</p>
-                      <p>{{ form.selected_MC4_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >MC9 (Occupancy detection: connected services):</label>
-                      {{ form.selected_MC9 }}
-                      <p>{{ form.selected_MC9_Perc_1 }}</p>
-                      <p>{{ form.selected_MC9_level }}</p>
-                      <p>{{ form.selected_MC9_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >MC13 (Central reporting of TBS performance and energy use):</label>
-                      {{ form.selected_MC13 }}
-                      <p>{{ form.selected_MC13_Perc_1 }}</p>
-                      <p>{{ form.selected_MC13_level }}</p>
-                      <p>{{ form.selected_MC13_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >MC25 (Smart Grid Integration):</label>
-                      {{ form.selected_MC25 }}
-                      <p>{{ form.selected_MC25_Perc_1 }}</p>
-                      <p>{{ form.selected_MC25_level }}</p>
-                      <p>{{ form.selected_MC25_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >MC28 (Reporting information regarding demand side management performance and operation):</label>
-                      {{ form.selected_MC28 }}
-                      <p>{{ form.selected_MC28_Perc_1 }}</p>
-                      <p>{{ form.selected_MC28_level }}</p>
-                      <p>{{ form.selected_MC28_Perc2_level }}</p>
-                    </div>
-                    <div class="fieldWrapper">
-                    <label >MC29 (Override of DSM control):</label>
-                      {{ form.selected_MC29 }}
-                      <p>{{ form.selected_MC29_Perc_1 }}</p>
-                      <p>{{ form.selected_MC29_level }}</p>
-                      <p>{{ form.selected_MC29_Perc2_level }}</p>
-                    </div>
+                <div id="collapseMC" class="collapse" style='opacity:0.8; border-color:black; width: 1100px;'>
+                    <div class="card card-body">
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC3">
+                            <label >MC3 (Run time management of HVAC systems):</label>
+                            {{ form.selected_MC3 }}
+                        </div>
 
-                    <div class="fieldWrapper">
-                    <label >MC30 (Single platform that allows automated control & coordination between TBS + optimization of energy flow based on occupancy, weather and grid signals):</label>
-                      {{ form.selected_MC30 }}
-                      <p>{{ form.selected_MC30_Perc_1 }}</p>
-                      <p>{{ form.selected_MC30_level }}</p>
-                      <p>{{ form.selected_MC30_Perc2_level }}</p>
-                    </div>
+                         <div id="collapseMC3" class="collapse">
+                             <p>{{ form.selected_MC3_Perc_1 }}</p>
+                             <p>{{ form.selected_MC3_level }}</p>
+                             <p>{{ form.selected_MC3_Perc2_level }}</p>
+                         </div>
+
+                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC4">
+                            <label >MC4 (Detecting faults of technical building systems and providing support to the diagnosis of these faults):</label>
+                            {{ form.selected_MC4 }}
+                         </div>
+
+                         <div id="collapseMC4" class="collapse" >
+                             <p>{{ form.selected_MC4_Perc_1 }}</p>
+                             <p>{{ form.selected_MC4_level }}</p>
+                             <p>{{ form.selected_MC4_Perc2_level }}</p>
+                         </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC9">
+                            <label >MC9 (Occupancy detection: connected services):</label>
+                            {{ form.selected_MC9 }}
+                        </div>
+
+                        <div id="collapseMC9" class="collapse" >
+                            <p>{{ form.selected_MC9_Perc_1 }}</p>
+                            <p>{{ form.selected_MC9_level }}</p>
+                            <p>{{ form.selected_MC9_Perc2_level }}</p>
+                        </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC13">
+                            <label >MC13 (Central reporting of TBS performance and energy use):</label>
+                            {{ form.selected_MC13 }}
+                        </div>
+
+                        <div id="collapseMC13" class="collapse" >
+                            <p>{{ form.selected_MC13_Perc_1 }}</p>
+                            <p>{{ form.selected_MC13_level }}</p>
+                            <p>{{ form.selected_MC13_Perc2_level }}</p>
+                        </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC25">
+                            <label >MC25 (Smart Grid Integration):</label>
+                            {{ form.selected_MC25 }}
+                        </div>
+
+                        <div id="collapseMC25" class="collapse" >
+                            <p>{{ form.selected_MC25_Perc_1 }}</p>
+                            <p>{{ form.selected_MC25_level }}</p>
+                            <p>{{ form.selected_MC25_Perc2_level }}</p>
+                        </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC28">
+                            <label >MC28 (Reporting information regarding demand side management performance and operation):</label>
+                            {{ form.selected_MC28 }}
+                        </div>
+
+                        <div id="collapseMC28" class="collapse" >
+                            <p>{{ form.selected_MC28_Perc_1 }}</p>
+                            <p>{{ form.selected_MC28_level }}</p>
+                            <p>{{ form.selected_MC28_Perc2_level }}</p>
+                        </div>
+
+                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC29">
+                            <label >MC29 (Override of DSM control):</label>
+                            {{ form.selected_MC29 }}
+                         </div>
+
+                        <div id="collapseMC29" class="collapse" >
+                            <p>{{ form.selected_MC29_Perc_1 }}</p>
+                            <p>{{ form.selected_MC29_level }}</p>
+                            <p>{{ form.selected_MC29_Perc2_level }}</p>
+                         </div>
+
+                        <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC30">
+                            <label >MC30 (Single platform for automated control & coordination between TBS + energy flow optimization based on occupancy, weather and grid):</label>
+                            {{ form.selected_MC30 }}
+                        </div>
+
+                        <div id="collapseMC30" class="collapse" >
+                            <p>{{ form.selected_MC30_Perc_1 }}</p>
+                            <p>{{ form.selected_MC30_level }}</p>
+                            <p>{{ form.selected_MC30_Perc2_level }}</p>
+                        </div>
                 </div>
                 </div>
 

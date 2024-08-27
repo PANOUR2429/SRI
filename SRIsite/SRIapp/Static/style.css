@@ -1,0 +1,32 @@
+body {
+     background-image: url("Images/SRIBanner.jpg") ;
+      /* The image used */
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+#id_selected_building_type {
+width: 180px;
+padding: 5px 5px;
+border: none;
+border-radius: 2px;
+opacity: 0.8;
+}
+
+#id_selected_zone {
+width: 180px;
+padding: 5px 5px;
+border: none;
+border-radius: 2px;
+opacity: 0.8;
+}
+
+
+
