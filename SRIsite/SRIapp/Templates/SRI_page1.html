@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container" style="float:left;">
       <div class="row justify-content-center">
         <div class="col-8">
             <p></p>
@@ -59,11 +59,31 @@
                          </div>
 
                        <div id="collapseH1a" class="collapse">
-                            <p>{{ form.selected_H1a_Perc_1 }}</p>
+
+
+                            <p >{{ form.selected_H1a_Perc_1 }}</p>
                             <p>{{ form.selected_H1a_level }}</p>
-                            <p>{{ form.selected_H1a_Perc2_level }}</p>
+                            <p >{{ form.selected_H1a_Perc2_level }}</p>
+
                        </div>
 
+                                                    <script>
+                                                        const element = document.getElementById("id_selected_H1a_Perc_1");
+                                                        element.addEventListener("change", myFunction);
+
+
+                                                        function myFunction() {
+                                                          var x = document.getElementById("id_selected_H1a_Perc_1");
+                                                          var y = document.getElementById("id_selected_H1a_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
 
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH1b">
                     <label >H1b (Emission control for TABS (heating mode)):</label>
@@ -76,6 +96,24 @@
                       <p>{{ form.selected_H1b_Perc2_level }}</p>
                     </div>
 
+                                                    <script>
+                                                        document.getElementById("id_selected_H1b_Perc_1").addEventListener("change", myFunction2);
+
+                                                        function myFunction2() {
+                                                          var x = document.getElementById("id_selected_H1b_Perc_1");
+                                                          var y = document.getElementById("id_selected_H1b_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
+
+
+
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH1c">
                     <label >H1c (Control of distribution fluid temperature (supply or return air flow or water flow):</label>
                       {{ form.selected_H1c }}
@@ -86,7 +124,21 @@
                       <p>{{ form.selected_H1c_level }}</p>
                       <p>{{ form.selected_H1c_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_H1c_Perc_1").addEventListener("change", myFunction3);
 
+                                                        function myFunction3() {
+                                                          var x = document.getElementById("id_selected_H1c_Perc_1");
+                                                          var y = document.getElementById("id_selected_H1c_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper " data-bs-toggle="collapse" data-bs-target="#collapseH1d">
                     <label >H1d (Control of distribution pumps in networks):</label>
                       {{ form.selected_H1d }}
@@ -97,7 +149,21 @@
                       <p>{{ form.selected_H1d_level }}</p>
                       <p>{{ form.selected_H1d_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_H1d_Perc_1").addEventListener("change", myFunction4);
 
+                                                        function myFunction4() {
+                                                          var x = document.getElementById("id_selected_H1d_Perc_1");
+                                                          var y = document.getElementById("id_selected_H1d_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH1f">
                     <label >H1f (Thermal Energy Storage (TES) for building heating (excluding TABS)):</label>
                       {{ form.selected_H1f }}

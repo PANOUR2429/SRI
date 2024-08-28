@@ -1,5 +1,5 @@
 body {
-     background-image: url("Images/SRIBanner.jpg") ;
+  background-image: url("Images/SRIBanner.jpg") ;
       /* The image used */
 
   /* Full height */
@@ -10,7 +10,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 
 #id_selected_building_type {
 width: 180px;
@@ -28,5 +27,447 @@ border-radius: 2px;
 opacity: 0.8;
 }
 
+#id_selected_H1a_Perc_1 {
+width: 50px;
+}
+
+#id_selected_H1b_Perc_1 {
+width: 50px;
+}
+
+#id_selected_H1c_Perc_1 {
+width: 50px;
+}
+
+#id_selected_H1d_Perc_1 {
+width: 50px;
+}
+
+#id_selected_H1f_Perc_1 {
+width: 50px;
+}
+
+#id_selected_H2a_Perc_1 {
+width: 50px;
+}
+
+#id_selected_H2b_Perc_1 {
+width: 50px;
+}
+
+#id_selected_H2d_Perc_1 {
+width: 50px;
+}
+
+#id_selected_H3_Perc_1 {
+width: 50px;
+}
+
+#id_selected_H4_Perc_1 {
+width: 50px;
+}
 
 
+#id_selected_DHW1a_Perc_1 {
+width: 50px;
+}
+
+#id_selected_DHW1b_Perc_1 {
+width: 50px;
+}
+
+#id_selected_DHW1d_Perc_1 {
+width: 50px;
+}
+
+#id_selected_DHW2b_Perc_1 {
+width: 50px;
+}
+
+#id_selected_DHW3_Perc_1 {
+width: 50px;
+}
+
+#id_selected_C1a_Perc_1 {
+width: 50px;
+}
+
+#id_selected_C1b_Perc_1 {
+width: 50px;
+}
+
+#id_selected_C1c_Perc_1 {
+width: 50px;
+}
+
+#id_selected_C1d_Perc_1 {
+width: 50px;
+}
+
+#id_selected_C1f_Perc_1 {
+width: 50px;
+}
+
+#id_selected_C2a_Perc_1 {
+width: 50px;
+}
+
+#id_selected_C2b_Perc_1 {
+width: 50px;
+}
+
+#id_selected_C1g_Perc_1 {
+width: 50px;
+}
+
+#id_selected_C3_Perc_1 {
+width: 50px;
+}
+
+#id_selected_C4_Perc_1 {
+width: 50px;
+}
+
+#id_selected_V1a_Perc_1 {
+width: 50px;
+}
+
+#id_selected_V1c_Perc_1 {
+width: 50px;
+}
+
+#id_selected_V2c_Perc_1 {
+width: 50px;
+}
+
+#id_selected_V2d_Perc_1 {
+width: 50px;
+}
+
+#id_selected_V3_Perc_1 {
+width: 50px;
+}
+
+#id_selected_V6_Perc_1 {
+width: 50px;
+}
+
+#id_selected_L1a_Perc_1 {
+width: 50px;
+}
+
+#id_selected_L2_Perc_1 {
+width: 50px;
+}
+
+#id_selected_DE1_Perc_1 {
+width: 50px;
+}
+
+#id_selected_DE2_Perc_1 {
+width: 50px;
+}
+
+#id_selected_DE4_Perc_1 {
+width: 50px;
+}
+
+#id_selected_E2_Perc_1 {
+width: 50px;
+}
+
+#id_selected_E3_Perc_1 {
+width: 50px;
+}
+
+
+#id_selected_E4_Perc_1 {
+width: 50px;
+}
+
+
+#id_selected_E5_Perc_1 {
+width: 50px;
+}
+
+#id_selected_E8_Perc_1 {
+width: 50px;
+}
+
+#id_selected_E11_Perc_1 {
+width: 50px;
+}
+
+#id_selected_E12_Perc_1 {
+width: 50px;
+}
+
+#id_selected_EV15_Perc_1 {
+width: 50px;
+}
+
+#id_selected_EV16_Perc_1 {
+width: 50px;
+}
+
+#id_selected_EV17_Perc_1 {
+width: 50px;
+}
+
+#id_selected_MC3_Perc_1 {
+width: 50px;
+}
+
+
+#id_selected_MC4_Perc_1 {
+width: 50px;
+}
+
+
+#id_selected_MC9_Perc_1 {
+width: 50px;
+}
+
+#id_selected_MC13_Perc_1 {
+width: 50px;
+}
+
+#id_selected_MC25_Perc_1 {
+width: 50px;
+}
+
+#id_selected_MC28_Perc_1 {
+width: 50px;
+}
+
+
+#id_selected_MC29_Perc_1 {
+width: 50px;
+}
+
+#id_selected_MC30_Perc_1 {
+width: 50px;
+}
+
+
+#id_selected_H1a_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_H1b_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_H1c_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_H1d_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_H1f_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_H2a_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_H2b_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_H2d_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_H3_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_H4_Perc2_level {
+visibility: hidden;
+}
+
+
+#id_selected_DHW1a_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_DHW1b_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_DHW1d_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_DHW2b_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_DHW3_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_C1a_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_C1b_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_C1c_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_C1d_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_C1f_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_C2a_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_C2b_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_C1g_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_C3_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_C4_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_V1a_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_V1c_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_V2c_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_V2d_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_V3_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_V6_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_L1a_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_L2_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_DE1_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_DE2_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_DE4_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_E2_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_E3_Perc2_level {
+visibility: hidden;
+}
+
+
+#id_selected_E4_Perc2_level {
+visibility: hidden;
+}
+
+
+#id_selected_E5_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_E8_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_E11_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_E12_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_EV15_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_EV16_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_EV17_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_MC3_Perc2_level {
+visibility: hidden;
+}
+
+
+#id_selected_MC4_Perc2_level {
+visibility: hidden;
+}
+
+
+#id_selected_MC9_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_MC13_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_MC25_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_MC28_Perc2_level {
+visibility: hidden;
+}
+
+
+#id_selected_MC29_Perc2_level {
+visibility: hidden;
+}
+
+#id_selected_MC30_Perc2_level {
+visibility: hidden;
+}
