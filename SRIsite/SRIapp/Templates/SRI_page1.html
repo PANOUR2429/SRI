@@ -185,7 +185,21 @@
                       <p>{{ form.selected_H2a_level }}</p>
                       <p>{{ form.selected_H2a_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_H2a_Perc_1").addEventListener("change", myFunction5);
 
+                                                        function myFunction5() {
+                                                          var x = document.getElementById("id_selected_H2a_Perc_1");
+                                                          var y = document.getElementById("id_selected_H2a_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH2b">
                     <label >H2b (Heat generator control (for heat pumps)):</label>
                       {{ form.selected_H2b }}
@@ -196,7 +210,21 @@
                       <p>{{ form.selected_H2b_level }}</p>
                       <p>{{ form.selected_H2b_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_H2b_Perc_1").addEventListener("change", myFunction6);
 
+                                                        function myFunction6() {
+                                                          var x = document.getElementById("id_selected_H2b_Perc_1");
+                                                          var y = document.getElementById("id_selected_H2b_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH2d">
                     <label >H2d (Sequencing in case of different heat generators):</label>
                       {{ form.selected_H2d }}
@@ -207,7 +235,21 @@
                       <p>{{ form.selected_H2d_level }}</p>
                       <p>{{ form.selected_H2d_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_H2d_Perc_1").addEventListener("change", myFunction7);
 
+                                                        function myFunction7() {
+                                                          var x = document.getElementById("id_selected_H2d_Perc_1");
+                                                          var y = document.getElementById("id_selected_H2d_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH3">
                     <label >H3 (Report information regarding heating system performance):</label>
                       {{ form.selected_H3 }}
@@ -218,7 +260,21 @@
                       <p>{{ form.selected_H3_level }}</p>
                       <p>{{ form.selected_H3_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_H3_Perc_1").addEventListener("change", myFunction8);
 
+                                                        function myFunction8() {
+                                                          var x = document.getElementById("id_selected_H3_Perc_1");
+                                                          var y = document.getElementById("id_selected_H3_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH4">
                     <label >H4 (Flexibility and grid interaction):</label>
                       {{ form.selected_H4 }}
@@ -229,6 +285,22 @@
                       <p>{{ form.selected_H4_level }}</p>
                       <p>{{ form.selected_H4_Perc2_level }}</p>
                     </div>
+
+                                                                           <script>
+                                                        document.getElementById("id_selected_H4_Perc_1").addEventListener("change", myFunction8);
+
+                                                        function myFunction8() {
+                                                          var x = document.getElementById("id_selected_H4_Perc_1");
+                                                          var y = document.getElementById("id_selected_H4_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                 </div>
             </div>
 
@@ -251,7 +323,21 @@
                             <p>{{ form.selected_DHW1a_level }}</p>
                             <p>{{ form.selected_DHW1a_Perc2_level }}</p>
                         </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_DHW1a_Perc_1").addEventListener("change", myFunction9);
 
+                                                        function myFunction9() {
+                                                          var x = document.getElementById("id_selected_DHW1a_Perc_1");
+                                                          var y = document.getElementById("id_selected_DHW1a_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW1b">
                             <label >DHW1b (Control of DHW storage charging (using hot water generation)):</label>
@@ -263,7 +349,21 @@
                             <p>{{ form.selected_DHW1b_level }}</p>
                             <p>{{ form.selected_DHW1b_Perc2_level }}</p>
                         </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_DHW1b_Perc_1").addEventListener("change", myFunction10);
 
+                                                        function myFunction10() {
+                                                          var x = document.getElementById("id_selected_DHW1b_Perc_1");
+                                                          var y = document.getElementById("id_selected_DHW1b_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW1d">
                             <label >DHW1d (Control of DHW storage charging (with solar collector and supplymentary heat generation)):</label>
                              {{ form.selected_DHW1d }}
@@ -274,7 +374,21 @@
                             <p>{{ form.selected_DHW1d_level }}</p>
                             <p>{{ form.selected_DHW1d_Perc2_level }}</p>
                         </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_DHW1d_Perc_1").addEventListener("change", myFunction11);
 
+                                                        function myFunction11() {
+                                                          var x = document.getElementById("id_selected_DHW1d_Perc_1");
+                                                          var y = document.getElementById("id_selected_DHW1d_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW2b">
                             <label >DHW2b (Sequencing in case of different DHW generators):</label>
                             {{ form.selected_DHW2b }}
@@ -285,7 +399,21 @@
                             <p>{{ form.selected_DHW2b_level }}</p>
                             <p>{{ form.selected_DHW2b_Perc2_level }}</p>
                         </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_DHW2b_Perc_1").addEventListener("change", myFunction12);
 
+                                                        function myFunction12() {
+                                                          var x = document.getElementById("id_selected_DHW2b_Perc_1");
+                                                          var y = document.getElementById("id_selected_DHW2b_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW3">
                         <label >DHW3 (Report information regarding domestic hot water performance):</label>
                         {{ form.selected_DHW3 }}
@@ -296,6 +424,22 @@
                       <p>{{ form.selected_DHW3_level }}</p>
                       <p>{{ form.selected_DHW3_Perc2_level }}</p>
                     </div>
+
+                                                                           <script>
+                                                        document.getElementById("id_selected_DHW3_Perc_1").addEventListener("change", myFunction13);
+
+                                                        function myFunction13() {
+                                                          var x = document.getElementById("id_selected_DHW3_Perc_1");
+                                                          var y = document.getElementById("id_selected_DHW3_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                 </div>
                 </div>
 
@@ -317,7 +461,21 @@
                             <p>{{ form.selected_C1a_level }}</p>
                             <p>{{ form.selected_C1a_Perc2_level }}</p>
                         </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_C1a_Perc_1").addEventListener("change", myFunction14);
 
+                                                        function myFunction14() {
+                                                          var x = document.getElementById("id_selected_C1a_Perc_1");
+                                                          var y = document.getElementById("id_selected_C1a_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
 
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1b">
                             <label >C1b (Emission control for TABS (cooling mode)):</label>
@@ -329,7 +487,21 @@
                       <p>{{ form.selected_C1b_level }}</p>
                       <p>{{ form.selected_C1b_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_C1b_Perc_1").addEventListener("change", myFunction15);
 
+                                                        function myFunction15() {
+                                                          var x = document.getElementById("id_selected_C1b_Perc_1");
+                                                          var y = document.getElementById("id_selected_C1b_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1c">
                         <label >C1c (Control of distribution network chilled water temperature (supply or return)):</label>
                         {{ form.selected_C1c }}
@@ -340,7 +512,21 @@
                       <p>{{ form.selected_C1c_level }}</p>
                       <p>{{ form.selected_C1c_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_C1c_Perc_1").addEventListener("change", myFunction15);
 
+                                                        function myFunction15() {
+                                                          var x = document.getElementById("id_selected_C1c_Perc_1");
+                                                          var y = document.getElementById("id_selected_C1c_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper"data-bs-toggle="collapse" data-bs-target="#collapseC1d">
                             <label >C1d (Control of distribution pumps in networks):</label>
                             {{ form.selected_C1d }}
@@ -351,7 +537,21 @@
                       <p>{{ form.selected_C1d_level }}</p>
                       <p>{{ form.selected_C1d_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_C1d_Perc_1").addEventListener("change", myFunction16);
 
+                                                        function myFunction16() {
+                                                          var x = document.getElementById("id_selected_C1d_Perc_1");
+                                                          var y = document.getElementById("id_selected_C1d_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1f">
                             <label >C1f (Interlock: avoiding simultaneous heating and cooling in the same room):</label>
                             {{ form.selected_C1f }}
@@ -362,7 +562,21 @@
                       <p>{{ form.selected_C1f_level }}</p>
                       <p>{{ form.selected_C1f_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_C1f_Perc_1").addEventListener("change", myFunction17);
 
+                                                        function myFunction17() {
+                                                          var x = document.getElementById("id_selected_C1f_Perc_1");
+                                                          var y = document.getElementById("id_selected_C1f_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1g">
                             <label >C1g (Control of Thermal Energy Storage (TES) operation):</label>
                              {{ form.selected_C1g }}
@@ -373,7 +587,21 @@
                       <p>{{ form.selected_C1g_level }}</p>
                       <p>{{ form.selected_C1g_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_C1g_Perc_1").addEventListener("change", myFunction18);
 
+                                                        function myFunction18() {
+                                                          var x = document.getElementById("id_selected_C1g_Perc_1");
+                                                          var y = document.getElementById("id_selected_C1g_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC2a">
                             <label >C2a (Generator control for cooling):</label>
                              {{ form.selected_C2a }}
@@ -384,7 +612,21 @@
                       <p>{{ form.selected_C2a_level }}</p>
                       <p>{{ form.selected_C2a_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_C2a_Perc_1").addEventListener("change", myFunction19);
 
+                                                        function myFunction19() {
+                                                          var x = document.getElementById("id_selected_C2a_Perc_1");
+                                                          var y = document.getElementById("id_selected_C2a_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC2b">
                             <label >C2b (Sequencing of different cooling generators):</label>
                             {{ form.selected_C2b
@@ -395,7 +637,21 @@
                       <p>{{ form.selected_C2b_level }}</p>
                       <p>{{ form.selected_C2b_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_C2b_Perc_1").addEventListener("change", myFunction20);
 
+                                                        function myFunction20() {
+                                                          var x = document.getElementById("id_selected_C2b_Perc_1");
+                                                          var y = document.getElementById("id_selected_C2b_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC3">
                             <label >C3 (Report information regarding cooling system performance):</label>
                             {{ form.selected_C3 }}
@@ -406,7 +662,21 @@
                       <p>{{ form.selected_C3_level }}</p>
                       <p>{{ form.selected_C3_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_C3_Perc_1").addEventListener("change", myFunction21);
 
+                                                        function myFunction21() {
+                                                          var x = document.getElementById("id_selected_C3_Perc_1");
+                                                          var y = document.getElementById("id_selected_C3_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC4">
                             <label >C4 (Flexibility and grid interaction):</label>
                             {{ form.selected_C4 }}
@@ -417,6 +687,21 @@
                       <p>{{ form.selected_C4_level }}</p>
                       <p>{{ form.selected_C4_Perc2_level }}</p>
                     </div>
+                                                     <script>
+                                                        document.getElementById("id_selected_C4_Perc_1").addEventListener("change", myFunction22);
+
+                                                        function myFunction22() {
+                                                          var x = document.getElementById("id_selected_C4_Perc_1");
+                                                          var y = document.getElementById("id_selected_C4_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                 </div>
                 </div>
 
@@ -438,7 +723,21 @@
                             <p>{{ form.selected_V1a_level }}</p>
                             <p>{{ form.selected_V1a_Perc2_level }}</p>
                         </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_V1a_Perc_1").addEventListener("change", myFunction23);
 
+                                                        function myFunction23() {
+                                                          var x = document.getElementById("id_selected_V1a_Perc_1");
+                                                          var y = document.getElementById("id_selected_V1a_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV1c">
                             <label >V1c (Air flow or pressure control at the air handler level):</label>
                             {{ form.selected_V1c }}
@@ -449,7 +748,21 @@
                             <p>{{ form.selected_V1c_level }}</p>
                             <p>{{ form.selected_V1c_Perc2_level }}</p>
                         </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_V1c_Perc_1").addEventListener("change", myFunction24);
 
+                                                        function myFunction24() {
+                                                          var x = document.getElementById("id_selected_V1c_Perc_1");
+                                                          var y = document.getElementById("id_selected_V1c_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV2c">
                             <label >V2c (Heat recovery control: prevention of overheating):</label>
                             {{ form.selected_V2c }}
@@ -460,7 +773,21 @@
                             <p>{{ form.selected_V2c_level }}</p>
                             <p>{{ form.selected_V2c_Perc2_level }}</p>
                         </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_V2c_Perc_1").addEventListener("change", myFunction25);
 
+                                                        function myFunction25() {
+                                                          var x = document.getElementById("id_selected_V2c_Perc_1");
+                                                          var y = document.getElementById("id_selected_V2c_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV2d">
                             <label >V2d (Supply air temperature control at the air handling unit level):</label>
                              {{ form.selected_V2d }}
@@ -471,7 +798,21 @@
                              <p>{{ form.selected_V2d_level }}</p>
                              <p>{{ form.selected_V2d_Perc2_level }}</p>
                          </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_V2d_Perc_1").addEventListener("change", myFunction26);
 
+                                                        function myFunction26() {
+                                                          var x = document.getElementById("id_selected_V2d_Perc_1");
+                                                          var y = document.getElementById("id_selected_V2d_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV3">
                           <label >V3 (Free cooling with mechanical ventilation system):</label>
                           {{ form.selected_V3 }}
@@ -482,7 +823,21 @@
                              <p>{{ form.selected_V3_level }}</p>
                              <p>{{ form.selected_V3_Perc2_level }}</p>
                         </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_V3_Perc_1").addEventListener("change", myFunction27);
 
+                                                        function myFunction27() {
+                                                          var x = document.getElementById("id_selected_V3_Perc_1");
+                                                          var y = document.getElementById("id_selected_V3_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV6">
                             <label >V6 (Reporting information regarding IAQ):</label>
                              {{ form.selected_V6 }}
@@ -493,7 +848,21 @@
                             <p>{{ form.selected_V6_level }}</p>
                             <p>{{ form.selected_V6_Perc2_level }}</p>
                         </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_V6_Perc_1").addEventListener("change", myFunction28);
 
+                                                        function myFunction28() {
+                                                          var x = document.getElementById("id_selected_V6_Perc_1");
+                                                          var y = document.getElementById("id_selected_V6_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                      </div>
                 </div>
 
@@ -515,7 +884,21 @@
                         <p>{{ form.selected_L1a_level }}</p>
                          <p>{{ form.selected_L1a_Perc2_level }}</p>
                     </div>
+                                                   <script>
+                                                        document.getElementById("id_selected_L1a_Perc_1").addEventListener("change", myFunction29);
 
+                                                        function myFunction29() {
+                                                          var x = document.getElementById("id_selected_L1a_Perc_1");
+                                                          var y = document.getElementById("id_selected_L1a_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseL2">
                             <label >L2 (Control artificial lighting power based on daylight levels):</label>
                             {{ form.selected_L2 }}
@@ -526,6 +909,21 @@
                          <p>{{ form.selected_L2_level }}</p>
                         <p>{{ form.selected_L2_Perc2_level }}</p>
                     </div>
+                                                                       <script>
+                                                        document.getElementById("id_selected_L2_Perc_1").addEventListener("change", myFunction29);
+
+                                                        function myFunction29() {
+                                                          var x = document.getElementById("id_selected_L2_Perc_1");
+                                                          var y = document.getElementById("id_selected_L2_Perc2_level");
+                                                            if (x.value < 100 ) {
+                                                                y.style.visibility = "visible";
+                                                                  }
+                                                                  else {
+                                                                y.style.visibility = "hidden";
+                                                                x.value = 100
+                                                                        }
+                                                                        }
+                                                    </script>
                 </div>
                 </div>
 
