@@ -79,9 +79,24 @@ def Result(request, id):
   Sum_N = Y['Sum_N']
   Sum_N_Max = Y['Sum_N_Max']
   Smartness = Y['Smartness']
-
+  Energy_Efficiency = Y['Energy_Efficiency']
+  Energy_flex_and_storage = Y['Energy_flex_and_storage']
+  Comfort = Y['Comfort']
+  Convenience = Y['Convenience']
+  Health = Y['Health']
+  Maintenance = Y['Maintenance']
+  Information = Y['Information']
   Impact_Weightings = Y['Impact_Weightings']
   key_functionality_weights = Y['key_functionality_weights']
+  Heating = Y['Heating']
+  Domestic_hot_water = Y['Domestic_hot_water']
+  Cooling = Y['Cooling']
+  Ventilation = Y['Ventilation']
+  Lighting = Y['Lighting']
+  Dynamic_building_envelope = Y['Dynamic_building_envelope']
+  Electricity = Y['Electricity']
+  Electric_vehicle_charging = Y['Electric_vehicle_charging' ]
+  Monitoring_and_control = Y['Monitoring_and_control']
 #  Y = calcSRI()
 
   template = loader.get_template('SRI_result.html')
@@ -139,7 +154,22 @@ def Result(request, id):
     'Smartness': Smartness,
     'Impact_Weightings': Impact_Weightings,
     'key_functionality_weights': key_functionality_weights,
-
+    'Energy_Efficiency' : Energy_Efficiency,
+    'Energy_flex_and_storage' : Energy_flex_and_storage,
+    'Comfort' : Comfort,
+    'Convenience': Convenience,
+    'Health': Health,
+    'Maintenance': Maintenance,
+    'Information': Information,
+    'Heating':Heating,
+    'Domestic_hot_water':Domestic_hot_water,
+    'Cooling':Cooling,
+    'Ventilation':Ventilation,
+    'Lighting':Lighting,
+    'Dynamic_building_envelope':Dynamic_building_envelope,
+    'Electricity':Electricity,
+    'Electric_vehicle_charging':Electric_vehicle_charging,
+    'Monitoring_and_control':Monitoring_and_control,
   }
   return HttpResponse(template.render(context, request))
 

@@ -802,6 +802,7 @@ def SRIcalculator(index):
                 )
         k += 1
     SRI_res['MCmax'] = MCmax
+
     # -----------------------------------------------------------------------------------------------------
     # NORMALISED VALUES CALCULATIONS
     g = 0
@@ -893,12 +894,49 @@ def SRIcalculator(index):
     Smartness = [0, 0, 0, 0, 0, 0, 0]
     Sum_N = [0, 0, 0, 0, 0, 0, 0]
     Sum_N_Max = [0, 0, 0, 0, 0, 0, 0]
+    Sum_N_H = 0
+    Sum_N_H_Max = 0
+    Sum_N_DHW = 0
+    Sum_N_DHW_Max = 0
+    Sum_N_C = 0
+    Sum_N_C_Max = 0
+    Sum_N_V = 0
+    Sum_N_V_Max = 0
+    Sum_N_L = 0
+    Sum_N_L_Max = 0
+    Sum_N_DE = 0
+    Sum_N_DE_Max = 0
+    Sum_N_E = 0
+    Sum_N_E_Max = 0
+    Sum_N_EV = 0
+    Sum_N_EV_Max = 0
+    Sum_N_MC = 0
+    Sum_N_MC_Max = 0
 
     W = list(ImpactWeight.objects.filter(building_type=selected_building_type, zone=selected_zone).values())
     N_Smartness = [0, 0, 0, 0, 0, 0, 0]
     Impact_Weightings = [0, 0, 0, 0, 0, 0, 0]
 
     while i < len(Smartness):
+        Sum_N_H += N_H[i]
+        Sum_N_H_Max +=  N_Hmax[i]
+        Sum_N_DHW += N_DHW[i]
+        Sum_N_DHW_Max += N_DHWmax[i]
+        Sum_N_C += N_C[i]
+        Sum_N_C_Max += N_Cmax[i]
+        Sum_N_V += N_V[i]
+        Sum_N_V_Max += N_Vmax[i]
+        Sum_N_L += N_L[i]
+        Sum_N_L_Max += N_Lmax[i]
+        Sum_N_DE += N_DE[i]
+        Sum_N_DE_Max += N_DEmax[i]
+        Sum_N_E += N_E[i]
+        Sum_N_E_Max += N_Emax[i]
+        Sum_N_EV += N_EV[i]
+        Sum_N_EV_Max += N_EVmax[i]
+        Sum_N_MC += N_MC[i]
+        Sum_N_MC_Max += N_MCmax[i]
+
         Sum_N[i] =  ceil( (N_H[i] + N_DHW[i] + N_C[i] + N_V[i] + N_L[i] + N_DE[i] + N_E[i] + N_EV[i] + N_MC[i])*100)/100
         Sum_N_Max[i] = ceil( (N_Hmax[i] + N_DHWmax[i] + N_Cmax[i] + N_Vmax[i] + N_Lmax[i] + N_DEmax[i] + N_Emax[i] + N_EVmax[
             i] + N_MCmax[i] )*100)/100
@@ -906,6 +944,27 @@ def SRIcalculator(index):
 
         Impact_Weightings[i] = W[0]["imp_cr" + str(i + 1)]
         i += 1
+
+    # Domain scores calculation
+    SRI_res['Heating'] = 100 * ceil(Sum_N_H / Sum_N_H_Max * 1000) / 1000
+    SRI_res['Domestic_hot_water'] = 100 * ceil(Sum_N_DHW/ Sum_N_DHW_Max * 1000) / 1000
+    SRI_res['Cooling'] = 100 * ceil(Sum_N_C / Sum_N_C_Max * 1000) / 1000
+    SRI_res['Ventilation'] = 100 * ceil(Sum_N_V / Sum_N_V_Max * 1000) / 1000
+    SRI_res['Lighting'] = 100 * ceil(Sum_N_L / Sum_N_L_Max * 1000) / 1000
+    SRI_res['Dynamic_building_envelope'] = 100 * ceil(Sum_N_DE / Sum_N_DE_Max * 1000) / 1000
+    SRI_res['Electricity'] = 100 * ceil(Sum_N_E / Sum_N_E_Max * 1000) / 1000
+    SRI_res['Electric_vehicle_charging'] = 100 * ceil(Sum_N_EV / Sum_N_EV_Max * 1000) / 1000
+    SRI_res['Monitoring_and_control'] = 100 * ceil(Sum_N_MC / Sum_N_MC_Max * 1000) / 1000
+
+    # Impact scores calculation
+    SRI_res['Energy_Efficiency'] = 100 * ceil(Sum_N[0]/Sum_N_Max[0] *1000)/1000
+    SRI_res['Energy_flex_and_storage'] = 100 * ceil(Sum_N[1] / Sum_N_Max[1] *1000)/1000
+    SRI_res['Comfort'] = 100 * ceil(Sum_N[2] / Sum_N_Max[2] *1000)/1000
+    SRI_res['Convenience'] = 100 * ceil(Sum_N[3] / Sum_N_Max[3] *1000)/1000
+    SRI_res['Health'] = 100 * ceil(Sum_N[4] / Sum_N_Max[4] *1000)/1000
+    SRI_res['Maintenance'] = 100 * ceil(Sum_N[5] / Sum_N_Max[5] *1000)/1000
+    SRI_res['Information'] = 100 * ceil(Sum_N[6] / Sum_N_Max[6] *1000)/1000
+
 
     SRI_res['Sum_N'] = Sum_N
     SRI_res['Sum_N_Max'] = Sum_N_Max
