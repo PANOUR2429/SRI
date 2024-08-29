@@ -1,4 +1,5 @@
 from .models import *
+from math import ceil
 
 def SRIcalculator(index):
     SRI_res = dict()
@@ -769,6 +770,10 @@ def SRIcalculator(index):
                         (selected_EV16 * EV16max[0]["score_cr" + str(k + 1)]) +
                         (selected_EV17 * EV17max[0]["score_cr" + str(k + 1)])
                 )
+        # from excel SRI tab calculation cell CQ50 when cell I50 is 0.
+        if ( selected_EV16 == 0) :
+            EVmax[1] = -2
+
         k += 1
     SRI_res['EVmax'] = EVmax
     # -------MCmax calculation-------------
@@ -841,24 +846,24 @@ def SRIcalculator(index):
     SRI_res['W_EV'] = W_EV[0]["dw_cr7"]
 
     while g < len(N_H):
-        N_H[g] = round( H[g] * W_H[0]["dw_cr" + str(g + 1)] ,2)
-        N_DHW[g] = round( DHW[g] * W_DHW[0]["dw_cr" + str(g + 1)],2)
-        N_C[g] = round( C[g] * W_C[0]["dw_cr" + str(g + 1)],2)
-        N_V[g] = round( V[g] * W_V[0]["dw_cr" + str(g + 1)],2)
-        N_L[g] = round( L[g] * W_L[0]["dw_cr" + str(g + 1)],2)
-        N_DE[g] = round( DE[g] * W_DE[0]["dw_cr" + str(g + 1)],2)
-        N_E[g] = round( E[g] * W_E[0]["dw_cr" + str(g + 1)],2)
-        N_EV[g] = round( EV[g] * W_EV[0]["dw_cr" + str(g + 1)],2)
-        N_MC[g] = round( MC[g] * W_MC[0]["dw_cr" + str(g + 1)],2)
-        N_Hmax[g] = round( Hmax[g] * W_H[0]["dw_cr" + str(g + 1)],2)
-        N_DHWmax[g] = round( DHWmax[g] * W_DHW[0]["dw_cr" + str(g + 1)],2)
-        N_Cmax[g] = round( Cmax[g] * W_C[0]["dw_cr" + str(g + 1)],2)
-        N_Vmax[g] = round( Vmax[g] * W_V[0]["dw_cr" + str(g + 1)],2)
-        N_Lmax[g] = round( Lmax[g] * W_L[0]["dw_cr" + str(g + 1)],2)
-        N_DEmax[g] = round( DEmax[g] * W_DE[0]["dw_cr" + str(g + 1)],2)
-        N_Emax[g] = round( Emax[g] * W_E[0]["dw_cr" + str(g + 1)],2)
-        N_EVmax[g] = round( EVmax[g] * W_EV[0]["dw_cr" + str(g + 1)],2)
-        N_MCmax[g] = round( MCmax[g] * W_MC[0]["dw_cr" + str(g + 1)],2)
+        N_H[g] = ceil( H[g] * W_H[0]["dw_cr" + str(g + 1)] *100)/100
+        N_DHW[g] = ceil( DHW[g] * W_DHW[0]["dw_cr" + str(g + 1)]*100)/100
+        N_C[g] = ceil( C[g] * W_C[0]["dw_cr" + str(g + 1)]*100)/100
+        N_V[g] = ceil( V[g] * W_V[0]["dw_cr" + str(g + 1)]*100)/100
+        N_L[g] = ceil( L[g] * W_L[0]["dw_cr" + str(g + 1)]*100)/100
+        N_DE[g] = ceil( DE[g] * W_DE[0]["dw_cr" + str(g + 1)]*100)/100
+        N_E[g] = ceil( E[g] * W_E[0]["dw_cr" + str(g + 1)]*100)/100
+        N_EV[g] = ceil( EV[g] * W_EV[0]["dw_cr" + str(g + 1)]*100)/100
+        N_MC[g] = ceil( MC[g] * W_MC[0]["dw_cr" + str(g + 1)]*100)/100
+        N_Hmax[g] = ceil( Hmax[g] * W_H[0]["dw_cr" + str(g + 1)]*100)/100
+        N_DHWmax[g] = ceil( DHWmax[g] * W_DHW[0]["dw_cr" + str(g + 1)]*100)/100
+        N_Cmax[g] = ceil( Cmax[g] * W_C[0]["dw_cr" + str(g + 1)]*100)/100
+        N_Vmax[g] = ceil( Vmax[g] * W_V[0]["dw_cr" + str(g + 1)]*100)/100
+        N_Lmax[g] = ceil( Lmax[g] * W_L[0]["dw_cr" + str(g + 1)]*100)/100
+        N_DEmax[g] = ceil( DEmax[g] * W_DE[0]["dw_cr" + str(g + 1)]*100)/100
+        N_Emax[g] = ceil( Emax[g] * W_E[0]["dw_cr" + str(g + 1)]*100)/100
+        N_EVmax[g] = ceil( EVmax[g] * W_EV[0]["dw_cr" + str(g + 1)]*100)/100
+        N_MCmax[g] = ceil( MCmax[g] * W_MC[0]["dw_cr" + str(g + 1)]*100)/100
         g += 1
 
         SRI_res['N_H'] = N_H
@@ -894,10 +899,10 @@ def SRIcalculator(index):
     Impact_Weightings = [0, 0, 0, 0, 0, 0, 0]
 
     while i < len(Smartness):
-        Sum_N[i] = round( N_H[i] + N_DHW[i] + N_C[i] + N_V[i] + N_L[i] + N_DE[i] + N_E[i] + N_EV[i] + N_MC[i],2)
-        Sum_N_Max[i] = round( N_Hmax[i] + N_DHWmax[i] + N_Cmax[i] + N_Vmax[i] + N_Lmax[i] + N_DEmax[i] + N_Emax[i] + N_EVmax[
-            i] + N_MCmax[i],2)
-        Smartness[i] = round( 100*( Sum_N[i] / Sum_N_Max[i] ),2)
+        Sum_N[i] =  ceil( (N_H[i] + N_DHW[i] + N_C[i] + N_V[i] + N_L[i] + N_DE[i] + N_E[i] + N_EV[i] + N_MC[i])*100)/100
+        Sum_N_Max[i] = ceil( (N_Hmax[i] + N_DHWmax[i] + N_Cmax[i] + N_Vmax[i] + N_Lmax[i] + N_DEmax[i] + N_Emax[i] + N_EVmax[
+            i] + N_MCmax[i] )*100)/100
+        Smartness[i] =  ceil( 100*( Sum_N[i] / Sum_N_Max[i] ) *100)/100
 
         Impact_Weightings[i] = W[0]["imp_cr" + str(i + 1)]
         i += 1
