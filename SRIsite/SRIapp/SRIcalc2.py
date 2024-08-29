@@ -626,7 +626,7 @@ def SRIcalculator(index):
                        (selected_H2d * H2dmax[0]["score_cr" + str(i + 1)]) +
                        (1 * H3max[0]["score_cr" + str(i + 1)]) +
                        (1 * H4max[0]["score_cr" + str(i + 1)])
-               ) *H_selected
+               )
         i += 1
     SRI_res['Hmax'] = Hmax
     # -------DHWmax calculation-------------
@@ -646,7 +646,7 @@ def SRIcalculator(index):
                     ( selected_DHW1d * DHW1dmax[0]["score_cr" + str(j + 1)]) +
                     ( selected_DHW2b * DHW2bmax[0]["score_cr" + str(j + 1)]) +
                     ( 1 * DHW3max[0]["score_cr" + str(j + 1)])
-                 ) * DHW_selected
+                 )
         j += 1
     SRI_res['DHWmax'] = DHWmax
     # -------Cmax calculation-------------
@@ -676,7 +676,7 @@ def SRIcalculator(index):
                        (selected_C2b * C2bmax[0]["score_cr" + str(k + 1)]) +
                        (1 * C3max[0]["score_cr" + str(k + 1)]) +
                        (1 * C4max[0]["score_cr" + str(k + 1)])
-               ) * C_selected
+               )
         k += 1
     SRI_res['Cmax'] = Cmax
     # -------Vmax calculation-------------
@@ -698,7 +698,7 @@ def SRIcalculator(index):
                        (selected_V2d * V2dmax[0]["score_cr" + str(k + 1)]) +
                        (selected_V3 * V3max[0]["score_cr" + str(k + 1)]) +
                        (1 * V6max[0]["score_cr" + str(k + 1)])
-               )  * V_selected
+               )
         k += 1
     SRI_res['Vmax'] = Vmax
     # -------Lmax calculation-------------
@@ -712,7 +712,7 @@ def SRIcalculator(index):
         Lmax[k] = (
                        (1 * L1amax[0]["score_cr" + str(k + 1)]) +
                        (1 * L2max[0]["score_cr" + str(k + 1)])
-               )  * L_selected
+               )
         k += 1
     SRI_res['Lmax'] = Lmax
     # -------DEmax calculation-------------
@@ -728,7 +728,7 @@ def SRIcalculator(index):
                         (selected_DE1 * DE1max[0]["score_cr" + str(k + 1)]) +
                         (1 * DE2max[0]["score_cr" + str(k + 1)]) +
                         (selected_DE4 * DE4max[0]["score_cr" + str(k + 1)])
-                ) * DE_selected
+                )
         k += 1
     SRI_res['DEmax'] = DEmax
     # -------Emax calculation-------------
@@ -752,7 +752,7 @@ def SRIcalculator(index):
                        (selected_E8 * E8max[0]["score_cr" + str(k + 1)]) +
                        (selected_E11 * E11max[0]["score_cr" + str(k + 1)]) +
                        (1 * E12max[0]["score_cr" + str(k + 1)])
-               ) * E_selected
+               )
         k += 1
     SRI_res['Emax'] = Emax
     # -------EVmax calculation-------------
@@ -768,7 +768,7 @@ def SRIcalculator(index):
                         (selected_EV15 * EV15max[0]["score_cr" + str(k + 1)]) +
                         (selected_EV16 * EV16max[0]["score_cr" + str(k + 1)]) +
                         (selected_EV17 * EV17max[0]["score_cr" + str(k + 1)])
-                ) * EV_selected
+                )
         k += 1
     SRI_res['EVmax'] = EVmax
     # -------MCmax calculation-------------
@@ -794,7 +794,7 @@ def SRIcalculator(index):
                        (1 * MC28max[0]["score_cr" + str(k + 1)]) +
                        (1 * MC29max[0]["score_cr" + str(k + 1)]) +
                        (1 * MC30max[0]["score_cr" + str(k + 1)])
-                )  * MC_selected
+                )
         k += 1
     SRI_res['MCmax'] = MCmax
     # -----------------------------------------------------------------------------------------------------
@@ -841,24 +841,24 @@ def SRIcalculator(index):
     SRI_res['W_EV'] = W_EV[0]["dw_cr7"]
 
     while g < len(N_H):
-        N_H[g] = H[g] * W_H[0]["dw_cr" + str(g + 1)]
-        N_DHW[g] = DHW[g] * W_DHW[0]["dw_cr" + str(g + 1)]
-        N_C[g] = C[g] * W_C[0]["dw_cr" + str(g + 1)]
-        N_V[g] = V[g] * W_V[0]["dw_cr" + str(g + 1)]
-        N_L[g] = L[g] * W_L[0]["dw_cr" + str(g + 1)]
-        N_DE[g] = DE[g] * W_DE[0]["dw_cr" + str(g + 1)]
-        N_E[g] = E[g] * W_E[0]["dw_cr" + str(g + 1)]
-        N_EV[g] = EV[g] * W_EV[0]["dw_cr" + str(g + 1)]
-        N_MC[g] = MC[g] * W_MC[0]["dw_cr" + str(g + 1)]
-        N_Hmax[g] = Hmax[g] * W_H[0]["dw_cr" + str(g + 1)]
-        N_DHWmax[g] = DHWmax[g] * W_DHW[0]["dw_cr" + str(g + 1)]
-        N_Cmax[g] = Cmax[g] * W_C[0]["dw_cr" + str(g + 1)]
-        N_Vmax[g] = Vmax[g] * W_V[0]["dw_cr" + str(g + 1)]
-        N_Lmax[g] = Lmax[g] * W_L[0]["dw_cr" + str(g + 1)]
-        N_DEmax[g] = DEmax[g] * W_DE[0]["dw_cr" + str(g + 1)]
-        N_Emax[g] = Emax[g] * W_E[0]["dw_cr" + str(g + 1)]
-        N_EVmax[g] = EVmax[g] * W_EV[0]["dw_cr" + str(g + 1)]
-        N_MCmax[g] = MCmax[g] * W_MC[0]["dw_cr" + str(g + 1)]
+        N_H[g] = round( H[g] * W_H[0]["dw_cr" + str(g + 1)] ,2)
+        N_DHW[g] = round( DHW[g] * W_DHW[0]["dw_cr" + str(g + 1)],2)
+        N_C[g] = round( C[g] * W_C[0]["dw_cr" + str(g + 1)],2)
+        N_V[g] = round( V[g] * W_V[0]["dw_cr" + str(g + 1)],2)
+        N_L[g] = round( L[g] * W_L[0]["dw_cr" + str(g + 1)],2)
+        N_DE[g] = round( DE[g] * W_DE[0]["dw_cr" + str(g + 1)],2)
+        N_E[g] = round( E[g] * W_E[0]["dw_cr" + str(g + 1)],2)
+        N_EV[g] = round( EV[g] * W_EV[0]["dw_cr" + str(g + 1)],2)
+        N_MC[g] = round( MC[g] * W_MC[0]["dw_cr" + str(g + 1)],2)
+        N_Hmax[g] = round( Hmax[g] * W_H[0]["dw_cr" + str(g + 1)],2)
+        N_DHWmax[g] = round( DHWmax[g] * W_DHW[0]["dw_cr" + str(g + 1)],2)
+        N_Cmax[g] = round( Cmax[g] * W_C[0]["dw_cr" + str(g + 1)],2)
+        N_Vmax[g] = round( Vmax[g] * W_V[0]["dw_cr" + str(g + 1)],2)
+        N_Lmax[g] = round( Lmax[g] * W_L[0]["dw_cr" + str(g + 1)],2)
+        N_DEmax[g] = round( DEmax[g] * W_DE[0]["dw_cr" + str(g + 1)],2)
+        N_Emax[g] = round( Emax[g] * W_E[0]["dw_cr" + str(g + 1)],2)
+        N_EVmax[g] = round( EVmax[g] * W_EV[0]["dw_cr" + str(g + 1)],2)
+        N_MCmax[g] = round( MCmax[g] * W_MC[0]["dw_cr" + str(g + 1)],2)
         g += 1
 
         SRI_res['N_H'] = N_H
@@ -891,31 +891,46 @@ def SRIcalculator(index):
 
     W = list(ImpactWeight.objects.filter(building_type=selected_building_type, zone=selected_zone).values())
     N_Smartness = [0, 0, 0, 0, 0, 0, 0]
+    Impact_Weightings = [0, 0, 0, 0, 0, 0, 0]
 
     while i < len(Smartness):
-        Sum_N[i] = N_H[i] + N_DHW[i] + N_C[i] + N_V[i] + N_L[i] + N_DE[i] + N_E[i] + N_EV[i] + N_MC[i]
-        Sum_N_Max[i] = N_Hmax[i] + N_DHWmax[i] + N_Cmax[i] + N_Vmax[i] + N_Lmax[i] + N_DEmax[i] + N_Emax[i] + N_EVmax[
-            i] + N_MCmax[i]
-        Smartness[i] = Sum_N[i] / Sum_N_Max[i]
-        N_Smartness[i] = Smartness[i] * W[0]["imp_cr" + str(i + 1)]
+        Sum_N[i] = round( N_H[i] + N_DHW[i] + N_C[i] + N_V[i] + N_L[i] + N_DE[i] + N_E[i] + N_EV[i] + N_MC[i],2)
+        Sum_N_Max[i] = round( N_Hmax[i] + N_DHWmax[i] + N_Cmax[i] + N_Vmax[i] + N_Lmax[i] + N_DEmax[i] + N_Emax[i] + N_EVmax[
+            i] + N_MCmax[i],2)
+        Smartness[i] = round( 100*( Sum_N[i] / Sum_N_Max[i] ),2)
+
+        Impact_Weightings[i] = W[0]["imp_cr" + str(i + 1)]
         i += 1
 
     SRI_res['Sum_N'] = Sum_N
     SRI_res['Sum_N_Max'] = Sum_N_Max
     SRI_res['Smartness'] = Smartness
+    SRI_res['Impact_Weightings'] = Impact_Weightings
     SRI_res['N_Smartness'] = N_Smartness
     # ------------------------------
     # SMARTNESS VALUES OF EACH KEY FUNCTIONALITY
+
+    # calculate key functionality weights from impact weights (as on excel file for SRI - calculation tab - cells EK5 ... EQ5
+    key_functionality_weights = [0, 0, 0, 0, 0, 0, 0]
+    key_functionality_weights[0] = W[0]["imp_cr1"] / (W[0]["imp_cr1"] + W[0]["imp_cr6"])
+    key_functionality_weights[1] = W[0]["imp_cr2"] / W[0]["imp_cr2"]
+    key_functionality_weights[2] = W[0]["imp_cr3"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
+    key_functionality_weights[3] = W[0]["imp_cr4"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
+    key_functionality_weights[4] = W[0]["imp_cr5"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
+    key_functionality_weights[5] = W[0]["imp_cr6"] / ( W[0]["imp_cr1"] + W[0]["imp_cr6"])
+    key_functionality_weights[6] = W[0]["imp_cr7"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
+    SRI_res['key_functionality_weights'] = key_functionality_weights
+
 
     w_kf1 = 1 / 3
     w_kf2 = 1 / 3
     w_kf3 = 1 / 3
 
-    SRI_res['kf1'] = w_kf1 * (N_Smartness[0] + N_Smartness[6])
-    SRI_res['kf2'] = w_kf2 * sum(N_Smartness[2:5])
-    SRI_res['kf3'] = w_kf3 * (N_Smartness[1])
+    SRI_res['kf1'] = round( (Smartness[0] * key_functionality_weights[0]) + (Smartness[5] * key_functionality_weights[5]),1)
+    SRI_res['kf2'] = round( (Smartness[2] * key_functionality_weights[2]) + (Smartness[3] * key_functionality_weights[3]) + (Smartness[4] * key_functionality_weights[4]) + (Smartness[6] * key_functionality_weights[6]),1)
+    SRI_res['kf3'] = round( (Smartness[1] * key_functionality_weights[1]),1)
 
-    SRI_res['SRI'] = (SRI_res['kf1'] + SRI_res['kf2'] + SRI_res['kf3'])
+    SRI_res['SRI'] = round(  (w_kf1 * SRI_res['kf1'] + w_kf2 * SRI_res['kf2'] + w_kf3 * SRI_res['kf3']) ,1)
 
     SRI_res['user_sel'] = str(LastUserSelection[0].values())
 

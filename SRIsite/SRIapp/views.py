@@ -79,7 +79,9 @@ def Result(request, id):
   Sum_N = Y['Sum_N']
   Sum_N_Max = Y['Sum_N_Max']
   Smartness = Y['Smartness']
-  N_Smartness = Y['N_Smartness']
+
+  Impact_Weightings = Y['Impact_Weightings']
+  key_functionality_weights = Y['key_functionality_weights']
 #  Y = calcSRI()
 
   template = loader.get_template('SRI_result.html')
@@ -135,7 +137,9 @@ def Result(request, id):
     'Sum_N' : Sum_N,
     'Sum_N_Max': Sum_N_Max,
     'Smartness': Smartness,
-    'N_Smartness': N_Smartness
+    'Impact_Weightings': Impact_Weightings,
+    'key_functionality_weights': key_functionality_weights,
+
   }
   return HttpResponse(template.render(context, request))
 
