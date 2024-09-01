@@ -1,9 +1,9 @@
 body {
-  //background-image: url("Images/SRIBanner.jpg") ;
+  background-image: url("Images/SRIBanner.jpg") ;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-origin: auto;
-  background-size: auto;
+  background-size: contain;
 }
 
 #container {
