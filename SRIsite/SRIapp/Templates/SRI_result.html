@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="{% static 'style2.css' %}">
 </head>
 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
 <body>
 <nav class="navbar navbar-expand-sm ">
   <div class="container-fluid">
@@ -29,6 +34,151 @@
         <div class="col-sm-8">
 
             <p>Results</p>
+
+            <!-- IMPACT SCORES ---->
+            <figure class="highcharts-figure">
+                <div id="container"></div>
+                    <p class="highcharts-description">
+
+                    </p>
+            </figure>
+
+            <script> Highcharts.chart('container', {
+                    chart: {
+                            type: 'column'
+                                },
+                            title: {
+                            text: 'Impact Scores: '
+                                   },
+                            xAxis: {
+                                   type: 'category',
+                            labels: {
+                                     autoRotation: [-45, -90],
+                            style: {
+                                   fontSize: '13px',
+                                  fontFamily: 'Verdana, sans-serif'
+                                  }
+                                 }
+                                 },
+                         yAxis: {
+                                   min: 0,
+                                    title: {
+                                    text: '%'
+                                  }
+                                    },
+                                     legend: {
+                                      enabled: false
+                                     },
+                                    tooltip: {
+
+                             },
+                            series: [{
+                             name: '%',
+                               colors: [
+                               '#000000', '#000000', '#000000', '#000000', '#000000', '#000000',
+                               '#000000', '#000000', '#000000', '#000000', '#000000', '#000000',
+                                 ],
+                              colorByPoint: true,
+                               groupPadding: 0,
+                                data: [
+                                   ['Energy Efficiency', {{Energy_Efficiency}}],
+                                   ['Energy flexibility & storage', {{Energy_flex_and_storage}} ],
+                                   ['Comfort', {{Comfort}}],
+                                   ['Convenience', {{Convenience}}],
+                                   ['Health, well-being and accessibility', {{Health}}],
+                                   ['Maintenance & fault prediction', {{Maintenance}}],
+                                   ['Information to occupants', {{Information}}],
+                                ],
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation: -90,
+                                      color: '#FFFFFF',
+                                      inside: true,
+                                     verticalAlign: 'top',
+                                      format: '{point.y:.1f}', // one decimal
+                                      y: 10, // 10 pixels down from the top
+                                       style: {
+                                      fontSize: '13px',
+                                      fontFamily: 'Verdana, sans-serif'
+                                               }
+                                                }
+                                }]
+                            });
+            </script>
+
+            <p></p>
+        <!-- DOMAIN SCORES ---->
+            <figure class="highcharts-figure2">
+                <div id="container2"></div>
+                    <p class="highcharts-description2">
+
+                    </p>
+            </figure>
+
+            <script> Highcharts.chart('container2', {
+                    chart: {
+                            type: 'column'
+                                },
+                            title: {
+                            text: 'Domain Scores: '
+                                   },
+                            xAxis: {
+                                   type: 'category',
+                            labels: {
+                                     autoRotation: [-45, -90],
+                            style: {
+                                   fontSize: '13px',
+                                  fontFamily: 'Verdana, sans-serif'
+                                  }
+                                 }
+                                 },
+                         yAxis: {
+                                   min: 0,
+                                    title: {
+                                    text: '%'
+                                  }
+                                    },
+                                     legend: {
+                                      enabled: false
+                                     },
+                                    tooltip: {
+
+                             },
+                            series: [{
+                             name: '%',
+                               colors: [
+                               '#ff5733', '#5b30e7', '#33fff9', '#740ea1', '#ffd733', '#42ff33',
+                               '#f3ff00', '#4d9d3b', '#ff00ff', '#4c46db', '#4551d5', '#3e5ccf',
+                                 ],
+                              colorByPoint: true,
+                               groupPadding: 0,
+                                data: [
+                                   ['Heating', {{Heating}}],
+                                   ['Domestic hot water', {{Domestic_hot_water}} ],
+                                   ['Cooling', {{Cooling}}],
+                                   ['Ventilation', {{Ventilation}}],
+                                   ['Lighting', {{Lighting}}],
+                                   ['Dynamic building envelope', {{Dynamic_building_envelope}}],
+                                   ['Electricity', {{Electricity}}],
+                                   ['Electric vehicle charging', {{Electric_vehicle_charging}}],
+                                   ['Monitoring and control', {{Monitoring_and_control}}],
+                                ],
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation: -90,
+                                      color: '#FFFFFF',
+                                      inside: true,
+                                     verticalAlign: 'top',
+                                      format: '{point.y:.1f}', // one decimal
+                                      y: 10, // 10 pixels down from the top
+                                       style: {
+                                      fontSize: '13px',
+                                      fontFamily: 'Verdana, sans-serif'
+                                               }
+                                                }
+                                }]
+                            });
+            </script>
 
             <p></p>
             <p>User selections :</p>
@@ -60,7 +210,7 @@
             <p>N_DHW = {{N_DHW}}</p>
             <p>N_C = {{N_C}}</p>
             <p>N_V = {{N_V}}</p>
-            <p>N_L = {{N_L}}</p>
+           <p>N_L = {{N_L}}</p>
             <p>N_DE = {{N_DE}}</p>
             <p>N_E = {{N_E}}</p>
             <p>N_EV = {{N_EV}}</p>
