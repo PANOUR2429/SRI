@@ -8,6 +8,61 @@
     {% bootstrap_javascript %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
+
+<style>
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;  /* Smaller width */
+    height: 14px; /* Smaller height */
+    top:5px
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch input:checked + .slider {
+    background-color: #4CAF50; /* Green when checked */
+}
+
+.switch input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 14px;  /* Rounded edges for the slider */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px; /* 14px knob size */
+    width: 14px;  /* 14px knob size */
+    border-radius: 50%;
+    left: 0;      /* Knob starts at the left */
+    bottom: 0;    /* Knob stays at the bottom */
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);  /* Move the knob when toggled */
+}
+
+    </style>
+
 </head>
 
 <body>
@@ -58,16 +113,25 @@
 
 
                  <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH" >
-                    <label >H (Heating):</label>
-                      {{ form.selected_H }}
+                     <label>{{ form.selected_H.label }}</label>  <!-- Render the label automatically -->
+                    <!-- The Switch -->
+                    <label class="switch">
+                        {{ form.selected_H }}  <!-- Render the form field (checkbox) -->
+                        <span class="slider"></span>
+                    </label>
                  </div>
+
 
                 <div id="collapseH" class="collapse" style='opacity:0.8; border-color:black; width: 800px;' >
                     <div class="card card-body">
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH1a">
-                            <label >H1a (Heat emission control):</label>
-                            {{ form.selected_H1a }}
+                            <label>{{ form.selected_H1a.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                            <label class="switch">
+                                {{ form.selected_H1a }}  <!-- Render the form field (checkbox) -->
+                                <span class="slider"></span>
+                            </label>
                          </div>
 
                        <div id="collapseH1a" class="collapse">
@@ -97,8 +161,12 @@
                                                     </script>
 
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH1b">
-                    <label >H1b (Emission control for TABS (heating mode)):</label>
-                      {{ form.selected_H1b }}
+                        <label>{{ form.selected_H1b.label }}</label>  <!-- Render the label automatically -->
+                    <!-- The Switch -->
+                    <label class="switch">
+                        {{ form.selected_H1b }}  <!-- Render the form field (checkbox) -->
+                        <span class="slider"></span>
+                    </label>
                     </div>
 
                      <div id="collapseH1b" class="collapse">
@@ -127,8 +195,12 @@
 
 
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH1c">
-                    <label >H1c (Control of distribution fluid temperature (supply or return air flow or water flow):</label>
-                      {{ form.selected_H1c }}
+                        <label>{{ form.selected_H1c.label }}</label>  <!-- Render the label automatically -->
+                    <!-- The Switch -->
+                    <label class="switch">
+                        {{ form.selected_H1c }}  <!-- Render the form field (checkbox) -->
+                        <span class="slider"></span>
+                    </label>
                     </div>
 
                      <div id="collapseH1c" class="collapse">
@@ -154,8 +226,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper " data-bs-toggle="collapse" data-bs-target="#collapseH1d">
-                    <label >H1d (Control of distribution pumps in networks):</label>
-                      {{ form.selected_H1d }}
+                        <label>{{ form.selected_H1d.label }}</label>  <!-- Render the label automatically -->
+                    <!-- The Switch -->
+                    <label class="switch">
+                        {{ form.selected_H1d }}  <!-- Render the form field (checkbox) -->
+                        <span class="slider"></span>
+                    </label>
                     </div>
 
                     <div id="collapseH1d" class="collapse">
@@ -181,8 +257,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH1f">
-                    <label >H1f (Thermal Energy Storage (TES) for building heating (excluding TABS)):</label>
-                      {{ form.selected_H1f }}
+                    <label>{{ form.selected_H1f.label }}</label>  <!-- Render the label automatically -->
+                    <!-- The Switch -->
+                    <label class="switch">
+                        {{ form.selected_H1f }}  <!-- Render the form field (checkbox) -->
+                        <span class="slider"></span>
+                    </label>
                     </div>
 
                     <div id="collapseH1f" class="collapse">
@@ -208,8 +288,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH2a">
-                    <label >H2a (Heat generator control (all except heat pumps)):</label>
-                      {{ form.selected_H2a }}
+                    <label>{{ form.selected_H2a.label }}</label>  <!-- Render the label automatically -->
+                    <!-- The Switch -->
+                    <label class="switch">
+                        {{ form.selected_H2a }}  <!-- Render the form field (checkbox) -->
+                        <span class="slider"></span>
+                    </label>
                     </div>
 
                     <div id="collapseH2a" class="collapse">
@@ -235,8 +319,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH2b">
-                    <label >H2b (Heat generator control (for heat pumps)):</label>
-                      {{ form.selected_H2b }}
+                    <label>{{ form.selected_H2b.label }}</label>  <!-- Render the label automatically -->
+                    <!-- The Switch -->
+                    <label class="switch">
+                        {{ form.selected_H2b }}  <!-- Render the form field (checkbox) -->
+                        <span class="slider"></span>
+                    </label>
                      </div>
 
                      <div id="collapseH2b" class="collapse">
@@ -262,8 +350,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH2d">
-                    <label >H2d (Sequencing in case of different heat generators):</label>
-                      {{ form.selected_H2d }}
+                    <label>{{ form.selected_H2d.label }}</label>  <!-- Render the label automatically -->
+                    <!-- The Switch -->
+                    <label class="switch">
+                        {{ form.selected_H2d }}  <!-- Render the form field (checkbox) -->
+                        <span class="slider"></span>
+                    </label>
                     </div>
 
                      <div id="collapseH2d" class="collapse">
@@ -289,8 +381,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH3">
-                    <label >H3 (Report information regarding heating system performance):</label>
-                      {{ form.selected_H3 }}
+                    <label>{{ form.selected_H3.label }}</label>  <!-- Render the label automatically -->
+                    <!-- The Switch -->
+                    <label class="switch">
+                        {{ form.selected_H3 }}  <!-- Render the form field (checkbox) -->
+                        <span class="slider"></span>
+                    </label>
                     </div>
 
                     <div id="collapseH3" class="collapse">
@@ -316,8 +412,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseH4">
-                    <label >H4 (Flexibility and grid interaction):</label>
-                      {{ form.selected_H4 }}
+                    <label>{{ form.selected_H4.label }}</label>  <!-- Render the label automatically -->
+                    <!-- The Switch -->
+                    <label class="switch">
+                        {{ form.selected_H4 }}  <!-- Render the form field (checkbox) -->
+                        <span class="slider"></span>
+                    </label>
                     </div>
 
                      <div id="collapseH4" class="collapse">
@@ -347,8 +447,12 @@
             </div>
 
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW" >
-                    <label >DHW (Domestic Hot Water) :</label>
-                      {{ form.selected_DHW }}
+                    <label>{{ form.selected_DHW.label }}</label>  <!-- Render the label automatically -->
+                    <!-- The Switch -->
+                    <label class="switch">
+                        {{ form.selected_DHW }}  <!-- Render the form field (checkbox) -->
+                        <span class="slider"></span>
+                    </label>
                     </div>
 
                 <div id="collapseDHW" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
@@ -356,8 +460,12 @@
 
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW1a">
-                         <label >DHW1a (Control of DHW storage charging (with direct electric heating or integrated electric heat pump)):</label>
-                         {{ form.selected_DHW1a }}
+                          <label>{{ form.selected_DHW1a.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_DHW1a }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                          </div>
 
                         <div id="collapseDHW1a" class="collapse">
@@ -384,8 +492,12 @@
                                                     </script>
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW1b">
-                            <label >DHW1b (Control of DHW storage charging (using hot water generation)):</label>
-                            {{ form.selected_DHW1b }}
+                             <label>{{ form.selected_DHW1b.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                            <label class="switch">
+                              {{ form.selected_DHW1b }}  <!-- Render the form field (checkbox) -->
+                        <span class="slider"></span>
+                          </label>
                         </div>
 
                         <div id="collapseDHW1b" class="collapse">
@@ -411,8 +523,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW1d">
-                            <label >DHW1d (Control of DHW storage charging (with solar collector and supplymentary heat generation)):</label>
-                             {{ form.selected_DHW1d }}
+                             <label>{{ form.selected_DHW1d.label }}</label>  <!-- Render the label automatically -->
+                           <!-- The Switch -->
+                           <label class="switch">
+                               {{ form.selected_DHW1d }}  <!-- Render the form field (checkbox) -->
+                              <span class="slider"></span>
+                           </label>
                         </div>
 
                         <div id="collapseDHW1d" class="collapse">
@@ -438,8 +554,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW2b">
-                            <label >DHW2b (Sequencing in case of different DHW generators):</label>
-                            {{ form.selected_DHW2b }}
+                            <label>{{ form.selected_DHW2b.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_DHW2b }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                          </div>
 
                         <div id="collapseDHW2b" class="collapse">
@@ -465,8 +585,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDHW3">
-                        <label >DHW3 (Report information regarding domestic hot water performance):</label>
-                        {{ form.selected_DHW3 }}
+                        <label>{{ form.selected_DHW3.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_DHW3 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
 
                     <div id="collapseDHW3" class="collapse">
@@ -496,16 +620,25 @@
                 </div>
 
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC">
-                    <label >C (Cooling) :</label>
-                      {{ form.selected_C }}
+                      <label>{{ form.selected_C.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_C }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
+
 
                     <div id="collapseC" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
                     <div class="card card-body">
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1a">
-                             <label >C1a (Cooling emission control):</label>
-                             {{ form.selected_C1a }}
+                             <label>{{ form.selected_C1a.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_C1a }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseC1a" class="collapse">
@@ -532,8 +665,12 @@
                                                     </script>
 
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1b">
-                            <label >C1b (Emission control for TABS (cooling mode)):</label>
-                             {{ form.selected_C1b }}
+                            <label>{{ form.selected_C1b.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_C1b }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
 
                     <div id="collapseC1b" class="collapse">
@@ -559,8 +696,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1c">
-                        <label >C1c (Control of distribution network chilled water temperature (supply or return)):</label>
-                        {{ form.selected_C1c }}
+                        <label>{{ form.selected_C1c.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_C1c }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
 
                     <div id="collapseC1c" class="collapse">
@@ -586,8 +727,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper"data-bs-toggle="collapse" data-bs-target="#collapseC1d">
-                            <label >C1d (Control of distribution pumps in networks):</label>
-                            {{ form.selected_C1d }}
+                            <label>{{ form.selected_C1d.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_C1d }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
 
                     <div id="collapseC1d" class="collapse">
@@ -613,8 +758,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1f">
-                            <label >C1f (Interlock: avoiding simultaneous heating and cooling in the same room):</label>
-                            {{ form.selected_C1f }}
+                            <label>{{ form.selected_C1f.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_C1f }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
 
                      <div id="collapseC1f" class="collapse">
@@ -640,8 +789,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC1g">
-                            <label >C1g (Control of Thermal Energy Storage (TES) operation):</label>
-                             {{ form.selected_C1g }}
+                           <label>{{ form.selected_C1g.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_C1g }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
 
                     <div id="collapseC1g" class="collapse">
@@ -667,8 +820,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC2a">
-                            <label >C2a (Generator control for cooling):</label>
-                             {{ form.selected_C2a }}
+                            <label>{{ form.selected_C2a.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_C2a }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
 
                     <div id="collapseC2a" class="collapse">
@@ -694,8 +851,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC2b">
-                            <label >C2b (Sequencing of different cooling generators):</label>
-                            {{ form.selected_C2b
+                            <label>{{ form.selected_C2b.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_C2b }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
 
                     <div id="collapseC2b" class="collapse">
@@ -721,8 +882,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC3">
-                            <label >C3 (Report information regarding cooling system performance):</label>
-                            {{ form.selected_C3 }}
+                            <label>{{ form.selected_C3.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_C3 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
 
                     <div id="collapseC3" class="collapse">
@@ -748,8 +913,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseC4">
-                            <label >C4 (Flexibility and grid interaction):</label>
-                            {{ form.selected_C4 }}
+                            <label>{{ form.selected_C4.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_C4 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
 
                     <div id="collapseC4" class="collapse">
@@ -778,16 +947,24 @@
                 </div>
 
                 <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV" >
-                    <label >V (Ventilation) :</label>
-                      {{ form.selected_V }}
+                    <label>{{ form.selected_V.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_V }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                 </div>
 
                 <div id="collapseV" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
                      <div class="card card-body">
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV1a">
-                            <label >V1a (Supply air flow control at the room level):</label>
-                            Share of the functionality level : {{ form.selected_V1a }}
+                            <label>{{ form.selected_V1a.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_V1a }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseV1a" class="collapse" >
@@ -813,8 +990,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV1c">
-                            <label >V1c (Air flow or pressure control at the air handler level):</label>
-                            {{ form.selected_V1c }}
+                            <label>{{ form.selected_V1c.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_V1c }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseV1c" class="collapse" >
@@ -840,8 +1021,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV2c">
-                            <label >V2c (Heat recovery control: prevention of overheating):</label>
-                            {{ form.selected_V2c }}
+                           <label>{{ form.selected_V2c.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_V2c }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseV2c" class="collapse" >
@@ -867,8 +1052,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV2d">
-                            <label >V2d (Supply air temperature control at the air handling unit level):</label>
-                             {{ form.selected_V2d }}
+                            <label>{{ form.selected_V2d.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_V2d }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseV2d" class="collapse" >
@@ -894,8 +1083,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV3">
-                          <label >V3 (Free cooling with mechanical ventilation system):</label>
-                          {{ form.selected_V3 }}
+                          <label>{{ form.selected_V3.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_V3 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseV3" class="collapse" >
@@ -921,8 +1114,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseV6">
-                            <label >V6 (Reporting information regarding IAQ):</label>
-                             {{ form.selected_V6 }}
+                            <label>{{ form.selected_V6.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_V6 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseV6" class="collapse" >
@@ -951,16 +1148,24 @@
                 </div>
 
                 <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseL">
-                    <label >L (Lighting) :</label>
-                      {{ form.selected_L }}
+                    <label>{{ form.selected_L.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_L }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                 </div>
 
                 <div id="collapseL" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
                 <div class="card card-body">
 
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseL1a">
-                            <label >L1a (Occupancy control for indoor lighting):</label>
-                             {{ form.selected_L1a }}
+                            <label>{{ form.selected_L1a.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_L1a }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
 
                     <div id="collapseL1a" class="collapse">
@@ -986,8 +1191,12 @@
                                                                         }
                                                     </script>
                     <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseL2">
-                            <label >L2 (Control artificial lighting power based on daylight levels):</label>
-                            {{ form.selected_L2 }}
+                            <label>{{ form.selected_L2.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_L2 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                     </div>
 
                     <div id="collapseL2" class="collapse">
@@ -1016,16 +1225,24 @@
                 </div>
 
                 <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseDE">
-                    <label >DE (Dynamic Building Envelope) :</label>
-                      {{ form.selected_DE }}
+                    <label>{{ form.selected_DE.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_DE }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                 </div>
 
                 <div id="collapseDE" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
                     <div class="card card-body">
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDE1">
-                            <label >DE1 (Window solar shading control):</label>
-                            {{ form.selected_DE1 }}
+                            <label>{{ form.selected_DE1.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_DE1 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseDE1" class="collapse">
@@ -1051,8 +1268,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDE2">
-                            <label >DE2 (Window open/closed control, combined ):</label>
-                            {{ form.selected_DE2 }}
+                            <label>{{ form.selected_DE2.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_DE2 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseDE2" class="collapse">
@@ -1078,8 +1299,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseDE4">
-                             <label >DE4 (Reporting information regarding performance of dynamic building envelope systems):</label>
-                             {{ form.selected_DE4 }}
+                             <label>{{ form.selected_DE4.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_DE4 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseDE4" class="collapse">
@@ -1108,16 +1333,24 @@
                 </div>
 
                 <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseE">
-                    <label >E (Electricity) :</label>
-                      {{ form.selected_E }}
+                    <label>{{ form.selected_E.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_E }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                 </div>
 
                 <div id="collapseE" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
                     <div class="card card-body">
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseE2">
-                            <label >E2 (Reporting information regarding local electricity generation):</label>
-                             {{ form.selected_E2 }}
+                            <label>{{ form.selected_E2.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_E2 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseE2" class="collapse">
@@ -1143,8 +1376,12 @@
                                                                         }
                                                     </script>
                          <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseE3">
-                            <label >E3 (Storage of (locally generated) electricity):</label>
-                              {{ form.selected_E3 }}
+                            <label>{{ form.selected_E3.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_E3 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                          </div>
 
                          <div id="collapseE3" class="collapse">
@@ -1170,8 +1407,13 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseE4">
-                            <label >E4 (Optimizing self-consumption of locally generated electricity):</label>
-                            {{ form.selected_E4 }}
+                            <label>{{ form.selected_E4.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_E4 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+
+                              </label>
                          </div>
 
                         <div id="collapseE4" class="collapse">
@@ -1198,8 +1440,12 @@
                                                     </script>
 
                         <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseE5">
-                            <label >E5 (Control of combined heat and power plant (CHP)):</label>
-                            {{ form.selected_E5 }}
+                           <label>{{ form.selected_E5.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_E5 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseE5" class="collapse">
@@ -1226,8 +1472,12 @@
                                                     </script>
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseE8">
-                            <label >E8 (Support of (micro)grid operation modes):</label>
-                            {{ form.selected_E8 }}
+                            <label>{{ form.selected_E8.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_E8 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseE8" class="collapse">
@@ -1254,8 +1504,12 @@
                                                     </script>
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseE11">
-                            <label >E11 (Reporting information regarding energy storage):</label>
-                            {{ form.selected_E11 }}
+                            <label>{{ form.selected_E11.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_E11 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseE11" class="collapse">
@@ -1282,8 +1536,12 @@
                                                     </script>
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseE12">
-                            <label >E12 (Reporting information regarding electricity consumption):</label>
-                            {{ form.selected_E12 }}
+                            <label>{{ form.selected_E12.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_E12 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseE12" class="collapse">
@@ -1312,15 +1570,23 @@
                 </div>
 
                 <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseEV">
-                       <label >EV (Electrical Vehicle Charging) :</label>
-                      {{ form.selected_EV }}
+                       <label>{{ form.selected_EV.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_EV }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                 </div>
 
                 <div id="collapseEV" class="collapse" style='opacity:0.8; border-color:black; width: 800px;'>
                      <div class="card card-body">
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseEV15">
-                            <label >EV15 (EV Charging Capacity):</label>
-                            {{ form.selected_EV15 }}
+                            <label>{{ form.selected_EV15.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_EV15 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseEV15" class="collapse">
@@ -1347,8 +1613,12 @@
                                                     </script>
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseEV16">
-                            <label >EV16 (EV Charging Grid balancing):</label>
-                            {{ form.selected_EV16 }}
+                            <label>{{ form.selected_EV16.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_EV16 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseEV16" class="collapse">
@@ -1375,8 +1645,12 @@
                                                     </script>
 
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseEV17">
-                            <label >EV17 (EV charging information and connectivity):</label>
-                             {{ form.selected_EV17 }}
+                            <label>{{ form.selected_EV17.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_EV17 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseEV17" class="collapse">
@@ -1405,15 +1679,23 @@
                 </div>
 
                 <div class="fieldWrapper"  data-bs-toggle="collapse" data-bs-target="#collapseMC">
-                      <label >MC (Monitoring and Control) :</label>
-                      {{ form.selected_MC }}
+                      <label>{{ form.selected_MC.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_MC }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                 </div>
 
                 <div id="collapseMC" class="collapse" style='opacity:0.8; border-color:black; width: 1100px;'>
                     <div class="card card-body">
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC3">
-                            <label >MC3 (Run time management of HVAC systems):</label>
-                            {{ form.selected_MC3 }}
+                            <label>{{ form.selected_MC3.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_MC3 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                          <div id="collapseMC3" class="collapse">
@@ -1439,8 +1721,12 @@
                                                                         }
                                                     </script>
                          <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC4">
-                            <label >MC4 (Detecting faults of technical building systems and providing support to the diagnosis of these faults):</label>
-                            {{ form.selected_MC4 }}
+                            <label>{{ form.selected_MC4.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_MC4 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                          </div>
 
                          <div id="collapseMC4" class="collapse" >
@@ -1466,8 +1752,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC9">
-                            <label >MC9 (Occupancy detection: connected services):</label>
-                            {{ form.selected_MC9 }}
+                            <label>{{ form.selected_MC9.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_MC9 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseMC9" class="collapse" >
@@ -1493,8 +1783,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC13">
-                            <label >MC13 (Central reporting of TBS performance and energy use):</label>
-                            {{ form.selected_MC13 }}
+                            <label>{{ form.selected_MC13.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_MC13 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseMC13" class="collapse" >
@@ -1520,8 +1814,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC25">
-                            <label >MC25 (Smart Grid Integration):</label>
-                            {{ form.selected_MC25 }}
+                            <label>{{ form.selected_MC25.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_MC25 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseMC25" class="collapse" >
@@ -1547,8 +1845,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC28">
-                            <label >MC28 (Reporting information regarding demand side management performance and operation):</label>
-                            {{ form.selected_MC28 }}
+                            <label>{{ form.selected_MC28.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_MC28 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseMC28" class="collapse" >
@@ -1574,8 +1876,12 @@
                                                                         }
                                                     </script>
                          <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC29">
-                            <label >MC29 (Override of DSM control):</label>
-                            {{ form.selected_MC29 }}
+                            <label>{{ form.selected_MC29.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_MC29 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                          </div>
 
                         <div id="collapseMC29" class="collapse" >
@@ -1601,8 +1907,12 @@
                                                                         }
                                                     </script>
                         <div class="fieldWrapper" data-bs-toggle="collapse" data-bs-target="#collapseMC30">
-                            <label >MC30 (Single platform for automated control & coordination between TBS + energy flow optimization based on occupancy, weather and grid):</label>
-                            {{ form.selected_MC30 }}
+                            <label>{{ form.selected_MC30.label }}</label>  <!-- Render the label automatically -->
+                            <!-- The Switch -->
+                           <label class="switch">
+                                  {{ form.selected_MC30 }}  <!-- Render the form field (checkbox) -->
+                                     <span class="slider"></span>
+                              </label>
                         </div>
 
                         <div id="collapseMC30" class="collapse" >
@@ -1635,6 +1945,7 @@
         </div>
       </div>
 </div>
+
 </body>
 
 </html>

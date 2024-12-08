@@ -39,7 +39,7 @@
 
             <p>Results</p>
             <!-- TOTAL SRI ---->
-              <figure class="highcharts-figure3">
+              <figure class="highcharts-figure3" >
                 <div id="container3"></div>
                 <p class="highcharts-description3">
 
@@ -48,6 +48,15 @@
 
 
             <script>
+
+               // Hide Highcharts credentials
+               Highcharts.setOptions({
+               credits: {
+                enabled: false
+                }
+                });
+
+
             Highcharts.chart('container3', {
 
                  chart: {
@@ -56,7 +65,7 @@
                      plotBackgroundImage: null,
                      plotBorderWidth: 0,
                       plotShadow: false,
-                         height: '30%'
+                         height: '40%'
                         },
 
              title: {
@@ -157,7 +166,7 @@
 
         }, 3000);
  </script>
-<p> </p>>
+<p> </p>
 
             <!-- IMPACT SCORES ---->
             <figure class="highcharts-figure">
@@ -167,7 +176,14 @@
                     </p>
             </figure>
 
-            <script> Highcharts.chart('container', {
+            <script>
+               // Hide Highcharts credentials
+               Highcharts.setOptions({
+               credits: {
+                enabled: false
+                }
+                });
+                Highcharts.chart('container', {
                     chart: {
                             type: 'column'
                                 },
@@ -239,7 +255,14 @@
                     </p>
             </figure>
 
-            <script> Highcharts.chart('container2', {
+            <script>
+               // Hide Highcharts credentials
+               Highcharts.setOptions({
+               credits: {
+                enabled: false
+                }
+                });
+                Highcharts.chart('container2', {
                     chart: {
                             type: 'column'
                                 },

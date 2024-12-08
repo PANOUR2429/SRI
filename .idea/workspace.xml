@@ -7,8 +7,10 @@
     <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="add SRI GAUGE (from highcharts)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/Static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/Static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/Static/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/Static/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_page1.html" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_page1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SRIsite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -406,7 +408,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725200523791</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="add SRI GAUGE (from highcharts)">
+      <option name="closed" value="true" />
+      <created>1725201739409</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1725201739410</updated>
+    </task>
+    <task id="LOCAL-00040" summary="add SRI GAUGE (from highcharts)">
+      <option name="closed" value="true" />
+      <created>1725201744919</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1725201744920</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
