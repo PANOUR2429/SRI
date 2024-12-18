@@ -71,6 +71,12 @@ class ControlForm(forms.ModelForm):
         label="H4 (Flexibility and grid interaction):"
     )
 
+    selected_DHW = forms.BooleanField(
+        required=False,
+        widget=forms.CheckboxInput(attrs={'class': 'switch'}),
+        label="DHW (Domestic Hot Water):"
+    )
+
     selected_DHW1a = forms.BooleanField(
         required=False,
         widget=forms.CheckboxInput(attrs={'class': 'switch'}),
