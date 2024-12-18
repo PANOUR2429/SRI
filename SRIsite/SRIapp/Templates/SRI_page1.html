@@ -174,6 +174,7 @@ input:checked + .slider:before {
                             <div class="tooltip-container">
                             <p> Main functionality level : {{ form.selected_H1a_level }}</p>
                                 <span class="tooltip-text">
+				                    Heat emission control<br>
                                     0: No automatic control<br>
                                     1: Central automatic control (e.g. central thermostat)<br>
                                     2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
@@ -218,11 +219,11 @@ input:checked + .slider:before {
                        <div class="tooltip-container">
                       <p>Main functionality level : {{ form.selected_H1b_level }}</p>
                            <span class="tooltip-text">
+                                    Emission control for TABS (heating mode)<br>
                                     0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+                                    1: Central automatic control <br>
+                                    2: Advanced central automatic control<br>
+                                    3: Advanced central automatic control with intermittent operation and/or room temperature feedback control
                                 </span>
                             </div>
                       <p>Additional functionality level (if Share <100%): {{ form.selected_H1b_Perc2_level }}</p>
@@ -261,11 +262,10 @@ input:checked + .slider:before {
                          <div class="tooltip-container">
                       <p>Main functionality level : {{ form.selected_H1c_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+                                    Control of distribution fluid temperature (supply or return air flow or water flow) - Similar function can be applied to the control of direct electric heating networks<br>
+				                    0: No automatic control <br>
+                                    1: Outside temperature compensated control<br>
+                                    2: Demand based control<br>
                                 </span>
                             </div>
                       <p>Additional functionality level (if Share <100%): {{ form.selected_H1c_Perc2_level }}</p>
@@ -301,11 +301,12 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                         <p>Main functionality level : {{ form.selected_H1d_level }}</p>
                        <span class="tooltip-text">
+                                    Control of distribution pumps in networks<br>
                                     0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+                                    1: On off control<br>
+                                    2: Multi-Stage control<br>
+                                    3: Variable speed pump control (pump unit (internal) estimations)<br>
+                                    4: Variable speed pump control (external demand signal)
                                 </span>
                             </div>
                           <p>Additional functionality level (if Share <100%): {{ form.selected_H1d_Perc2_level }}</p>
@@ -341,11 +342,11 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                          <p>Main functionality level : {{ form.selected_H1f_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+                                    Thermal Energy Storage (TES) for building heating (excluding TABS)<br>
+                                    0: Continuous storage operation<br>
+                                    1: Time-scheduled storage operation<br>
+                                    2: Load prediction based storage operation<br>
+                                    3: Heat storage capable of flexible control through grid signals (e.g. DSM) <br>
                                 </span>
                             </div>
                       <p>Additional functionality level (if Share <100%): {{ form.selected_H1f_Perc2_level }}</p>
@@ -381,11 +382,10 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                          <p>Main functionality level : {{ form.selected_H2a_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+                                    Heat generator control (all except heat pumps)<br>
+                                    0: Constant temperature control<br>
+                                    1: Variable temperature control depending on outdoor temperature (e.g. central thermostat)<br>
+                                    2: Variable temperature control depending on the load (e.g. depending on supply water temperature set point)
                                 </span>
                             </div>
                          <p>Additional functionality level (if Share <100%): {{ form.selected_H2a_Perc2_level }}</p>
@@ -421,11 +421,11 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                       <p>Main functionality level : {{ form.selected_H2b_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+                                    Heat generator control (for heat pumps)<br>
+                                    0: On/Off-control of heat generator<br>
+                                    1: Multi-stage control of heat generator capacity depending on the load or demand (e.g. on/off of several compressors)<br>
+                                    2: Variable control of heat generator capacity depending on the load or demand (e.g. hot gas bypass, inverter frequency control)<br>
+                                    3: Variable control of heat generator capacity depending on the load AND external signals from grid<br>
                                 </span>
                             </div>
                           <p>Additional functionality level (if Share <100%): {{ form.selected_H2b_Perc2_level }}</p>
@@ -461,11 +461,12 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                       <p>Main functionality level : {{ form.selected_H2d_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+                                    Sequencing in case of different heat generators<br>
+                                    0: Priorities only based on running time<br>
+                                    1: Control according to fixed priority list: e.g. based on rated energy efficiency<br>
+                                    2: Control according to dynamic priority list (based on current energy efficiency, carbon emissions and capacity of generators, e.g. solar, geothermal heat, cogeneration plant, fossil fuels)<br>
+                                    3: Control according to dynamic priority list (based on current AND predicted load, energy efficiency, carbon emissions  and capacity of generators)
+		                		    4: Control according to dynamic priority list (based on current AND predicted load, energy efficiency, carbon emissions, capacity of generators AND external signals from grid)
                                 </span>
                             </div>
                       <p>Additional functionality level (if Share <100%): {{ form.selected_H2d_Perc2_level }}</p>
@@ -501,11 +502,12 @@ input:checked + .slider:before {
 <div class="tooltip-container">
                       <p>Main functionality level : {{ form.selected_H3_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+     				                Report information regarding heating system performance<br>
+                                    0: None<br>
+                                    1: Central or remote reporting of current performance KPIs (e.g. temperatures, submetering energy usage)<br>
+                                    2: Central or remote reporting of current performance KPIs and historical data<br>
+                                    3: Central or remote reporting of performance evaluation including forecasting and/or benchmarking<br>
+                                    4: Central or remote reporting of performance evaluation including forecasting and/or benchmarking; also including predictive management and fault detection
                                 </span>
                             </div>
                       <p>Additional functionality level (if Share <100%): {{ form.selected_H3_Perc2_level }}</p>
@@ -541,11 +543,12 @@ input:checked + .slider:before {
 <div class="tooltip-container">
                       <p>Main functionality level : {{ form.selected_H4_level }}</p>
                              <span class="tooltip-text">
+				                    Flexibility and grid interaction<br>
                                     0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+                                    1: Scheduled operation of heating system<br>
+                                    2: Self-learning optimal control of heating system<br>
+                                    3: Heating system capable of flexible control through grid signals (e.g. DSM) <br>
+                                    4: Optimized control of  heating system based on local predictions and grid signals (e.g. through model predictive control)
                                 </span>
                             </div>
                       <p>Additional functionality level (if Share <100%): {{ form.selected_H4_Perc2_level }}</p>
@@ -598,11 +601,11 @@ input:checked + .slider:before {
 <div class="tooltip-container">
                             <p>Main functionality level : {{ form.selected_DHW1a_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+        				            Control of DHW storage charging (with direct electric heating or integrated electric heat pump)<br>
+                                    0: Automatic control on / off<br>
+                                    1: Automatic control on / off and scheduled charging enable<br>
+                                    2: Automatic control on / off and scheduled charging enable and multi-sensor storage management<br>
+                                    3: Automatic charging control based on local availability of renewables or information from electricity grid (DR, DSM) <br>
                                 </span>
                             </div>
                             <p>Additional functionality level (if Share <100%): {{ form.selected_DHW1a_Perc2_level }}</p>
@@ -639,11 +642,11 @@ input:checked + .slider:before {
                             <div class="tooltip-container">
                             <p>Main functionality level : {{ form.selected_DHW1b_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+                				    Control of DHW storage charging (using hot water generation)<br>
+                                    0: Automatic control on / off<br>
+                                    1: Automatic control on / off and scheduled charging enable<br>
+                                    2: Automatic on/off control, scheduled charging enable and demand-based supply temperature control or multi-sensor storage management<br>
+                                    3: DHW production system capable of automatic charging control based on external signals (e.g. from district heating grid)<br>
                                 </span>
                             </div>
                             <p>Additional functionality level (if Share <100%): {{ form.selected_DHW1b_Perc2_level }}</p>
@@ -679,11 +682,11 @@ input:checked + .slider:before {
                             <div class="tooltip-container">
                             <p>Main functionality level : {{ form.selected_DHW1d_level }}</p>
                               <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+				                    Control of DHW storage charging (with solar collector and supplymentary heat generation)<br>
+                                    0: Manual selected control of solar energy or heat generation<br>
+                                    1: Automatic control of solar storage charge (Prio. 1) and supplementary storage charge<br>
+                                    2: Automatic control of solar storage charge (Prio. 1) and supplementary storage charge and demand-oriented supply or multi-sensor storage management<br>
+                                    3: Automatic control of solar storage charge (Prio. 1) and supplementary storage charge, demand-oriented supply and return temperature control and multi-sensor storage management<br>
                                 </span>
                             </div>
                             <p>Additional functionality level (if Share <100%): {{ form.selected_DHW1d_Perc2_level }}</p>
@@ -719,11 +722,12 @@ input:checked + .slider:before {
                             <div class="tooltip-container">
                              <p>Main functionality level : {{ form.selected_DHW2b_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+	                			    Sequencing in case of different DHW generators<br>
+                                    0: Priorities only based on running time<br>
+                                    1: Control according to fixed priority list: e.g. based on rated energy efficiency<br>
+                                    2: Control according to dynamic priority list (based on current energy efficiency, carbon emissions and capacity of generators, e.g. solar, geothermal heat, cogeneration plant, fossil fuels)<br>
+	                			    3: Control according to dynamic priority list (based on current AND predicted load, energy efficiency, carbon emissions  and capacity of generators)<br>
+                                    4: Control according to dynamic priority list (based on current AND predicted load, energy efficiency, carbon emissions, capacity of generators AND external signals from grid)<br>
                                 </span>
                             </div>
                             <p>Additional functionality level (if Share <100%): {{ form.selected_DHW2b_Perc2_level }}</p>
@@ -759,11 +763,12 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                       <p>Main functionality level : {{ form.selected_DHW3_level }}</p>
                          <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+			                	    Report information regarding domestic hot water performance<br>
+                                    0: None<br>
+                                    1: Indication of actual values (e.g. temperatures, submetering energy usage)<br>
+                                    2: Actual values and historical data<br>
+		                		    3: Performance evaluation including forecasting and/or benchmarking<br>
+                                    4: Performance evaluation including forecasting and/or benchmarking; also including predictive management and fault detection<br>
                                 </span>
                             </div>
                           <p>Additional functionality level (if Share <100%): {{ form.selected_DHW3_Perc2_level }}</p>
@@ -816,11 +821,12 @@ input:checked + .slider:before {
                             <div class="tooltip-container">
                             <p>Main functionality level : {{ form.selected_C1a_level }}</p>
                             <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+Cooling emission control<br>
+0: No automatic control	<br>
+1: Central automatic control<br>
+2: Individual room control<br>
+3: Individual room control with communication between controllers and to BACS<br>
+4: Individual room control with communication and occupancy detection
                                 </span>
                             </div>
                             <p>Additional functionality level (if Share <100%): {{ form.selected_C1a_Perc2_level }}</p>
@@ -857,11 +863,11 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                          <p>Main functionality level : {{ form.selected_C1b_level }}</p>
                         <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+Emission control for TABS (cooling mode)<br>
+0: No automatic control	<br>
+1: Central automatic control	<br>
+2: Advanced central automatic control	<br>
+3: Advanced central automatic control with intermittent operation and/or room temperature feedback control
                                 </span>
                             </div>
                           <p>Additional functionality level (if Share <100%): {{ form.selected_C1b_Perc2_level }}</p>
@@ -897,11 +903,10 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                          <p>Main functionality level : {{ form.selected_C1c_level }}</p>
                         <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+Control of distribution network chilled water temperature (supply or return)<br>
+0: Constant temperature control	<br>
+1: Outside temperature compensated control<br>
+2: Demand based control
                                 </span>
                             </div>
                          <p>Additional functionality level (if Share <100%): {{ form.selected_C1c_Perc2_level }}</p>
@@ -937,11 +942,12 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                          <p>Main functionality level : {{ form.selected_C1d_level }}</p>
                          <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+Control of distribution pumps in networks<br>
+0: No automatic control	<br>
+1: On off control	<br>
+2: Multi-Stage control	<br>
+3: Variable speed pump control (pump unit (internal) estimations)<br>
+4: Variable speed pump control (external demand signal)
                                 </span>
                             </div>
                           <p>Additional functionality level (if Share <100%): {{ form.selected_C1d_Perc2_level }}</p>
@@ -977,11 +983,10 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                           <p>Main functionality level : {{ form.selected_C1f_level }}</p>
                        <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+Interlock: avoiding simultaneous heating and cooling in the same room	<br>
+0: No interlock	<br>
+1: Partial interlock (minimising risk of simultanieus heating and cooling e.g. by sliding setpoints)	<br>
+2: Total interlock (control system ensures no  simultaneous heating and cooling can take place)
                                 </span>
                             </div>
                           <p>Additional functionality level (if Share <100%): {{ form.selected_C1f_Perc2_level }}</p>
@@ -1017,11 +1022,10 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                          <p>Main functionality level : {{ form.selected_C1g_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+Continuous storage operation	<br>
+0: Time-scheduled storage operation	<br>
+1: Load prediction based storage operation	<br>
+2: Cold storage capable of flexible control through grid signals (e.g. DSM)
                                 </span>
                             </div>
                           <p>Additional functionality level (if Share <100%): {{ form.selected_C1g_Perc2_level }}</p>
@@ -1057,11 +1061,11 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                          <p>Main functionality level : {{ form.selected_C2a_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+Generator control for cooling	<br>
+0: On/Off-control of cooling production	<br>
+1: Multi-stage control of  cooling production capacity depending on the load or demand (e.g. on/off of several compressors)	<br>
+2: Variable control of  cooling production capacity depending on the load or demand (e.g. hot gas bypass, inverter frequency control)	<br>
+3: Variable control of  cooling production capacity depending on the load AND external signals from grid
                                 </span>
                             </div>
                       <p>Additional functionality level (if Share <100%): {{ form.selected_C2a_Perc2_level }}</p>
@@ -1097,11 +1101,12 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                          <p>Main functionality level : {{ form.selected_C2b_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+Sequencing of different cooling generators	<br>
+0: Priorities only based on running times	<br>
+1: Fixed sequencing based on loads only: e.g. depending on the generators characteristics such as absorption chiller vs. centrifugal chiller<br>
+2: Dynamic priorities based on generator efficiency and characteristics (e.g. availability of free cooling)	<br>
+3: Load prediction based sequencing: the sequence is based on e.g. COP and available power of a device and the predicted required power	<br>
+4: Sequencing based on dynamic priority list, including external signals from grid
                                 </span>
                             </div>
                       <p>Additional functionality level (if Share <100%): {{ form.selected_C2b_Perc2_level }}</p>
@@ -1137,11 +1142,12 @@ input:checked + .slider:before {
                         <div class="tooltip-container">
                       <p>Main functionality level : {{ form.selected_C3_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+Report information regarding cooling system performance	<br>
+0: None	<br>
+1: Central or remote reporting of current performance KPIs (e.g. temperatures, submetering energy usage)<br>
+2: Central or remote reporting of current performance KPIs and historical data	<br>
+3: Central or remote reporting of performance evaluation including forecasting and/or benchmarking	<br>
+4: Central or remote reporting of performance evaluation including forecasting and/or benchmarking; also including predictive management and fault detection
                                 </span>
                             </div>
                       <p>Additional functionality level (if Share <100%): {{ form.selected_C3_Perc2_level }}</p>
@@ -1177,11 +1183,12 @@ input:checked + .slider:before {
                       <div class="tooltip-container">
                          <p>Main functionality level : {{ form.selected_C4_level }}</p>
                              <span class="tooltip-text">
-                                    0: No automatic control<br>
-                                    1: Central automatic control (e.g. central thermostat)<br>
-                                    2: Individual room control (e.g. thermostatic valves, or electronic controller)<br>
-                                    3: Individual room control with communication between controllers and to BACS<br>
-                                    4: Individual room control with communication and occupancy detection
+Flexibility and grid interaction	<br>
+0: No automatic control	<br>
+1: Scheduled operation of cooling system	<br>
+2: Self-learning optimal control of cooling system<br>
+3: Cooling system capable of flexible control through grid signals (e.g. DSM) 	<br>
+4: Optimized control of  cooling system based on local predictions and grid signals (e.g. through model predictive control)
                                 </span>
                             </div>
                           <p>Additional functionality level (if Share <100%): {{ form.selected_C4_Perc2_level }}</p>

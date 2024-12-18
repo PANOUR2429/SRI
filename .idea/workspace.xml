@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="change checkboxes to switches">
+    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="popup info on main functionality levels">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_page1.html" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_page1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -437,7 +436,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734515788080</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="change checkboxes to switches">
+      <option name="closed" value="true" />
+      <created>1734517690818</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1734517690818</updated>
+    </task>
+    <task id="LOCAL-00044" summary="popup info on main functionality levels">
+      <option name="closed" value="true" />
+      <created>1734517754535</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1734517754535</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -471,6 +486,7 @@
     <MESSAGE value="add charts (from highcharts)" />
     <MESSAGE value="add SRI GAUGE (from highcharts)" />
     <MESSAGE value="change checkboxes to switches" />
-    <option name="LAST_COMMIT_MESSAGE" value="change checkboxes to switches" />
+    <MESSAGE value="popup info on main functionality levels" />
+    <option name="LAST_COMMIT_MESSAGE" value="popup info on main functionality levels" />
   </component>
 </project>
