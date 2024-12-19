@@ -131,6 +131,12 @@ class ControlForm(forms.ModelForm):
         label="C1c (Control of distribution network chilled water temperature (supply or return)):"
     )
 
+    selected_C1d = forms.BooleanField(
+        required=False,
+        widget=forms.CheckboxInput(attrs={'class': 'switch'}),
+        label="C1d (Control of distribution pumps in networks):"
+    )
+
     selected_C1f = forms.BooleanField(
         required=False,
         widget=forms.CheckboxInput(attrs={'class': 'switch'}),
