@@ -913,7 +913,7 @@ def SRIcalculator(index):
     Sum_N_MC = 0
     Sum_N_MC_Max = 0
 
-    W = list(ImpactWeight.objects.filter(building_type=selected_building_type, zone=selected_zone).values())
+    W = list(ImpactWeight.objects.filter(zone=selected_zone).values())
     N_Smartness = [0, 0, 0, 0, 0, 0, 0]
     Impact_Weightings = [0, 0, 0, 0, 0, 0, 0]
 

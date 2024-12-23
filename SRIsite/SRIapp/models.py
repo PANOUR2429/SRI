@@ -51,7 +51,7 @@ class Services(models.Model):
 
 
 # possible building types: Residential, Non - Residential
-building_type_choice = (('Residential','Residential'), ('Non - Residential','Non - Residential'))
+building_type_choice = (('Residential','Residential'), ('Non-Residential','Non-Residential'))
 
 # possible zones : North Europe, West Europe, North-East Europe, South Europe, South-East Europe
 zones_choice = (
