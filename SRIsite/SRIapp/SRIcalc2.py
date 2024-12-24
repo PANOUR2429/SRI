@@ -326,7 +326,7 @@ def SRIcalculator(index):
     H4_2 = list(Levels.objects.filter(code='H-4', level=H_level_list2[9]).values())
 
     while i < len(H):
-        H[i] = (
+        H[i] = H_selected * (
                 (((selected_H1a_Perc_1/100) * H1a[0]["score_cr" + str(i+1)]) + ((1-(selected_H1a_Perc_1/100)) * H1a_2[0]["score_cr" + str(i + 1)]))* selected_H1a +
                 (((selected_H1b_Perc_1/100) * H1b[0]["score_cr" + str(i+1)]) + ((1-(selected_H1b_Perc_1/100)) * H1b_2[0]["score_cr" + str(i + 1)])) * selected_H1b +
                 (((selected_H1c_Perc_1/100) * H1c[0]["score_cr" + str(i+1)]) + ((1-(selected_H1c_Perc_1/100)) * H1c_2[0]["score_cr" + str(i + 1)]))* selected_H1c +
@@ -337,7 +337,7 @@ def SRIcalculator(index):
                 (((selected_H2d_Perc_1/100) * H2d[0]["score_cr" + str(i+1)]) + ((1-(selected_H2d_Perc_1/100)) * H2d_2[0]["score_cr" + str(i + 1)])) * selected_H2d +
                 (((selected_H3_Perc_1/100) * H3[0]["score_cr" + str(i+1)]) + ((1-(selected_H3_Perc_1/100)) * H3_2[0]["score_cr" + str(i + 1)])) * selected_H3 +
                 (((selected_H4_Perc_1/100) * H4[0]["score_cr" + str(i+1)]) + ((1-(selected_H4_Perc_1/100)) * H4_2[0]["score_cr" + str(i + 1)])) * selected_H4
-               ) * H_selected
+               )
         i += 1
 
     SRI_res['H']=H
@@ -363,13 +363,13 @@ def SRIcalculator(index):
 
 
     while j < len(DHW):
-        DHW[j] = (
+        DHW[j] = DHW_selected * (
                     (((selected_DHW1a_Perc_1 / 100) * DHW1a[0]["score_cr" + str(j + 1)]) + ((1 - (selected_DHW1a_Perc_1 / 100)) * DHW1a_2[0]["score_cr" + str(j + 1)])) * selected_DHW1a +
                     (((selected_DHW1b_Perc_1 / 100) * DHW1b[0]["score_cr" + str(j + 1)]) + ((1 - (selected_DHW1b_Perc_1 / 100)) * DHW1b_2[0]["score_cr" + str(j + 1)])) * selected_DHW1b +
                     (((selected_DHW1d_Perc_1 / 100) * DHW1d[0]["score_cr" + str(j + 1)]) + ((1 - (selected_DHW1d_Perc_1 / 100)) * DHW1d_2[0]["score_cr" + str(j + 1)])) * selected_DHW1d +
                     (((selected_DHW2b_Perc_1 / 100) * DHW2b[0]["score_cr" + str(j + 1)]) + ((1 - (selected_DHW2b_Perc_1 / 100)) * DHW2b_2[0]["score_cr" + str(j + 1)])) * selected_DHW2b +
                     (((selected_DHW3_Perc_1 / 100) * DHW3[0]["score_cr" + str(j + 1)]) + ((1 - (selected_DHW3_Perc_1 / 100)) * DHW3_2[0]["score_cr" + str(j + 1)])) * selected_DHW3
-                 ) * DHW_selected
+                 )
         j += 1
 
     SRI_res['DHW'] = DHW
@@ -405,7 +405,7 @@ def SRIcalculator(index):
     C4_2 = list(Levels.objects.filter(code='C-4', level=C_level_list2[9]).values())
 
     while k < len(C):
-        C[k] = (
+        C[k] = C_selected * (
                (((selected_C1a_Perc_1 / 100) * C1a[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C1a_Perc_1 / 100)) * C1a_2[0]["score_cr" + str(k + 1)])) * selected_C1a +
                (((selected_C1b_Perc_1 / 100) * C1b[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C1b_Perc_1 / 100)) * C1b_2[0]["score_cr" + str(k + 1)])) * selected_C1b +
                (((selected_C1c_Perc_1 / 100) * C1c[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C1c_Perc_1 / 100)) * C1c_2[0]["score_cr" + str(k + 1)])) * selected_C1c +
@@ -416,7 +416,7 @@ def SRIcalculator(index):
                (((selected_C2b_Perc_1 / 100) * C2b[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C2b_Perc_1 / 100)) * C2b_2[0]["score_cr" + str(k + 1)])) * selected_C2b +
                (((selected_C3_Perc_1 / 100) * C3[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C3_Perc_1 / 100)) * C3_2[0]["score_cr" + str(k + 1)])) * selected_C3 +
                (((selected_C4_Perc_1 / 100) * C4[0]["score_cr" + str(k + 1)]) + ((1 - (selected_C4_Perc_1 / 100)) * C4_2[0]["score_cr" + str(k + 1)])) * selected_C4
-                ) * C_selected
+                )
         k += 1
 
     SRI_res['C'] = C
@@ -442,14 +442,14 @@ def SRIcalculator(index):
     V6_2 = list(Levels.objects.filter(code='V-6', level=V_level_list2[5]).values())
 
     while k < len(V):
-        V[k] = (
+        V[k] = V_selected * (
                 (((selected_V1a_Perc_1 / 100) * V1a[0]["score_cr" + str(k + 1)]) + ((1 - (selected_V1a_Perc_1 / 100)) * V1a_2[0]["score_cr" + str(k + 1)])) * selected_V1a +
                 (((selected_V1c_Perc_1 / 100) * V1c[0]["score_cr" + str(k + 1)]) + ((1 - (selected_V1c_Perc_1 / 100)) * V1c_2[0]["score_cr" + str(k + 1)])) * selected_V1c +
                 (((selected_V2c_Perc_1 / 100) * V2c[0]["score_cr" + str(k + 1)]) + ((1 - (selected_V2c_Perc_1 / 100)) * V2c_2[0]["score_cr" + str(k + 1)])) * selected_V2c +
                 (((selected_V2d_Perc_1 / 100) * V2d[0]["score_cr" + str(k + 1)]) + ((1 - (selected_V2d_Perc_1 / 100)) * V2d_2[0]["score_cr" + str(k + 1)])) * selected_V2d +
                 (((selected_V3_Perc_1 / 100) * V3[0]["score_cr" + str(k + 1)]) + ((1 - (selected_V3_Perc_1 / 100)) * V3_2[0]["score_cr" + str(k + 1)])) * selected_V3 +
                 (((selected_V6_Perc_1 / 100) * V6[0]["score_cr" + str(k + 1)]) + ((1 - (selected_V6_Perc_1 / 100)) * V6_2[0]["score_cr" + str(k + 1)])) * selected_V6
-               ) * V_selected
+               )
         k += 1
 
     SRI_res['V'] = V
@@ -466,10 +466,10 @@ def SRIcalculator(index):
     L1a_2 = list(Levels.objects.filter(code='L-1a', level=L_level_list2[0]).values())
     L2_2 = list(Levels.objects.filter(code='L-2', level=L_level_list2[1]).values())
     while k < len(L):
-        L[k] = (
+        L[k] = L_selected * (
                (((selected_L1a_Perc_1 / 100) * L1a[0]["score_cr" + str(k + 1)]) + ((1 - (selected_L1a_Perc_1 / 100)) * L1a_2[0]["score_cr" + str(k + 1)])) * selected_L1a +
                (((selected_L2_Perc_1 / 100) * L2[0]["score_cr" + str(k + 1)]) + ((1 - (selected_L2_Perc_1 / 100)) * L2_2[0]["score_cr" + str(k + 1)])) * selected_L2
-               ) * L_selected
+               )
         k += 1
 
     SRI_res['L'] = L
@@ -489,11 +489,11 @@ def SRIcalculator(index):
     DE4_2 = list(Levels.objects.filter(code='DE-4', level=DE_level_list2[2]).values())
 
     while k < len(DE):
-        DE[k] = (
+        DE[k] = DE_selected * (
                 (((selected_DE1_Perc_1 / 100) * DE1[0]["score_cr" + str(k + 1)]) + ((1 - (selected_DE1_Perc_1 / 100)) * DE1_2[0]["score_cr" + str(k + 1)])) * selected_DE1 +
                 (((selected_DE2_Perc_1 / 100) * DE2[0]["score_cr" + str(k + 1)]) + ((1 - (selected_DE2_Perc_1 / 100)) * DE2_2[0]["score_cr" + str(k + 1)])) * selected_DE2 +
                 (((selected_DE4_Perc_1 / 100) * DE4[0]["score_cr" + str(k + 1)]) + ((1 - (selected_DE4_Perc_1 / 100)) * DE4_2[0]["score_cr" + str(k + 1)])) * selected_DE4
-                ) * DE_selected
+                )
         k += 1
 
     SRI_res['DE'] = DE
@@ -521,7 +521,7 @@ def SRIcalculator(index):
     E12_2 = list(Levels.objects.filter(code='E-12', level=E_level_list2[6]).values())
 
     while k < len(E):
-        E[k] = (
+        E[k] = E_selected * (
                (((selected_E2_Perc_1 / 100) * E2[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E2_Perc_1 / 100)) * E2_2[0]["score_cr" + str(k + 1)])) * selected_E2 +
                (((selected_E3_Perc_1 / 100) * E3[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E3_Perc_1 / 100)) * E3_2[0]["score_cr" + str(k + 1)])) * selected_E3 +
                (((selected_E4_Perc_1 / 100) * E4[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E4_Perc_1 / 100)) * E4_2[0]["score_cr" + str(k + 1)])) * selected_E4 +
@@ -529,7 +529,7 @@ def SRIcalculator(index):
                (((selected_E8_Perc_1 / 100) * E8[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E8_Perc_1 / 100)) * E8_2[0]["score_cr" + str(k + 1)])) * selected_E8 +
                (((selected_E11_Perc_1 / 100) * E11[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E11_Perc_1 / 100)) * E11_2[0]["score_cr" + str(k + 1)])) * selected_E11 +
                (((selected_E12_Perc_1 / 100) * E12[0]["score_cr" + str(k + 1)]) + ((1 - (selected_E12_Perc_1 / 100)) * E12_2[0]["score_cr" + str(k + 1)])) * selected_E12
-               ) * E_selected
+               )
         k += 1
 
     SRI_res['E'] = E
@@ -553,7 +553,7 @@ def SRIcalculator(index):
                  (((selected_EV15_Perc_1 / 100) * EV15[0]["score_cr" + str(k + 1)]) + ((1 - (selected_EV15_Perc_1 / 100)) * EV15_2[0]["score_cr" + str(k + 1)])) * selected_EV15 +
                  (((selected_EV16_Perc_1 / 100) * EV16[0]["score_cr" + str(k + 1)]) + ((1 - (selected_EV16_Perc_1 / 100)) * EV16_2[0]["score_cr" + str(k + 1)])) * selected_EV16 +
                  (((selected_EV17_Perc_1 / 100) * EV17[0]["score_cr" + str(k + 1)]) + ((1 - (selected_EV17_Perc_1 / 100)) * EV17_2[0]["score_cr" + str(k + 1)])) * selected_EV17
-                ) * EV_selected
+                )
         k += 1
 
     SRI_res['EV'] = EV
@@ -592,7 +592,7 @@ def SRIcalculator(index):
                 (((selected_MC28_Perc_1 / 100) * MC28[0]["score_cr" + str(k + 1)]) + ((1 - (selected_MC28_Perc_1 / 100)) * MC28_2[0]["score_cr" + str(k + 1)])) * selected_MC28 +
                 (((selected_MC29_Perc_1 / 100) * MC29[0]["score_cr" + str(k + 1)]) + ((1 - (selected_MC29_Perc_1 / 100)) * MC29_2[0]["score_cr" + str(k + 1)])) * selected_MC29 +
                 (((selected_MC30_Perc_1 / 100) * MC30[0]["score_cr" + str(k + 1)]) + ((1 - (selected_MC30_Perc_1 / 100)) * MC30_2[0]["score_cr" + str(k + 1)])) * selected_MC30
-                ) * MC_selected
+                )
         k += 1
 
 
@@ -616,7 +616,7 @@ def SRIcalculator(index):
     H4max = list(Levels.objects.filter(code='H-4', level=Hmax_level_list[9]).values())
 
     while i < len(Hmax):
-        Hmax[i] = (
+        Hmax[i] = H_selected * (
                        (selected_H1a * H1amax[0]["score_cr" + str(i + 1)]) +
                        (selected_H1b * H1bmax[0]["score_cr" + str(i + 1)]) +
                        (selected_H1c * H1cmax[0]["score_cr" + str(i + 1)]) +
@@ -641,7 +641,7 @@ def SRIcalculator(index):
     DHW3max = list(Levels.objects.filter(code='DHW-3', level=DHWmax_level_list[4]).values())
 
     while j < len(DHWmax):
-        DHWmax[j] = (
+        DHWmax[j] = DHW_selected * (
                     ( selected_DHW1a * DHW1amax[0]["score_cr" + str(j + 1)]) +
                     ( selected_DHW1b * DHW1bmax[0]["score_cr" + str(j + 1)]) +
                     ( selected_DHW1d * DHW1dmax[0]["score_cr" + str(j + 1)]) +
@@ -666,7 +666,7 @@ def SRIcalculator(index):
     C4max = list(Levels.objects.filter(code='C-4', level=Cmax_level_list[9]).values())
 
     while k < len(Cmax):
-        Cmax[k] = (
+        Cmax[k] = C_selected * (
                        (selected_C1a * C1amax[0]["score_cr" + str(k + 1)]) +
                        (selected_C1b * C1bmax[0]["score_cr" + str(k + 1)]) +
                        (selected_C1c * C1cmax[0]["score_cr" + str(k + 1)]) +
@@ -692,7 +692,7 @@ def SRIcalculator(index):
     V6max = list(Levels.objects.filter(code='V-6', level=Vmax_level_list[5]).values())
 
     while k < len(Vmax):
-        Vmax[k] = (
+        Vmax[k] = V_selected * (
                        (1 * V1amax[0]["score_cr" + str(k + 1)]) +
                        (selected_V1c * V1cmax[0]["score_cr" + str(k + 1)]) +
                        (selected_V2c * V2cmax[0]["score_cr" + str(k + 1)]) +
@@ -710,7 +710,7 @@ def SRIcalculator(index):
     L2max = list(Levels.objects.filter(code='L-2', level=Lmax_level_list[1]).values())
 
     while k < len(Lmax):
-        Lmax[k] = (
+        Lmax[k] = L_selected * (
                        (1 * L1amax[0]["score_cr" + str(k + 1)]) +
                        (1 * L2max[0]["score_cr" + str(k + 1)])
                )
@@ -725,7 +725,7 @@ def SRIcalculator(index):
     DE4max = list(Levels.objects.filter(code='DE-4', level=DEmax_level_list[2]).values())
 
     while k < len(DEmax):
-        DEmax[k] = (
+        DEmax[k] = DE_selected *  (
                         (selected_DE1 * DE1max[0]["score_cr" + str(k + 1)]) +
                         (1 * DE2max[0]["score_cr" + str(k + 1)]) +
                         (selected_DE4 * DE4max[0]["score_cr" + str(k + 1)])
@@ -745,7 +745,7 @@ def SRIcalculator(index):
     E12max = list(Levels.objects.filter(code='E-12', level=Emax_level_list[6]).values())
 
     while k < len(Emax):
-        Emax[k] = (
+        Emax[k] = E_selected * (
                        (selected_E2 * E2max[0]["score_cr" + str(k + 1)]) +
                        (selected_E3 * E3max[0]["score_cr" + str(k + 1)]) +
                        (selected_E4 * E4max[0]["score_cr" + str(k + 1)]) +
@@ -765,7 +765,7 @@ def SRIcalculator(index):
     EV17max = list(Levels.objects.filter(code='EV-17', level=EVmax_level_list[2]).values())
 
     while k < len(EVmax):
-        EVmax[k] = (
+        EVmax[k] = EV_selected * (
                         (selected_EV15 * EV15max[0]["score_cr" + str(k + 1)]) +
                         (selected_EV16 * EV16max[0]["score_cr" + str(k + 1)]) +
                         (selected_EV17 * EV17max[0]["score_cr" + str(k + 1)])
@@ -790,7 +790,7 @@ def SRIcalculator(index):
     MC30max = list(Levels.objects.filter(code='MC-30', level=MCmax_level_list[7]).values())
 
     while k < len(MCmax):
-        MCmax[k] = (
+        MCmax[k] = MC_selected * (
                        (1 * MC3max[0]["score_cr" + str(k + 1)]) +
                        (1 * MC4max[0]["score_cr" + str(k + 1)]) +
                        (1 * MC9max[0]["score_cr" + str(k + 1)]) +
@@ -946,15 +946,50 @@ def SRIcalculator(index):
         i += 1
 
     # Domain scores calculation
-    SRI_res['Heating'] = 100 * ceil(Sum_N_H / Sum_N_H_Max * 1000) / 1000
-    SRI_res['Domestic_hot_water'] = 100 * ceil(Sum_N_DHW/ Sum_N_DHW_Max * 1000) / 1000
-    SRI_res['Cooling'] = 100 * ceil(Sum_N_C / Sum_N_C_Max * 1000) / 1000
-    SRI_res['Ventilation'] = 100 * ceil(Sum_N_V / Sum_N_V_Max * 1000) / 1000
-    SRI_res['Lighting'] = 100 * ceil(Sum_N_L / Sum_N_L_Max * 1000) / 1000
-    SRI_res['Dynamic_building_envelope'] = 100 * ceil(Sum_N_DE / Sum_N_DE_Max * 1000) / 1000
-    SRI_res['Electricity'] = 100 * ceil(Sum_N_E / Sum_N_E_Max * 1000) / 1000
-    SRI_res['Electric_vehicle_charging'] = 100 * ceil(Sum_N_EV / Sum_N_EV_Max * 1000) / 1000
-    SRI_res['Monitoring_and_control'] = 100 * ceil(Sum_N_MC / Sum_N_MC_Max * 1000) / 1000
+    if Sum_N_H_Max == 0 :
+        SRI_res['Heating'] =0
+    else:
+        SRI_res['Heating'] = 100 * ceil(Sum_N_H / Sum_N_H_Max * 1000) / 1000
+
+    if Sum_N_DHW_Max == 0 :
+        SRI_res['Domestic_hot_water'] =0
+    else:
+        SRI_res['Domestic_hot_water'] = 100 * ceil(Sum_N_DHW/ Sum_N_DHW_Max * 1000) / 1000
+
+    if Sum_N_C_Max == 0 :
+        SRI_res['Cooling'] =0
+    else:
+        SRI_res['Cooling'] = 100 * ceil(Sum_N_C / Sum_N_C_Max * 1000) / 1000
+
+    if Sum_N_V_Max == 0:
+        SRI_res['Ventilation'] = 0
+    else:
+        SRI_res['Ventilation'] = 100 * ceil(Sum_N_V / Sum_N_V_Max * 1000) / 1000
+
+    if Sum_N_L_Max == 0:
+        SRI_res['Lighting'] = 0
+    else:
+        SRI_res['Lighting'] = 100 * ceil(Sum_N_L / Sum_N_L_Max * 1000) / 1000
+
+    if Sum_N_DE_Max == 0:
+        SRI_res['Dynamic_building_envelope'] = 0
+    else:
+        SRI_res['Dynamic_building_envelope'] = 100 * ceil(Sum_N_DE / Sum_N_DE_Max * 1000) / 1000
+
+    if Sum_N_E_Max == 0:
+        SRI_res['Electricity'] = 0
+    else:
+         SRI_res['Electricity'] = 100 * ceil(Sum_N_E / Sum_N_E_Max * 1000) / 1000
+
+    if Sum_N_EV_Max == 0:
+        SRI_res['Electric_vehicle_charging'] = 0
+    else:
+        SRI_res['Electric_vehicle_charging'] = 100 * ceil(Sum_N_EV / Sum_N_EV_Max * 1000) / 1000
+
+    if Sum_N_MC_Max == 0:
+        SRI_res['Monitoring_and_control'] = 0
+    else:
+        SRI_res['Monitoring_and_control'] = 100 * ceil(Sum_N_MC / Sum_N_MC_Max * 1000) / 1000
 
     # Impact scores calculation
     SRI_res['Energy_Efficiency'] = 100 * ceil(Sum_N[0]/Sum_N_Max[0] *1000)/1000
@@ -976,19 +1011,29 @@ def SRIcalculator(index):
 
     # calculate key functionality weights from impact weights (as on excel file for SRI - calculation tab - cells EK5 ... EQ5
     key_functionality_weights = [0, 0, 0, 0, 0, 0, 0]
-    key_functionality_weights[0] = W[0]["imp_cr1"] / (W[0]["imp_cr1"] + W[0]["imp_cr6"])
-    key_functionality_weights[1] = W[0]["imp_cr2"] / W[0]["imp_cr2"]
-    key_functionality_weights[2] = W[0]["imp_cr3"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
-    key_functionality_weights[3] = W[0]["imp_cr4"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
-    key_functionality_weights[4] = W[0]["imp_cr5"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
-    key_functionality_weights[5] = W[0]["imp_cr6"] / ( W[0]["imp_cr1"] + W[0]["imp_cr6"])
-    key_functionality_weights[6] = W[0]["imp_cr7"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
+ #   key_functionality_weights[0] = W[0]["imp_cr1"] / (W[0]["imp_cr1"] + W[0]["imp_cr6"])
+ #   key_functionality_weights[1] = W[0]["imp_cr2"] / W[0]["imp_cr2"]
+ #   key_functionality_weights[2] = W[0]["imp_cr3"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
+ #   key_functionality_weights[3] = W[0]["imp_cr4"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
+ #   key_functionality_weights[4] = W[0]["imp_cr5"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
+ #   key_functionality_weights[5] = W[0]["imp_cr6"] / ( W[0]["imp_cr1"] + W[0]["imp_cr6"])
+ #   key_functionality_weights[6] = W[0]["imp_cr7"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
+    key_functionality_weights[0] = 1/2
+    key_functionality_weights[1] = 1
+    key_functionality_weights[2] = 1/4
+    key_functionality_weights[3] = 1/4
+    key_functionality_weights[4] = 1/4
+    key_functionality_weights[5] = 1/2
+    key_functionality_weights[6] = 1/4
+
     SRI_res['key_functionality_weights'] = key_functionality_weights
 
 
     w_kf1 = 1 / 3
     w_kf2 = 1 / 3
     w_kf3 = 1 / 3
+
+
 
     SRI_res['kf1'] = round( (Smartness[0] * key_functionality_weights[0]) + (Smartness[5] * key_functionality_weights[5]),1)
     SRI_res['kf2'] = round( (Smartness[2] * key_functionality_weights[2]) + (Smartness[3] * key_functionality_weights[3]) + (Smartness[4] * key_functionality_weights[4]) + (Smartness[6] * key_functionality_weights[6]),1)
