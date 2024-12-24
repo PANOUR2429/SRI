@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="popup info on main functionality levels done">
+    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="fixed non-residential issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc2.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SRIsite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -470,7 +468,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734640560208</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="fixed non-residential issue">
+      <option name="closed" value="true" />
+      <created>1734995247767</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1734995247767</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -506,7 +512,8 @@
     <MESSAGE value="change checkboxes to switches" />
     <MESSAGE value="popup info on main functionality levels" />
     <MESSAGE value="popup info on main functionality levels done" />
-    <option name="LAST_COMMIT_MESSAGE" value="popup info on main functionality levels done" />
+    <MESSAGE value="fixed non-residential issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed non-residential issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
