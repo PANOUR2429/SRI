@@ -940,7 +940,11 @@ def SRIcalculator(index):
         Sum_N[i] =  ceil( (N_H[i] + N_DHW[i] + N_C[i] + N_V[i] + N_L[i] + N_DE[i] + N_E[i] + N_EV[i] + N_MC[i])*100)/100
         Sum_N_Max[i] = ceil( (N_Hmax[i] + N_DHWmax[i] + N_Cmax[i] + N_Vmax[i] + N_Lmax[i] + N_DEmax[i] + N_Emax[i] + N_EVmax[
             i] + N_MCmax[i] )*100)/100
-        Smartness[i] =  ceil( 100*( Sum_N[i] / Sum_N_Max[i] ) *100)/100
+
+        if Sum_N_Max[i]==0:
+            Smartness[i] =0
+        else:
+            Smartness[i] =  ceil( 100*( Sum_N[i] / Sum_N_Max[i] ) *100)/100
 
         Impact_Weightings[i] = W[0]["imp_cr" + str(i + 1)]
         i += 1
@@ -992,13 +996,34 @@ def SRIcalculator(index):
         SRI_res['Monitoring_and_control'] = 100 * ceil(Sum_N_MC / Sum_N_MC_Max * 1000) / 1000
 
     # Impact scores calculation
-    SRI_res['Energy_Efficiency'] = 100 * ceil(Sum_N[0]/Sum_N_Max[0] *1000)/1000
-    SRI_res['Energy_flex_and_storage'] = 100 * ceil(Sum_N[1] / Sum_N_Max[1] *1000)/1000
-    SRI_res['Comfort'] = 100 * ceil(Sum_N[2] / Sum_N_Max[2] *1000)/1000
-    SRI_res['Convenience'] = 100 * ceil(Sum_N[3] / Sum_N_Max[3] *1000)/1000
-    SRI_res['Health'] = 100 * ceil(Sum_N[4] / Sum_N_Max[4] *1000)/1000
-    SRI_res['Maintenance'] = 100 * ceil(Sum_N[5] / Sum_N_Max[5] *1000)/1000
-    SRI_res['Information'] = 100 * ceil(Sum_N[6] / Sum_N_Max[6] *1000)/1000
+    if Sum_N_Max[0] == 0:
+        SRI_res['Energy_Efficiency'] =0
+    else:
+        SRI_res['Energy_Efficiency'] = 100 * ceil(Sum_N[0]/Sum_N_Max[0] *1000)/1000
+    if Sum_N_Max[1] == 0:
+        SRI_res['Energy_flex_and_storage'] =0
+    else:
+        SRI_res['Energy_flex_and_storage'] = 100 * ceil(Sum_N[1] / Sum_N_Max[1] *1000)/1000
+    if Sum_N_Max[2] == 0:
+        SRI_res['Comfort'] =0
+    else:
+        SRI_res['Comfort'] = 100 * ceil(Sum_N[2] / Sum_N_Max[2] *1000)/1000
+    if Sum_N_Max[3] == 0:
+        SRI_res['Convenience'] =0
+    else:
+        SRI_res['Convenience'] = 100 * ceil(Sum_N[3] / Sum_N_Max[3] *1000)/1000
+    if Sum_N_Max[4] == 0:
+        SRI_res['Health'] = 0
+    else:
+        SRI_res['Health'] = 100 * ceil(Sum_N[4] / Sum_N_Max[4] * 1000) / 1000
+    if Sum_N_Max[5] == 0:
+        SRI_res['Maintenance'] =0
+    else:
+        SRI_res['Maintenance'] = 100 * ceil(Sum_N[5] / Sum_N_Max[5] *1000)/1000
+    if Sum_N_Max[6] == 0:
+        SRI_res['Information'] =0
+    else:
+        SRI_res['Information'] = 100 * ceil(Sum_N[6] / Sum_N_Max[6] *1000)/1000
 
 
     SRI_res['Sum_N'] = Sum_N
