@@ -771,7 +771,7 @@ def SRIcalculator(index):
                         (selected_EV17 * EV17max[0]["score_cr" + str(k + 1)])
                 )
         # from excel SRI tab calculation cell CQ50 when cell I50 is 0.
-        if ( selected_EV16 == 0) :
+        if ( EV_selected ==1 and selected_EV16 == 0) :
             EVmax[1] = -2
 
         k += 1
@@ -894,6 +894,29 @@ def SRIcalculator(index):
     Smartness = [0, 0, 0, 0, 0, 0, 0]
     Sum_N = [0, 0, 0, 0, 0, 0, 0]
     Sum_N_Max = [0, 0, 0, 0, 0, 0, 0]
+
+
+    Sum_H = 0
+    Sum_H_Max = 0
+    Sum_DHW = 0
+    Sum_DHW_Max = 0
+    Sum_C = 0
+    Sum_C_Max = 0
+    Sum_V = 0
+    Sum_V_Max = 0
+    Sum_L = 0
+    Sum_L_Max = 0
+    Sum_DE = 0
+    Sum_DE_Max = 0
+    Sum_E = 0
+    Sum_E_Max = 0
+    Sum_EV = 0
+    Sum_EV_Max = 0
+    Sum_MC = 0
+    Sum_MC_Max = 0
+
+
+
     Sum_N_H = 0
     Sum_N_H_Max = 0
     Sum_N_DHW = 0
@@ -916,7 +939,7 @@ def SRIcalculator(index):
     W = list(ImpactWeight.objects.filter(zone=selected_zone).values())
     N_Smartness = [0, 0, 0, 0, 0, 0, 0]
     Impact_Weightings = [0, 0, 0, 0, 0, 0, 0]
-
+    i=0
     while i < len(Smartness):
         Sum_N_H += N_H[i]
         Sum_N_H_Max +=  N_Hmax[i]
@@ -941,6 +964,7 @@ def SRIcalculator(index):
         Sum_N_Max[i] = ceil( (N_Hmax[i] + N_DHWmax[i] + N_Cmax[i] + N_Vmax[i] + N_Lmax[i] + N_DEmax[i] + N_Emax[i] + N_EVmax[
             i] + N_MCmax[i] )*100)/100
 
+
         if Sum_N_Max[i]==0:
             Smartness[i] =0
         else:
@@ -950,50 +974,124 @@ def SRIcalculator(index):
         i += 1
 
     # Domain scores calculation
-    if Sum_N_H_Max == 0 :
-        SRI_res['Heating'] =0
-    else:
-        SRI_res['Heating'] = 100 * ceil(Sum_N_H / Sum_N_H_Max * 1000) / 1000
+    Sum_Imp_W = 0
+    Sum_Imp_W = Impact_Weightings[0] + Impact_Weightings[1] + Impact_Weightings[2] + Impact_Weightings[3]+ Impact_Weightings[4] + Impact_Weightings[5] + Impact_Weightings[6]
 
-    if Sum_N_DHW_Max == 0 :
-        SRI_res['Domestic_hot_water'] =0
-    else:
-        SRI_res['Domestic_hot_water'] = 100 * ceil(Sum_N_DHW/ Sum_N_DHW_Max * 1000) / 1000
+    H_div_Hmax= [0, 0, 0, 0, 0, 0, 0]
+    s1 = 0
+    while s1 < 7:
+       if Hmax[s1]==0:
+          H_div_Hmax[s1] = 0
+       else:
+          H_div_Hmax[s1] = (H[s1]/Hmax[s1]) * Impact_Weightings[s1]
+       s1 += 1
 
-    if Sum_N_C_Max == 0 :
-        SRI_res['Cooling'] =0
-    else:
-        SRI_res['Cooling'] = 100 * ceil(Sum_N_C / Sum_N_C_Max * 1000) / 1000
+    SRI_res['Heating'] = ( 100 * ceil((H_div_Hmax[0] + H_div_Hmax[1] + H_div_Hmax[2] + H_div_Hmax[3] + H_div_Hmax[4] + H_div_Hmax[5] + H_div_Hmax[6] ) / Sum_Imp_W * 100 )/100)
 
-    if Sum_N_V_Max == 0:
-        SRI_res['Ventilation'] = 0
-    else:
-        SRI_res['Ventilation'] = 100 * ceil(Sum_N_V / Sum_N_V_Max * 1000) / 1000
+    DHW_div_DHWmax= [0, 0, 0, 0, 0, 0, 0]
+    s1 = 0
+    while s1 < 7:
+       if DHWmax[s1]==0:
+          DHW_div_DHWmax[s1] = 0
+       else:
+          DHW_div_DHWmax[s1] = (DHW[s1]/DHWmax[s1]) * Impact_Weightings[s1]
+       s1 += 1
 
-    if Sum_N_L_Max == 0:
-        SRI_res['Lighting'] = 0
-    else:
-        SRI_res['Lighting'] = 100 * ceil(Sum_N_L / Sum_N_L_Max * 1000) / 1000
+    SRI_res['Domestic_hot_water'] = ( 100 * ceil((DHW_div_DHWmax[0] + DHW_div_DHWmax[1] + DHW_div_DHWmax[2] + DHW_div_DHWmax[3] + DHW_div_DHWmax[4] + DHW_div_DHWmax[5] + DHW_div_DHWmax[6] ) / Sum_Imp_W * 100 )/100)
 
-    if Sum_N_DE_Max == 0:
-        SRI_res['Dynamic_building_envelope'] = 0
-    else:
-        SRI_res['Dynamic_building_envelope'] = 100 * ceil(Sum_N_DE / Sum_N_DE_Max * 1000) / 1000
+    C_div_Cmax= [0, 0, 0, 0, 0, 0, 0]
+    s1 = 0
+    while s1 < 7:
+       if Cmax[s1]==0:
+          C_div_Cmax[s1] = 0
+       else:
+          C_div_Cmax[s1] = (C[s1]/Cmax[s1]) * Impact_Weightings[s1]
+       s1 += 1
 
-    if Sum_N_E_Max == 0:
-        SRI_res['Electricity'] = 0
-    else:
-         SRI_res['Electricity'] = 100 * ceil(Sum_N_E / Sum_N_E_Max * 1000) / 1000
+    SRI_res['Cooling'] = (100 * ceil((C_div_Cmax[0] + C_div_Cmax[1] + C_div_Cmax[2] +
+                                                 C_div_Cmax[3] + C_div_Cmax[4] + C_div_Cmax[5] +
+                                                 C_div_Cmax[6]) / Sum_Imp_W * 100) / 100)
 
-    if Sum_N_EV_Max == 0:
-        SRI_res['Electric_vehicle_charging'] = 0
-    else:
-        SRI_res['Electric_vehicle_charging'] = 100 * ceil(Sum_N_EV / Sum_N_EV_Max * 1000) / 1000
+    V_div_Vmax= [0, 0, 0, 0, 0, 0, 0]
+    s1 = 0
+    while s1 < 7:
+       if Vmax[s1]==0:
+          V_div_Vmax[s1] = 0
+       else:
+          V_div_Vmax[s1] = (V[s1]/Vmax[s1]) * Impact_Weightings[s1]
+       s1 += 1
 
-    if Sum_N_MC_Max == 0:
-        SRI_res['Monitoring_and_control'] = 0
-    else:
-        SRI_res['Monitoring_and_control'] = 100 * ceil(Sum_N_MC / Sum_N_MC_Max * 1000) / 1000
+    SRI_res['Ventilation'] = (100 * ceil((V_div_Vmax[0] + V_div_Vmax[1] + V_div_Vmax[2] +
+                                                 V_div_Vmax[3] + V_div_Vmax[4] + V_div_Vmax[5] +
+                                                 V_div_Vmax[6]) / Sum_Imp_W * 100) / 100)
+
+    L_div_Lmax= [0, 0, 0, 0, 0, 0, 0]
+    s1 = 0
+    while s1 < 7:
+       if Lmax[s1]==0:
+          L_div_Lmax[s1] = 0
+       else:
+          L_div_Lmax[s1] = (L[s1]/Lmax[s1]) * Impact_Weightings[s1]
+       s1 += 1
+
+    SRI_res['Lighting'] = (100 * ceil((L_div_Lmax[0] + L_div_Lmax[1] + L_div_Lmax[2] +
+                                                 L_div_Lmax[3] + L_div_Lmax[4] + L_div_Lmax[5] +
+                                                 L_div_Lmax[6]) / Sum_Imp_W * 100) / 100)
+
+    DE_div_DEmax= [0, 0, 0, 0, 0, 0, 0]
+    s1 = 0
+    while s1 < 7:
+       if DEmax[s1]==0:
+          DE_div_DEmax[s1] = 0
+       else:
+          DE_div_DEmax[s1] = (DE[s1]/DEmax[s1]) * Impact_Weightings[s1]
+       s1 += 1
+
+
+    SRI_res['Dynamic_building_envelope'] = (100 * ceil((DE_div_DEmax[0] + DE_div_DEmax[1] + DE_div_DEmax[2] +
+                                                 DE_div_DEmax[3] + DE_div_DEmax[4] + DE_div_DEmax[5] +
+                                                 DE_div_DEmax[6]) / Sum_Imp_W * 100) / 100)
+
+
+    E_div_Emax= [0, 0, 0, 0, 0, 0, 0]
+    s1 = 0
+    while s1 < 7:
+       if Emax[s1]==0:
+          E_div_Emax[s1] = 0
+       else:
+          E_div_Emax[s1] = (E[s1]/Emax[s1]) * Impact_Weightings[s1]
+       s1 += 1
+
+    SRI_res['Electricity'] = (100 * ceil((E_div_Emax[0] + E_div_Emax[1] + E_div_Emax[2] +
+                                                 E_div_Emax[3] + E_div_Emax[4] + E_div_Emax[5] +
+                                                 E_div_Emax[6]) / Sum_Imp_W * 100) / 100)
+
+    EV_div_EVmax= [0, 0, 0, 0, 0, 0, 0]
+    s1 = 0
+    while s1 < 7:
+       if EVmax[s1]==0:
+          EV_div_EVmax[s1] = 0
+       else:
+          EV_div_EVmax[s1] = (EV[s1]/EVmax[s1]) * Impact_Weightings[s1]
+       s1 += 1
+
+    SRI_res['Electric_vehicle_charging'] = (100 * ceil((EV_div_EVmax[0] + EV_div_EVmax[1] + EV_div_EVmax[2] +
+                                                 EV_div_EVmax[3] + EV_div_EVmax[4] + EV_div_EVmax[5] +
+                                                 EV_div_EVmax[6]) / Sum_Imp_W * 100) / 100)
+
+    MC_div_MCmax= [0, 0, 0, 0, 0, 0, 0]
+    s1 = 0
+    while s1 < 7:
+       if MCmax[s1]==0:
+          MC_div_MCmax[s1] = 0
+       else:
+          MC_div_MCmax[s1] = (MC[s1]/MCmax[s1]) * Impact_Weightings[s1]
+       s1 += 1
+
+    SRI_res['Monitoring_and_control'] = (100 * ceil((MC_div_MCmax[0] + MC_div_MCmax[1] + MC_div_MCmax[2] +
+                                                 MC_div_MCmax[3] + MC_div_MCmax[4] + MC_div_MCmax[5] +
+                                                 MC_div_MCmax[6]) / Sum_Imp_W * 100) / 100)
+
 
     # Impact scores calculation
     if Sum_N_Max[0] == 0:
@@ -1034,15 +1132,15 @@ def SRIcalculator(index):
     # ------------------------------
     # SMARTNESS VALUES OF EACH KEY FUNCTIONALITY
 
-    # calculate key functionality weights from impact weights (as on excel file for SRI - calculation tab - cells EK5 ... EQ5
+   # calculate key functionality weights from impact weights (as on excel file for SRI - calculation tab - cells EK5 ... EQ5
     key_functionality_weights = [0, 0, 0, 0, 0, 0, 0]
- #   key_functionality_weights[0] = W[0]["imp_cr1"] / (W[0]["imp_cr1"] + W[0]["imp_cr6"])
- #   key_functionality_weights[1] = W[0]["imp_cr2"] / W[0]["imp_cr2"]
- #   key_functionality_weights[2] = W[0]["imp_cr3"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
+    #   key_functionality_weights[0] = W[0]["imp_cr1"] / (W[0]["imp_cr1"] + W[0]["imp_cr6"])
+    #   key_functionality_weights[1] = W[0]["imp_cr2"] / W[0]["imp_cr2"]
+    #   key_functionality_weights[2] = W[0]["imp_cr3"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
  #   key_functionality_weights[3] = W[0]["imp_cr4"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
- #   key_functionality_weights[4] = W[0]["imp_cr5"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
- #   key_functionality_weights[5] = W[0]["imp_cr6"] / ( W[0]["imp_cr1"] + W[0]["imp_cr6"])
- #   key_functionality_weights[6] = W[0]["imp_cr7"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
+    #   key_functionality_weights[4] = W[0]["imp_cr5"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
+    #   key_functionality_weights[5] = W[0]["imp_cr6"] / ( W[0]["imp_cr1"] + W[0]["imp_cr6"])
+    #   key_functionality_weights[6] = W[0]["imp_cr7"] / (W[0]["imp_cr3"] + W[0]["imp_cr4"] + W[0]["imp_cr5"] + W[0]["imp_cr7"])
     key_functionality_weights[0] = 1/2
     key_functionality_weights[1] = 1
     key_functionality_weights[2] = 1/4
@@ -1067,5 +1165,6 @@ def SRIcalculator(index):
     SRI_res['SRI'] = round(  (w_kf1 * SRI_res['kf1'] + w_kf2 * SRI_res['kf2'] + w_kf3 * SRI_res['kf3']) ,1)
 
     SRI_res['user_sel'] = str(LastUserSelection[0].values())
+
 
     return SRI_res
