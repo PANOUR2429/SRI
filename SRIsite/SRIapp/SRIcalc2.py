@@ -1054,15 +1054,15 @@ def SRIcalculator(index):
         Sum_N_MC += N_MC[i]
         Sum_N_MC_Max += N_MCmax[i]
 
-        Sum_N[i] =  round( (N_H[i] + N_DHW[i] + N_C[i] + N_V[i] + N_L[i] + N_DE[i] + N_E[i] + N_EV[i] + N_MC[i]),2)
-        Sum_N_Max[i] = round( (N_Hmax[i] + N_DHWmax[i] + N_Cmax[i] + N_Vmax[i] + N_Lmax[i] + N_DEmax[i] + N_Emax[i] + N_EVmax[
-            i] + N_MCmax[i] ),2)
+        Sum_N[i] =   (N_H[i] + N_DHW[i] + N_C[i] + N_V[i] + N_L[i] + N_DE[i] + N_E[i] + N_EV[i] + N_MC[i])
+        Sum_N_Max[i] =  (N_Hmax[i] + N_DHWmax[i] + N_Cmax[i] + N_Vmax[i] + N_Lmax[i] + N_DEmax[i] + N_Emax[i] + N_EVmax[
+            i] + N_MCmax[i] )
 
 
         if Sum_N_Max[i]==0:
             Smartness[i] =0
         else:
-            Smartness[i] =  ceil( 100*( Sum_N[i] / Sum_N_Max[i] ) *100)/100
+            Smartness[i] =   100*( Sum_N[i] / Sum_N_Max[i] )
 
         Impact_Weightings[i] = W[0]["imp_cr" + str(i + 1)]
         i += 1
@@ -1302,11 +1302,11 @@ def SRIcalculator(index):
     w_kf3 = 1 / 3
 
 
-    SRI_res['kf1'] = round( (Smartness[0] * key_functionality_weights[0]) + (Smartness[5] * key_functionality_weights[5]),2)
-    SRI_res['kf2'] = round( (Smartness[2] * key_functionality_weights[2]) + (Smartness[3] * key_functionality_weights[3]) + (Smartness[4] * key_functionality_weights[4]) + (Smartness[6] * key_functionality_weights[6]),2)
-    SRI_res['kf3'] = round( (Smartness[1] * key_functionality_weights[1]),2)
+    SRI_res['kf1'] = round( (Smartness[0] * key_functionality_weights[0]) + (Smartness[5] * key_functionality_weights[5]),3)
+    SRI_res['kf2'] = round( (Smartness[2] * key_functionality_weights[2]) + (Smartness[3] * key_functionality_weights[3]) + (Smartness[4] * key_functionality_weights[4]) + (Smartness[6] * key_functionality_weights[6]),3)
+    SRI_res['kf3'] = round( (Smartness[1] * key_functionality_weights[1]),3)
 
-    SRI_res['SRI'] = round(  (w_kf1 * SRI_res['kf1'] + w_kf2 * SRI_res['kf2'] + w_kf3 * SRI_res['kf3']) ,2)
+    SRI_res['SRI'] = round(  (w_kf1 * SRI_res['kf1'] + w_kf2 * SRI_res['kf2'] + w_kf3 * SRI_res['kf3']) ,1)
 
     SRI_res['user_sel'] = str(LastUserSelection[0].values())
 
