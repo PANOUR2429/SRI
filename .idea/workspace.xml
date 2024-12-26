@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="fixed non-residential issue">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc2.py" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/SRIcalc2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SRIsite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/db.sqlite3" afterDir="false" />
-    </list>
+    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="domain scores" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,14 +96,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712868917579</updated>
-    </task>
-    <task id="LOCAL-00002" summary="1st commit">
-      <option name="closed" value="true" />
-      <created>1713217078490</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1713217078490</updated>
     </task>
     <task id="LOCAL-00003" summary="1st commit">
       <option name="closed" value="true" />
@@ -493,7 +481,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735118792865</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="domain scores">
+      <option name="closed" value="true" />
+      <created>1735183846178</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1735183846180</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -530,7 +526,8 @@
     <MESSAGE value="popup info on main functionality levels" />
     <MESSAGE value="popup info on main functionality levels done" />
     <MESSAGE value="fixed non-residential issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed non-residential issue" />
+    <MESSAGE value="domain scores" />
+    <option name="LAST_COMMIT_MESSAGE" value="domain scores" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

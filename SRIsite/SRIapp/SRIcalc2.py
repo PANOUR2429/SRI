@@ -603,6 +603,7 @@ def SRIcalculator(index):
     # -------Hmax calculation-------------
     i = 0
     Hmax = [0, 0, 0, 0, 0, 0, 0]
+    HM = [0, 0, 0, 0, 0, 0, 0]
     Hmax_level_list = [4, 3, 2, 4, 3, 2, 3, 4, 4, 4]
     H1amax = list(Levels.objects.filter(code='H-1a', level=Hmax_level_list[0]).values())
     H1bmax = list(Levels.objects.filter(code='H-1b', level=Hmax_level_list[1]).values())
@@ -628,11 +629,26 @@ def SRIcalculator(index):
                        (1 * H3max[0]["score_cr" + str(i + 1)]) +
                        (1 * H4max[0]["score_cr" + str(i + 1)])
                )
+
+        HM[i] = (
+                H1amax[0]["score_cr" + str(i + 1)] +
+                H1bmax[0]["score_cr" + str(i + 1)] +
+                H1cmax[0]["score_cr" + str(i + 1)] +
+                H1dmax[0]["score_cr" + str(i + 1)] +
+                H1fmax[0]["score_cr" + str(i + 1)] +
+                H2amax[0]["score_cr" + str(i + 1)] +
+                H2bmax[0]["score_cr" + str(i + 1)] +
+                H2dmax[0]["score_cr" + str(i + 1)] +
+                H3max[0]["score_cr" + str(i + 1)] +
+                H4max[0]["score_cr" + str(i + 1)]
+        )
+
         i += 1
     SRI_res['Hmax'] = Hmax
     # -------DHWmax calculation-------------
     j = 0
     DHWmax = [0, 0, 0, 0, 0, 0, 0]
+    DHWM = [0, 0, 0, 0, 0, 0, 0]
     DHWmax_level_list = [3, 3, 3, 4, 4]
     DHW1amax = list(Levels.objects.filter(code='DHW-1a', level=DHWmax_level_list[0]).values())
     DHW1bmax = list(Levels.objects.filter(code='DHW-1b', level=DHWmax_level_list[1]).values())
@@ -648,11 +664,20 @@ def SRIcalculator(index):
                     ( selected_DHW2b * DHW2bmax[0]["score_cr" + str(j + 1)]) +
                     ( 1 * DHW3max[0]["score_cr" + str(j + 1)])
                  )
+
+
+        DHWM[j] = ( DHW1amax[0]["score_cr" + str(j + 1)] +
+                    DHW1bmax[0]["score_cr" + str(j + 1)] +
+                    DHW1dmax[0]["score_cr" + str(j + 1)] +
+                    DHW2bmax[0]["score_cr" + str(j + 1)] +
+                    DHW3max[0]["score_cr" + str(j + 1)])
+
         j += 1
     SRI_res['DHWmax'] = DHWmax
     # -------Cmax calculation-------------
     k = 0
     Cmax = [0, 0, 0, 0, 0, 0, 0]
+    CM = [0, 0, 0, 0, 0, 0, 0]
     Cmax_level_list = [4, 3, 2, 4, 2, 3, 3, 4, 4, 4]
     C1amax = list(Levels.objects.filter(code='C-1a', level=Cmax_level_list[0]).values())
     C1bmax = list(Levels.objects.filter(code='C-1b', level=Cmax_level_list[1]).values())
@@ -678,11 +703,25 @@ def SRIcalculator(index):
                        (1 * C3max[0]["score_cr" + str(k + 1)]) +
                        (1 * C4max[0]["score_cr" + str(k + 1)])
                )
+
+        CM[k] = ( C1amax[0]["score_cr" + str(k + 1)] +
+                 C1bmax[0]["score_cr" + str(k + 1)] +
+                 C1cmax[0]["score_cr" + str(k + 1)] +
+                 C1dmax[0]["score_cr" + str(k + 1)] +
+                 C1fmax[0]["score_cr" + str(k + 1)] +
+                 C1gmax[0]["score_cr" + str(k + 1)] +
+                 C2amax[0]["score_cr" + str(k + 1)] +
+                 C2bmax[0]["score_cr" + str(k + 1)] +
+                 C3max[0]["score_cr" + str(k + 1)] +
+                 C4max[0]["score_cr" + str(k + 1)])
+
+
         k += 1
     SRI_res['Cmax'] = Cmax
     # -------Vmax calculation-------------
     k = 0
     Vmax = [0, 0, 0, 0, 0, 0, 0]
+    VM = [0, 0, 0, 0, 0, 0, 0]
     Vmax_level_list = [4, 4, 2, 3, 3, 3]
     V1amax = list(Levels.objects.filter(code='V-1a', level=Vmax_level_list[0]).values())
     V1cmax = list(Levels.objects.filter(code='V-1c', level=Cmax_level_list[1]).values())
@@ -700,11 +739,23 @@ def SRIcalculator(index):
                        (selected_V3 * V3max[0]["score_cr" + str(k + 1)]) +
                        (1 * V6max[0]["score_cr" + str(k + 1)])
                )
+
+
+        VM[k] = (V1amax[0]["score_cr" + str(k + 1)] +
+                V1cmax[0]["score_cr" + str(k + 1)] +
+                V2cmax[0]["score_cr" + str(k + 1)] +
+                V2dmax[0]["score_cr" + str(k + 1)] +
+                V3max[0]["score_cr" + str(k + 1)] +
+                V6max[0]["score_cr" + str(k + 1)])
+
+
+
         k += 1
     SRI_res['Vmax'] = Vmax
     # -------Lmax calculation-------------
     k = 0
     Lmax = [0, 0, 0, 0, 0, 0, 0]
+    LM = [0, 0, 0, 0, 0, 0, 0]
     Lmax_level_list = [3, 4]
     L1amax = list(Levels.objects.filter(code='L-1a', level=Lmax_level_list[0]).values())
     L2max = list(Levels.objects.filter(code='L-2', level=Lmax_level_list[1]).values())
@@ -714,11 +765,17 @@ def SRIcalculator(index):
                        (1 * L1amax[0]["score_cr" + str(k + 1)]) +
                        (1 * L2max[0]["score_cr" + str(k + 1)])
                )
+
+        LM[k] = (L1amax[0]["score_cr" + str(k + 1)] +
+                L2max[0]["score_cr" + str(k + 1)])
+
+
         k += 1
     SRI_res['Lmax'] = Lmax
     # -------DEmax calculation-------------
     k = 0
     DEmax = [0, 0, 0, 0, 0, 0, 0]
+    DEM = [0, 0, 0, 0, 0, 0, 0]
     DEmax_level_list = [4, 3, 4]
     DE1max = list(Levels.objects.filter(code='DE-1', level=DEmax_level_list[0]).values())
     DE2max = list(Levels.objects.filter(code='DE-2', level=DEmax_level_list[1]).values())
@@ -730,11 +787,18 @@ def SRIcalculator(index):
                         (1 * DE2max[0]["score_cr" + str(k + 1)]) +
                         (selected_DE4 * DE4max[0]["score_cr" + str(k + 1)])
                 )
+
+        DEM[k] = (DE1max[0]["score_cr" + str(k + 1)] +
+                  DE2max[0]["score_cr" + str(k + 1)] +
+                  DE4max[0]["score_cr" + str(k + 1)])
+
+
         k += 1
     SRI_res['DEmax'] = DEmax
     # -------Emax calculation-------------
     k = 0
     Emax = [0, 0, 0, 0, 0, 0, 0]
+    EM = [0, 0, 0, 0, 0, 0, 0]
     Emax_level_list = [4, 4, 3, 2, 3, 4, 4]
     E2max = list(Levels.objects.filter(code='E-2', level=Emax_level_list[0]).values())
     E3max = list(Levels.objects.filter(code='E-3', level=Emax_level_list[1]).values())
@@ -754,11 +818,23 @@ def SRIcalculator(index):
                        (selected_E11 * E11max[0]["score_cr" + str(k + 1)]) +
                        (1 * E12max[0]["score_cr" + str(k + 1)])
                )
+
+
+        EM[k] = ( E2max[0]["score_cr" + str(k + 1)] +
+                    E3max[0]["score_cr" + str(k + 1)] +
+                     E4max[0]["score_cr" + str(k + 1)] +
+                     E5max[0]["score_cr" + str(k + 1)] +
+                     E8max[0]["score_cr" + str(k + 1)] +
+                    E11max[0]["score_cr" + str(k + 1)] +
+                     E12max[0]["score_cr" + str(k + 1)])
+
+
         k += 1
     SRI_res['Emax'] = Emax
     # -------EVmax calculation-------------
     k = 0
     EVmax = [0, 0, 0, 0, 0, 0, 0]
+    EVM = [0, 0, 0, 0, 0, 0, 0]
     EVmax_level_list = [4, 2, 2]
     EV15max = list(Levels.objects.filter(code='EV-15', level=EVmax_level_list[0]).values())
     EV16max = list(Levels.objects.filter(code='EV-16', level=EVmax_level_list[1]).values())
@@ -774,11 +850,17 @@ def SRIcalculator(index):
         if ( EV_selected ==1 and selected_EV16 == 0) :
             EVmax[1] = -2
 
+        EVM[k] = (EV15max[0]["score_cr" + str(k + 1)] +
+                EV16max[0]["score_cr" + str(k + 1)] +
+                EV17max[0]["score_cr" + str(k + 1)])
+
+
         k += 1
     SRI_res['EVmax'] = EVmax
     # -------MCmax calculation-------------
     k = 0
     MCmax = [0, 0, 0, 0, 0, 0, 0]
+    MCM = [0, 0, 0, 0, 0, 0, 0]
     MCmax_level_list = [3, 3, 2, 3, 2, 2, 4, 3]
     MC3max = list(Levels.objects.filter(code='MC-3', level=MCmax_level_list[0]).values())
     MC4max = list(Levels.objects.filter(code='MC-4', level=MCmax_level_list[1]).values())
@@ -800,6 +882,18 @@ def SRIcalculator(index):
                        (1 * MC29max[0]["score_cr" + str(k + 1)]) +
                        (1 * MC30max[0]["score_cr" + str(k + 1)])
                 )
+
+        MCM[k] = (MC3max[0]["score_cr" + str(k + 1)] +
+                        MC4max[0]["score_cr" + str(k + 1)] +
+                        MC9max[0]["score_cr" + str(k + 1)] +
+                        MC13max[0]["score_cr" + str(k + 1)] +
+                        MC25max[0]["score_cr" + str(k + 1)] +
+                        MC28max[0]["score_cr" + str(k + 1)] +
+                        MC29max[0]["score_cr" + str(k + 1)] +
+                        MC30max[0]["score_cr" + str(k + 1)])
+
+
+
         k += 1
     SRI_res['MCmax'] = MCmax
 
@@ -877,15 +971,15 @@ def SRIcalculator(index):
         SRI_res['N_EV'] = N_EV
         SRI_res['N_MC'] = N_MC
 
-        SRI_res['N_Hmax'] = N_Hmax
-        SRI_res['N_DHWmax'] = N_DHWmax
-        SRI_res['N_Cmax'] = N_Cmax
-        SRI_res['N_Vmax'] = N_Vmax
-        SRI_res['N_Lmax'] = N_Lmax
-        SRI_res['N_DEmax'] = N_DEmax
-        SRI_res['N_Emax'] = N_Emax
-        SRI_res['N_EVmax'] = N_EVmax
-        SRI_res['N_MCmax'] = N_MCmax
+     #   SRI_res['N_Hmax'] = N_Hmax
+     #   SRI_res['N_DHWmax'] = N_DHWmax
+     #   SRI_res['N_Cmax'] = N_Cmax
+     #   SRI_res['N_Vmax'] = N_Vmax
+     #   SRI_res['N_Lmax'] = N_Lmax
+     #   SRI_res['N_DEmax'] = N_DEmax
+     #   SRI_res['N_Emax'] = N_Emax
+     #   SRI_res['N_EVmax'] = N_EVmax
+     #   SRI_res['N_MCmax'] = N_MCmax
 
     # ------------------------------
     # SMARTNESS OF EACH CRITERION
@@ -974,8 +1068,16 @@ def SRIcalculator(index):
         i += 1
 
     # Domain scores calculation
-    Sum_Imp_W = 0
-    Sum_Imp_W = Impact_Weightings[0] + Impact_Weightings[1] + Impact_Weightings[2] + Impact_Weightings[3]+ Impact_Weightings[4] + Impact_Weightings[5] + Impact_Weightings[6]
+    Sum_Imp_W_H = 0
+    Sum_Imp_W_DHW = 0
+    Sum_Imp_W_C = 0
+    Sum_Imp_W_V = 0
+    Sum_Imp_W_L = 0
+    Sum_Imp_W_DE = 0
+    Sum_Imp_W_E = 0
+    Sum_Imp_W_EV = 0
+    Sum_Imp_W_MC = 0
+
 
     H_div_Hmax= [0, 0, 0, 0, 0, 0, 0]
     s1 = 0
@@ -984,9 +1086,13 @@ def SRIcalculator(index):
           H_div_Hmax[s1] = 0
        else:
           H_div_Hmax[s1] = (H[s1]/Hmax[s1]) * Impact_Weightings[s1]
+          Sum_Imp_W_H += Impact_Weightings[s1]
        s1 += 1
 
-    SRI_res['Heating'] = ( 100 * ceil((H_div_Hmax[0] + H_div_Hmax[1] + H_div_Hmax[2] + H_div_Hmax[3] + H_div_Hmax[4] + H_div_Hmax[5] + H_div_Hmax[6] ) / Sum_Imp_W * 100 )/100)
+    if Sum_Imp_W_H ==0:
+        SRI_res['Heating'] = 0
+    else:
+        SRI_res['Heating'] = 100* (H_div_Hmax[0] + H_div_Hmax[1] + H_div_Hmax[2] + H_div_Hmax[3] + H_div_Hmax[4] + H_div_Hmax[5] + H_div_Hmax[6] ) / Sum_Imp_W_H
 
     DHW_div_DHWmax= [0, 0, 0, 0, 0, 0, 0]
     s1 = 0
@@ -995,9 +1101,13 @@ def SRIcalculator(index):
           DHW_div_DHWmax[s1] = 0
        else:
           DHW_div_DHWmax[s1] = (DHW[s1]/DHWmax[s1]) * Impact_Weightings[s1]
+          Sum_Imp_W_DHW += Impact_Weightings[s1]
        s1 += 1
 
-    SRI_res['Domestic_hot_water'] = ( 100 * ceil((DHW_div_DHWmax[0] + DHW_div_DHWmax[1] + DHW_div_DHWmax[2] + DHW_div_DHWmax[3] + DHW_div_DHWmax[4] + DHW_div_DHWmax[5] + DHW_div_DHWmax[6] ) / Sum_Imp_W * 100 )/100)
+    if Sum_Imp_W_DHW ==0:
+        SRI_res['Domestic_hot_water'] = 0
+    else:
+        SRI_res['Domestic_hot_water'] = 100 * (DHW_div_DHWmax[0] + DHW_div_DHWmax[1] + DHW_div_DHWmax[2] + DHW_div_DHWmax[3] + DHW_div_DHWmax[4] + DHW_div_DHWmax[5] + DHW_div_DHWmax[6] ) / Sum_Imp_W_DHW
 
     C_div_Cmax= [0, 0, 0, 0, 0, 0, 0]
     s1 = 0
@@ -1006,11 +1116,15 @@ def SRIcalculator(index):
           C_div_Cmax[s1] = 0
        else:
           C_div_Cmax[s1] = (C[s1]/Cmax[s1]) * Impact_Weightings[s1]
+          Sum_Imp_W_C += Impact_Weightings[s1]
        s1 += 1
 
-    SRI_res['Cooling'] = (100 * ceil((C_div_Cmax[0] + C_div_Cmax[1] + C_div_Cmax[2] +
+    if Sum_Imp_W_C ==0:
+        SRI_res['Cooling'] = 0
+    else:
+        SRI_res['Cooling'] = 100 * (C_div_Cmax[0] + C_div_Cmax[1] + C_div_Cmax[2] +
                                                  C_div_Cmax[3] + C_div_Cmax[4] + C_div_Cmax[5] +
-                                                 C_div_Cmax[6]) / Sum_Imp_W * 100) / 100)
+                                                 C_div_Cmax[6]) / Sum_Imp_W_C
 
     V_div_Vmax= [0, 0, 0, 0, 0, 0, 0]
     s1 = 0
@@ -1019,11 +1133,15 @@ def SRIcalculator(index):
           V_div_Vmax[s1] = 0
        else:
           V_div_Vmax[s1] = (V[s1]/Vmax[s1]) * Impact_Weightings[s1]
+          Sum_Imp_W_V += Impact_Weightings[s1]
        s1 += 1
 
-    SRI_res['Ventilation'] = (100 * ceil((V_div_Vmax[0] + V_div_Vmax[1] + V_div_Vmax[2] +
+    if Sum_Imp_W_V ==0:
+        SRI_res['Ventilation'] = 0
+    else:
+        SRI_res['Ventilation'] = 100 *(V_div_Vmax[0] + V_div_Vmax[1] + V_div_Vmax[2] +
                                                  V_div_Vmax[3] + V_div_Vmax[4] + V_div_Vmax[5] +
-                                                 V_div_Vmax[6]) / Sum_Imp_W * 100) / 100)
+                                                 V_div_Vmax[6]) / Sum_Imp_W_V
 
     L_div_Lmax= [0, 0, 0, 0, 0, 0, 0]
     s1 = 0
@@ -1032,11 +1150,15 @@ def SRIcalculator(index):
           L_div_Lmax[s1] = 0
        else:
           L_div_Lmax[s1] = (L[s1]/Lmax[s1]) * Impact_Weightings[s1]
+          Sum_Imp_W_L += Impact_Weightings[s1]
        s1 += 1
 
-    SRI_res['Lighting'] = (100 * ceil((L_div_Lmax[0] + L_div_Lmax[1] + L_div_Lmax[2] +
+    if Sum_Imp_W_L ==0:
+        SRI_res['Lighting'] = 0
+    else:
+        SRI_res['Lighting'] = 100 * (L_div_Lmax[0] + L_div_Lmax[1] + L_div_Lmax[2] +
                                                  L_div_Lmax[3] + L_div_Lmax[4] + L_div_Lmax[5] +
-                                                 L_div_Lmax[6]) / Sum_Imp_W * 100) / 100)
+                                                 L_div_Lmax[6]) / Sum_Imp_W_L
 
     DE_div_DEmax= [0, 0, 0, 0, 0, 0, 0]
     s1 = 0
@@ -1045,12 +1167,15 @@ def SRIcalculator(index):
           DE_div_DEmax[s1] = 0
        else:
           DE_div_DEmax[s1] = (DE[s1]/DEmax[s1]) * Impact_Weightings[s1]
+          Sum_Imp_W_DE += Impact_Weightings[s1]
        s1 += 1
 
-
-    SRI_res['Dynamic_building_envelope'] = (100 * ceil((DE_div_DEmax[0] + DE_div_DEmax[1] + DE_div_DEmax[2] +
+    if Sum_Imp_W_DE ==0:
+        SRI_res['Dynamic_building_envelope'] = 0
+    else:
+        SRI_res['Dynamic_building_envelope'] = 100 * (DE_div_DEmax[0] + DE_div_DEmax[1] + DE_div_DEmax[2] +
                                                  DE_div_DEmax[3] + DE_div_DEmax[4] + DE_div_DEmax[5] +
-                                                 DE_div_DEmax[6]) / Sum_Imp_W * 100) / 100)
+                                                 DE_div_DEmax[6]) / Sum_Imp_W_DE
 
 
     E_div_Emax= [0, 0, 0, 0, 0, 0, 0]
@@ -1060,11 +1185,13 @@ def SRIcalculator(index):
           E_div_Emax[s1] = 0
        else:
           E_div_Emax[s1] = (E[s1]/Emax[s1]) * Impact_Weightings[s1]
+          Sum_Imp_W_E += Impact_Weightings[s1]
        s1 += 1
 
-    SRI_res['Electricity'] = (100 * ceil((E_div_Emax[0] + E_div_Emax[1] + E_div_Emax[2] +
-                                                 E_div_Emax[3] + E_div_Emax[4] + E_div_Emax[5] +
-                                                 E_div_Emax[6]) / Sum_Imp_W * 100) / 100)
+    if Sum_Imp_W_E ==0:
+        SRI_res['Electricity'] = 0
+    else:
+        SRI_res['Electricity'] = 100* (E_div_Emax[0] + E_div_Emax[1] + E_div_Emax[2] + E_div_Emax[3] + E_div_Emax[4] + E_div_Emax[5] + E_div_Emax[6]) / (Sum_Imp_W_E)
 
     EV_div_EVmax= [0, 0, 0, 0, 0, 0, 0]
     s1 = 0
@@ -1075,9 +1202,12 @@ def SRIcalculator(index):
           EV_div_EVmax[s1] = (EV[s1]/EVmax[s1]) * Impact_Weightings[s1]
        s1 += 1
 
-    SRI_res['Electric_vehicle_charging'] = (100 * ceil((EV_div_EVmax[0] + EV_div_EVmax[1] + EV_div_EVmax[2] +
+    if Sum_Imp_W_EV ==0:
+        SRI_res['Electric_vehicle_charging'] = 0
+    else:
+        SRI_res['Electric_vehicle_charging'] = 100 * (EV_div_EVmax[0] + EV_div_EVmax[1] + EV_div_EVmax[2] +
                                                  EV_div_EVmax[3] + EV_div_EVmax[4] + EV_div_EVmax[5] +
-                                                 EV_div_EVmax[6]) / Sum_Imp_W * 100) / 100)
+                                                 EV_div_EVmax[6]) / Sum_Imp_W_EV
 
     MC_div_MCmax= [0, 0, 0, 0, 0, 0, 0]
     s1 = 0
@@ -1086,11 +1216,26 @@ def SRIcalculator(index):
           MC_div_MCmax[s1] = 0
        else:
           MC_div_MCmax[s1] = (MC[s1]/MCmax[s1]) * Impact_Weightings[s1]
+          Sum_Imp_W_MC += Impact_Weightings[s1]
        s1 += 1
 
-    SRI_res['Monitoring_and_control'] = (100 * ceil((MC_div_MCmax[0] + MC_div_MCmax[1] + MC_div_MCmax[2] +
+    if Sum_Imp_W_MC ==0:
+        SRI_res['Monitoring_and_control'] = 0
+    else:
+        SRI_res['Monitoring_and_control'] = 100 * (MC_div_MCmax[0] + MC_div_MCmax[1] + MC_div_MCmax[2] +
                                                  MC_div_MCmax[3] + MC_div_MCmax[4] + MC_div_MCmax[5] +
-                                                 MC_div_MCmax[6]) / Sum_Imp_W * 100) / 100)
+                                                 MC_div_MCmax[6]) / Sum_Imp_W_MC
+
+    SRI_res['N_Hmax'] = N_Hmax
+    SRI_res['N_DHWmax'] = N_DHWmax
+    SRI_res['N_Cmax'] = N_Cmax
+    SRI_res['N_Vmax'] = N_Vmax
+    SRI_res['N_Lmax'] = N_Lmax
+    SRI_res['N_DEmax'] = N_DEmax
+    SRI_res['N_Emax'] = N_Emax
+    SRI_res['N_EVmax'] = N_EVmax
+    SRI_res['N_MCmax'] = N_MCmax
+
 
 
     # Impact scores calculation
