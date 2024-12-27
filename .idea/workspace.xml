@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="domain scores" />
+    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="fixed domain scores">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/Static/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/Static/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SRIsite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/db.sqlite3" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,30 +101,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712868917579</updated>
-    </task>
-    <task id="LOCAL-00003" summary="1st commit">
-      <option name="closed" value="true" />
-      <created>1713217420492</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1713217420492</updated>
-    </task>
-    <task id="LOCAL-00004" summary="1st commit">
-      <option name="closed" value="true" />
-      <created>1713218226423</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1713218226423</updated>
-    </task>
-    <task id="LOCAL-00005" summary="FILLED DB">
-      <option name="closed" value="true" />
-      <created>1715303891675</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1715303891675</updated>
     </task>
     <task id="LOCAL-00006" summary="FILLED DB">
       <option name="closed" value="true" />
@@ -489,7 +470,31 @@
       <option name="project" value="LOCAL" />
       <updated>1735183846180</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="fixed domain scores">
+      <option name="closed" value="true" />
+      <created>1735248542740</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1735248542742</updated>
+    </task>
+    <task id="LOCAL-00053" summary="fixed domain scores">
+      <option name="closed" value="true" />
+      <created>1735250417247</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1735250417248</updated>
+    </task>
+    <task id="LOCAL-00054" summary="fixed domain scores">
+      <option name="closed" value="true" />
+      <created>1735254419016</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1735254419016</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -527,7 +532,8 @@
     <MESSAGE value="popup info on main functionality levels done" />
     <MESSAGE value="fixed non-residential issue" />
     <MESSAGE value="domain scores" />
-    <option name="LAST_COMMIT_MESSAGE" value="domain scores" />
+    <MESSAGE value="fixed domain scores" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed domain scores" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

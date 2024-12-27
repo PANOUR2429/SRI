@@ -9,6 +9,32 @@
     {% bootstrap_javascript %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'style2.css' %}">
+
+
+<style>
+        /* Custom CSS to move content to the left */
+    .container-fluid {
+      margin-left: 0; /* Remove any left margin */
+      padding-left: 0; /* Remove any left padding */
+    }
+
+    /* Adjust column positioning */
+    .row.justify-content-center {
+      justify-content: flex-start; /* Align items to the left */
+    }
+
+    .col-sm-8 {
+      max-width: 100%; /* Ensures the content doesn't take up more space than necessary */
+    }
+
+    /* Optional: Reduce any extra spacing from the figure elements */
+    .highcharts-figure {
+      margin-left: 0;
+    }
+    </style>
+
+
+
 </head>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -38,17 +64,16 @@
         <div class="col-sm-8">
 
             <p>Results</p>
+
             <!-- TOTAL SRI ---->
               <figure class="highcharts-figure3" >
-                <div id="container3"></div>
-                <p class="highcharts-description3">
+              <div id="container3"></div>
+              <p class="highcharts-description3">
 
-                </p>
-            </figure>
+              </p>
+              </figure>
 
-
-            <script>
-
+              <script>
                // Hide Highcharts credentials
                Highcharts.setOptions({
                credits: {
@@ -58,7 +83,6 @@
 
 
             Highcharts.chart('container3', {
-
                  chart: {
                     type: 'gauge',
                      plotBackgroundColor: null,
@@ -75,9 +99,9 @@
              pane: {
                      startAngle: -90,
                      endAngle: 89.9,
-                      background: null,
-                      center: ['50%', '75%'],
-                        size: '120%'                // Adjust the size of the gauge here (from 120% to 100%)
+                     background: null,
+                     center: ['50%', '75%'],
+                     size: '120%'                // Adjust the size of the gauge here (from 120% to 100%)
                     },
 
            // the value axis
@@ -86,18 +110,18 @@
                     max: 100,
                     tickPixelInterval: 72,
                     tickPosition: 'inside',
-                     tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
-                     tickLength: 20,
-                     tickWidth: 2,
-                 minorTickInterval: null,
-                 labels: {
-                         distance: 20,
-                         style: {
-                        fontSize: '14px'
-                        }
-                },
-                lineWidth: 0,
-                plotBands: [{
+                    tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+                    tickLength: 20,
+                    tickWidth: 2,
+                    minorTickInterval: null,
+                    labels: {
+                            distance: 20,
+                            style: {
+                            fontSize: '14px'
+                            }
+                            },
+                    lineWidth: 0,
+                    plotBands: [{
                              from: 0,
                              to: 30,
                              color: '#8B0000', // dark red
@@ -127,23 +151,22 @@
                              to: 100,
                              color:'#0000FF', // blue
                              thickness: 15
-                         }]
-                     },
-
+                             }]
+                             },
                  series: [{
-                     name: 'SRI',
+                         name: 'SRI',
                          data: [{{SRI}}],
                          tooltip: {
-                             valueSuffix: ' %'
-                             },
-                  dataLabels: {
+                         valueSuffix: ' %'
+                                  },
+                 dataLabels: {
                         format: '{y} %',
-                         borderWidth: 0,
-                            color: (
-                            Highcharts.defaultOptions.title &&
-                            Highcharts.defaultOptions.title.style &&
-                            Highcharts.defaultOptions.title.style.color
-                            ) || '#333333',
+                        borderWidth: 0,
+                        color: (
+                        Highcharts.defaultOptions.title &&
+                        Highcharts.defaultOptions.title.style &&
+                        Highcharts.defaultOptions.title.style.color
+                                ) || '#333333',
                         style: {
                         fontSize: '16px'
                             }
@@ -151,39 +174,33 @@
                         dial: {
                              radius: '80%',
                              backgroundColor: 'gray',
-                            baseWidth: 12,
-                          baseLength: '0%',
-                          rearLength: '0%'
-                            },
+                             baseWidth: 12,
+                             baseLength: '0%',
+                             rearLength: '0%'
+                               },
                         pivot: {
-                           backgroundColor: 'gray',
-                            radius: 6
+                             backgroundColor: 'gray',
+                             radius: 6
                               }
-
                   }]
-
             });
 
                 // Add some life
-                    setInterval(() => {
-                   const chart = Highcharts.charts[0];
+                     setInterval(() => {
+                     const chart = Highcharts.charts[0];
                      if (chart && !chart.renderer.forExport) {
                      const point = chart.series[0].points[0],
-                         inc = Math.round((Math.random() - 0.5) * 20);
+                     inc = Math.round((Math.random() - 0.5) * 20);
+                     let newVal = {{SRI}}
+                     point.update(newVal);
+                     }
+                     }, 3000);
+</script>
 
-                         let newVal = {{SRI}}
-
-
-                      point.update(newVal);
-                  }
-
-        }, 3000);
- </script>
 <p> </p>
-
             <!-- IMPACT SCORES ---->
             <figure class="highcharts-figure">
-                <div id="container"></div>
+                <div id="container" style="width: 800px; height: 600px; margin: 0 auto; "></div>
                     <p class="highcharts-description">
 
                     </p>
@@ -243,17 +260,17 @@
                                    ['Information to occupants', {{Information}}],
                                 ],
                                 dataLabels: {
-                                    enabled: true,
-                                    rotation: -90,
+                                     enabled: true,
+                                     rotation: -90,
                                       color: '#FFFFFF',
                                       inside: true,
-                                     verticalAlign: 'top',
+                                      verticalAlign: 'top',
                                       format: '{point.y:.1f}', // one decimal
                                       y: 10, // 10 pixels down from the top
-                                       style: {
+                                      style: {
                                       fontSize: '13px',
                                       fontFamily: 'Verdana, sans-serif'
-                                               }
+                                                }
                                                 }
                                 }]
                             });
@@ -264,7 +281,7 @@
 
         <!-- DOMAIN SCORES ---->
             <figure class="highcharts-figure2">
-                <div id="container2"></div>
+                <div id="container2" style="width: 800px; height: 600px;"></div>
                     <p class="highcharts-description2">
 
                     </p>
