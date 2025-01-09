@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="fixed allignment">
+    <list default="true" id="2dbf76e4-39e5-4124-8364-453db32befc5" name="Changes" comment="fixed points">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/SRIsite/SRIapp/Templates/SRI_result.html" afterDir="false" />
     </list>
@@ -99,14 +99,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712868917579</updated>
-    </task>
-    <task id="LOCAL-00008" summary="FILLED DB">
-      <option name="closed" value="true" />
-      <created>1715507839176</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1715507839176</updated>
     </task>
     <task id="LOCAL-00009" summary="FILLED DB">
       <option name="closed" value="true" />
@@ -492,7 +484,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736438080895</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="fixed points">
+      <option name="closed" value="true" />
+      <created>1736442802768</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1736442802770</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -532,7 +532,8 @@
     <MESSAGE value="domain scores" />
     <MESSAGE value="fixed domain scores" />
     <MESSAGE value="fixed allignment" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed allignment" />
+    <MESSAGE value="fixed points" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed points" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
