@@ -93,7 +93,7 @@
                         },
 
              title: {
-                 text: 'Total SRI'
+                 text: 'Total SRI %'
                     },
 
              pane: {
@@ -218,7 +218,7 @@
                             type: 'column'
                                 },
                             title: {
-                            text: 'Impact Scores: '
+                            text: 'Scores per Impact 7 criteria '
                                    },
                             xAxis: {
                                    type: 'category',
@@ -233,14 +233,14 @@
                          yAxis: {
 
                                     title: {
-                                    text: '%'
+                                    text: 'Scores'
                                   }
                                     },
                                      legend: {
                                       enabled: false
                                      },
                                     tooltip: {
-
+                                    pointFormat: '<b>{point.y:.1f}</b>'
                              },
                             series: [{
                              name: '%',
@@ -261,7 +261,7 @@
                                 ],
                                 dataLabels: {
                                      enabled: true,
-                                     rotation: -90,
+                                     rotation: 0,
                                       color: '#FFFFFF',
                                       inside: true,
                                       verticalAlign: 'top',
@@ -299,7 +299,7 @@
                             type: 'column'
                                 },
                             title: {
-                            text: 'Domain Scores: '
+                            text: 'Scores per 9 Technical Domains '
                                    },
                             xAxis: {
                                    type: 'category',
@@ -314,14 +314,14 @@
                          yAxis: {
 
                                     title: {
-                                    text: '%'
+                                    text: 'Scores'
                                   }
                                     },
                                      legend: {
                                       enabled: false
                                      },
                                     tooltip: {
-
+                                              pointFormat: '<b>{point.y:.1f}</b>'
                              },
                             series: [{
                              name: '%',
@@ -344,7 +344,7 @@
                                 ],
                                 dataLabels: {
                                     enabled: true,
-                                    rotation: -90,
+                                    rotation: 0,
                                       color: '#FFFFFF',
                                       inside: true,
                                      verticalAlign: 'top',
