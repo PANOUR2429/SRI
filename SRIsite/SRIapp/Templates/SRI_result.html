@@ -31,6 +31,13 @@
     .highcharts-figure {
       margin-left: 0;
     }
+
+
+    .grade {{
+            font-size: 2em;
+            color: {'green' if grade in ['A', 'B'] else 'red'};
+        }}
+
     </style>
 
 
@@ -162,7 +169,7 @@
                          name: 'SRI',
                          data: [{{SRI}}],
                          tooltip: {
-                         valueSuffix: ' %'
+                         valueSuffix: ' % '
                                   },
                  dataLabels: {
                         format: '{y} %',
@@ -200,9 +207,14 @@
                      point.update(newVal);
                      }
                      }, 3000);
+
 </script>
 
-<p> </p>
+
+
+
+
+
             <!-- IMPACT SCORES ---->
             <figure class="highcharts-figure">
                 <div id="container" style="width: 800px; height: 600px; margin: 0 auto; "></div>
@@ -212,6 +224,7 @@
             </figure>
 
             <script>
+
                // Hide Highcharts credentials
                Highcharts.setOptions({
                credits: {
