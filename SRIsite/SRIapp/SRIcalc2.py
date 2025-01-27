@@ -1316,4 +1316,19 @@ def SRIcalculator(index):
     SRI_res['user_sel'] = str(LastUserSelection[0].values())
 
 
+    if SRI_res['SRI'] <= 20 :
+        SRI_res['Grade'] = "G"
+    elif SRI_res['SRI'] > 20 and SRI_res['SRI'] <= 35:
+        SRI_res['Grade'] = "F"
+    elif SRI_res['SRI'] > 35 and SRI_res['SRI'] <= 50:
+        SRI_res['Grade'] = "E"
+    elif SRI_res['SRI'] > 50 and SRI_res['SRI'] <= 65:
+        SRI_res['Grade'] = "D"
+    elif SRI_res['SRI'] > 65 and SRI_res['SRI'] <= 80:
+        SRI_res['Grade'] = "C"
+    elif SRI_res['SRI'] > 80 and SRI_res['SRI'] <= 90:
+        SRI_res['Grade'] = "B"
+    elif SRI_res['SRI'] > 90 and SRI_res['SRI'] <= 100:
+        SRI_res['Grade'] = "A"
+
     return SRI_res

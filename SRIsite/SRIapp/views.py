@@ -97,6 +97,7 @@ def Result(request, id):
   Electricity = Y['Electricity']
   Electric_vehicle_charging = Y['Electric_vehicle_charging' ]
   Monitoring_and_control = Y['Monitoring_and_control']
+  Grade=Y['Grade']
 #  Y = calcSRI()
 
   template = loader.get_template('SRI_result.html')
@@ -170,6 +171,7 @@ def Result(request, id):
     'Electricity':Electricity,
     'Electric_vehicle_charging':Electric_vehicle_charging,
     'Monitoring_and_control':Monitoring_and_control,
+    'Grade':Grade,
   }
   return HttpResponse(template.render(context, request))
 

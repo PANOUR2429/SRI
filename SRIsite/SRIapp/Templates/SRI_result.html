@@ -38,6 +38,10 @@
             color: {'green' if grade in ['A', 'B'] else 'red'};
         }}
 
+
+
+
+
     </style>
 
 
@@ -102,7 +106,15 @@
              title: {
                  text: 'Total SRI %'
                     },
-
+             caption: {
+                     text: '<b> Building has SRI Grade : {{Grade}} </b>',
+                     align: 'center', // Aligns the caption horizontally
+                     verticalAlign: 'bottom', // Aligns the caption vertically
+                      style: {
+                      textAlign: 'center', // Centers the text within the caption box
+                        fontSize: '30px' // Optional: adjust font size if needed
+                        }
+                     },
              pane: {
                      startAngle: -90,
                      endAngle: 89.9,
@@ -209,9 +221,6 @@
                      }, 3000);
 
 </script>
-
-
-
 
 
 
